@@ -35,8 +35,8 @@ POST /v1/event-tickets/
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
-| locations | array | Optional. Collection of up to 10 *location hash objects*
-| beacons | array | Optional. Collection of up to 10 *beacon hash objects* 
+| locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
+| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | background_color| rgb string | Required. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Required. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
@@ -48,9 +48,9 @@ POST /v1/event-tickets/
 
 ```json
 {
-	"altitude": 0.0
-	"latitude": 0.0
-	"longitude": 0.0
+	"altitude": 0.0,
+	"latitude": 0.0,
+	"longitude": 0.0,
 	"relevant_text": "notification to display"
 }
 ```
@@ -66,9 +66,9 @@ relevant_text | string | Optional. Text displayed on the lock screen when the pa
 
 ```json
 {
-	"major": 0.0
-	"minor": 0.0
-	"proximity_uuid": "30b5d792-48c9-4f12-80ff-082cae62e80f"
+	"major": 0.0,
+	"minor": 0.0,
+	"proximity_uuid": "30b5d792-48c9-4f12-80ff-082cae62e80f",
 	"relevant_text": "notification to display"
 }
 ```
