@@ -1,30 +1,25 @@
 Passworks API
 ====================
 
-The Passworks API is based on [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) using predictable, resource-oriented URLs. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools. [JSON](http://www.json.org/) will be returned in all responses from the API. 
+The Passworks API is based on [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools. 
 
 Making a request
 ----------------
 
-All URLs start with `https://api.passworks.io/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
-
+All URLs start with `https://api.passworks.io/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.
 
 To create objects using the API each request must include the `Content-Type` header with the value `application/json` and the boy must contain data in the [JSON](http://en.wikipedia.org/wiki/JSON) format
 
 ```shell
 curl -u account_id:api_key \
   -H 'Content-Type: application/json' \
-  -d '{"name": "My Loyalty campaign", "icon_id": "4ee66acf-5f0a-4544-930a-e72b0e50150a"}'
-  https://api.passworks.io/v1/loyalties
+  https://api.passworks.io/v1/loyalty
 ```
-
-That's all!
-
 
 Authentication
 --------------
 
-As stated previously Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication. This is secure since all requests in made to `api.passworks.io` use SSL.
+As stated previously Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests in made to `api.passworks.io` use SSL.
 
 
 Identify for your account id and api key
@@ -50,11 +45,6 @@ Most collection APIs paginate their results. The first request returns up to
 `&page=3`, and so on until you get an empty response.
 
 Each page returns a maximum of 25 objects you can increse (up to 50 items per page) or decrese (to 1 per item page) this value adding the `&per_page=50` .
-
-Use HTTP caching
-----------------
-
-You must make use of the HTTP freshness headers to lessen the load on our servers (and increase the speed of your application!). Most requests we return will include an `ETag` or `Last-Modified` header. When you first request a resource, store this value, and then submit them back to us on subsequent requests as `If-None-Match` and `If-Modified-Since`. If the resource hasn't changed, you'll see a `304 Not Modified` response, which saves you the time and bandwidth of sending something you already have.
 
 
 Handling errors
@@ -97,13 +87,10 @@ Creating things using the API
 -----------------
 
 * [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md)
-* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/sections/event_tickets.md)
-* [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupons.md)
-* [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generics.md)
+* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md)
+* [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md)
+* [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generic.md)
 * [Loyalty](https://github.com/passworks/passworks-api/blob/master/sections/loyalty.md)
-* [Store Card](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md)
-
-
 
 API libraries
 -------------
