@@ -8,8 +8,9 @@ Event Tickets are passes used for events such as concerts, movie tickets, galas,
 Example of Event Tickets
 ------------
 
+PLEASE PLACE HERE THE SAMPLE PASS IMAGES
 
-Creating a Event Ticket group
+Creating a Event Ticket
 ------------
 
 
@@ -17,12 +18,24 @@ Creating a Event Ticket group
 POST /v1/event-tickets/
 ```
 
+POST content
+
 ```json
 {
 	"name": "My birthday party",
 	"icon_id": "f2faadec-13f2-4cf2-8297-2b85e8a2cae3"
 }
 ```
+
+In case of success HTTP 201 response code is returned with the following body content:
+
+```json
+{
+	"id": "c9234384-6ef3-417f-a7b2-14746af0335d"
+}
+```
+
+##### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -78,3 +91,11 @@ major| 16-bit unsigned integer | Optional. Major identifier of a Bluetooth Low E
 minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low Energy location beacon
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
+
+Creating a event ticket pass
+------------
+
+```shell
+POST /v1/event-tickets/{event-ticket-id}/passes
+```
+
