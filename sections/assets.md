@@ -23,7 +23,7 @@ Each pass type (`store card`, `event ticket`, `boarding pass`, `generic pass` an
 
 Prefered image format is .png since it supports transparencies.
 
-Maximum upload size if 1 Megabyte (1025 Kb)
+Maximum upload size is 1 Megabyte (1024 Kb)
 
 Listing the assets
 ----------------
