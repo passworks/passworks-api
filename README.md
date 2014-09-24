@@ -83,7 +83,7 @@ X-RateLimit-Reset |	The time at which the current rate limit window resets in [U
 
 *Note: Unauthenticated requests are associated with your IP address, and not the user making requests. For unauthenticated you have 60 requests per hour.*
 
-Understanding API the workflow
+Understanding the API workflow
 --------------------
 
 Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
