@@ -27,15 +27,14 @@ Identify for your account id and api key
 
 To use the API you must provide your `account_id` and `api_key` in each request via Basic Auth.
 
-The `account_id` and `api_key` can be found here [http://www.passworks.io/api](http://www.passworks.io/api)
+Your `account_id` and `api_key` can be found here [http://www.passworks.io/api](http://www.passworks.io/api)
 
 
-Just JSON
+Call me JSON
 -----------------
 
-We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks. **All API URLs end in .json to indicate that they accept and return JSON.**
+We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
 
-You'll receive a `415 Unsupported Media Type` response code if you attempt to use a different URL suffix or leave out the `Content-Type` header.
 
 Pagination
 ----------
@@ -87,10 +86,11 @@ Creating things using the API
 -----------------
 
 * [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md)
-* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md)
+* [Event Ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md)
 * [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md)
 * [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generic.md)
-* [Loyalty](https://github.com/passworks/passworks-api/blob/master/sections/loyalty.md)
+* [Store Card](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md) (Loyalty, Membership Card)
+* [Boarding Pass](https://github.com/passworks/passworks-api/blob/master/sections/boarding_pass.md)
 
 API libraries
 -------------
@@ -103,4 +103,4 @@ Help us make it better
 
 Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.
 
-To talk with us and other developers about the API [open a support ticket](https://github.com/passworks/passworks-api/issues) or mail us at `api@passworks.io` if you need to talk to us.
+To talk with us and other developers about the API [open a support ticket](https://github.com/passworks/passworks-api/issues) or mail us at `api at passworks.io` if you need to talk to us.
