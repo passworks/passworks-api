@@ -92,7 +92,7 @@ A pass is composed of at least one asset (a asset is a image) and a bounch of te
 
 So to start creating passes you must first upload an image, usually it's an `icon` since all passes require it (the icon is used in the lock screen's notification).
 
-Second step is creating a "campaign" think of a "campaign" as an aggregator element for all your passes, for example, if you are creating an [event ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) for your birthday you create the "campaing" for instence the the name "my birthday" and start to add passes to it.
+Second step is creating a "campaign" think of a "campaign" as an aggregator element for all your passes, for example, if you are creating an [event ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) for your birthday you create the "campaing" for instance assign it a ``name`` like "my birthday" and the icon asset. After that start to adding passes to it.
 
 It's easy peasy!
 
