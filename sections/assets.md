@@ -5,11 +5,12 @@ Assets are the visual elements of the pass.
 
 Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of passe uses one or more assets.
 
+You can reuse your assets, meaning that you can assign the same asset to multiple passes.
+
 Types of assets
 ----------------
 
-Each pass type (store card, event ticket, boarding pass, generic pass and coupons) have there specific set of images.
-
+Each pass type (`store card`, `event ticket`, `boarding pass`, `generic pass` and `coupons`) use specific set of assets/images.
 
 | Asset Name |  Used in       | Size
 |------------|----------------------------------|----------------------------------|
