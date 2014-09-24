@@ -3,9 +3,9 @@ Assets
 
 Assets are the visual elements of the pass.
 
-Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of passe uses one or more assets.
+Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of passe uses one or more types of assets.
 
-You can reuse your assets, meaning that you can assign the same asset to multiple passes.
+You can reuse assets, meaning that you can assign the same asset to multiple passes, reducing the number of asset operations and also reducing the amount of bandwidth required to create a pass.
 
 Types of assets
 ----------------
