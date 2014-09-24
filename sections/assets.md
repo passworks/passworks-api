@@ -19,4 +19,54 @@ Each pass type (`store card`, `event ticket`, `boarding pass`, `generic pass` an
 | strip	   | Coupon, Event Ticket, Store Card | 640x84 for Event Tickets or 640x246 for other types of passes 
 | thumbnail  | Event ticket, Generic | 180x180 The aspect ratio should be in the range of 2:3 to 3:2, otherwise the image is cropped.
 | background | Event Ticket | 360x440	        |
-| footer	   | Boarding Pass | 286x30           |               
+| footer	   | Boarding Pass | 286x30           |    
+
+Prefered image format is .png since it supports transparencies.
+
+Maximum upload size if 1 Megabyte (1025 Kb)
+
+Creating a asset
+----------------
+
+Passworks API allows you to upload images in the `.jpg`, `.png` and `.gif` format, note that all the uploads images will be reprocessed and converted to into `png`.
+
+Images must be uploaded using the [base64](http://en.wikipedia.org/wiki/Base64) encoding.
+
+
+```shell
+POST /v1/assets
+```
+
+Body payload:
+
+
+```json
+{
+  "asset": {
+    "filename": "passworks.jpg",
+    "content_type": "image/jpeg",
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAABGdBTUEAALGP\nC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUw\nAADqYAAAOpgAABdwnLpRPAAAAO1QTFRF/////v//6fbx1O3jzereyOjbyunc\n0ezh3/Lq/P79ltS7VruSZcGbY72YZb6aY76ZZL+aXL6WbsSh7Pfz/v/+/f7+\nzuvfVLqQ5/Xv+/39/v7+fMmqhs2wqNvGgMqswufYbMOgnda/gsut+/79yOnc\nbcai3fHp1u/lacOe5/bwasKeZcCb4/Pt+v38odjC2vDn4/Tt0+3iZsGcrd3J\nKqVzKKRxrd3Kz+vgEpxkhM2vXb6XwubY3/HqYr+ZodjBf8qryOnbqtzHw+fY\nzeveVLmQ5vXve8mpiM6xl9W8Zb6ZW72Vcsak7/n16vbx4PLrTQ8gcgAAAAFi\nS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAACnSURBVAjXbU/XDsIw\nDLyww2qBplBmoZS99y57w/9/DknEE8KWLJ3PPp8BELjcHq/PH6AQQRAMhSNR\nRY3FE9DAoCdTTAOMdCYLyjOXh5hkKJicpyiWYFAGC2WbtzVUqrwIXq8JvXqj\n2Wp3uuihPxB4OBpPprM5FsvV+g//u0+xcWBJ/a0t8c753t+b0t/heBL+KD1f\nBEFw5f5vinp/PKUQwUv+92YcfAAwZRGmNH9JIQAAACV0RVh0ZGF0ZTpjcmVh\ndGUAMjAxNC0wOC0yNlQwNzozMjowOC0wNDowMCJkoiAAAAAldEVYdGRhdGU6\nbW9kaWZ5ADIwMTQtMDgtMjZUMDc6MzI6MDgtMDQ6MDBTORqcAAAAAElFTkSu\nQmCC\n",
+    "asset_type": "background"
+  }
+}
+```
+
+| Field Name           | Type      | Description    |
+|----------------------|-----------|----------------|
+| filename   			   | string    |  Required. The uploaded filename (eg: company-logo.png)
+| content_type		   | string	  |  Required. The [mime type](http://en.wikipedia.org/wiki/Internet_media_type) of the uploaded file. Valid mime types are `image/jpeg`, `image/png` and `image/gif`
+| base64               | string    | Required. A string in [base64](http://en.wikipedia.org/wiki/Base64) encoding containing the content of the file
+| asset_type    		   | string    | Required. The type of asset being uploaded. Valid asset types are `icon`, `logo`, `strip `, `thumbnail`, `background`, `footer`
+
+Response:
+
+
+```json
+{
+  "asset": {
+    "id": "32f85671-2e12-4a46-9fe2-05435cd5fc14",
+    "asset_type": "background",
+    "created_at": "2014-09-24T17:41:27Z"
+  }
+}
+```
