@@ -3,12 +3,13 @@ Passworks API
 
 The Passworks API is based on [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools. 
 
+
 Making a request
 ----------------
 
 All URLs start with `https://api.passworks.io/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.
 
-To create objects using the API each request must include the `Content-Type` header with the value `application/json` and the boy must contain data in the [JSON](http://en.wikipedia.org/wiki/JSON) format
+To create objects using the API each request must include the `Content-Type` header with the value `application/json` and the body must contain data in the [JSON](http://en.wikipedia.org/wiki/JSON) format.
 
 ```shell
 curl -u account_id:api_key \
@@ -97,6 +98,7 @@ API libraries
 
 * [passworks-php](https://github.com/passworks/passworks-php) - PHP library, composer compatible
 * [passworks-ruby](https://github.com/passworks/passworks-ruby) - Ruby gem
+
 
 Help us make it better
 ----------------------
