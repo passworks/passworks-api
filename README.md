@@ -28,7 +28,7 @@ Identify for your account id and api key
 
 To use the API you must provide your `account_id` and `api_key` in each request via Basic Auth.
 
-Your `account_id` and `api_key` can be found here [http://www.passworks.io/api](http://www.passworks.io/api)
+Your `account_id` and `api_key` can be found here [http://www.passworks.io/organizations/roles](http://www.passworks.io/organizations/roles)
 
 
 Call me JSON
