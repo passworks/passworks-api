@@ -10,15 +10,15 @@ Example of Loyalty passes
 
 <div>
 
-<figure style="float:left; margin: 0; padding: 0; width: 50%">
+<div style="float:left; margin: 0; padding: 0; width: 50%">
 	<img src="https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/store_card_2x.png" />
-	<figcaption>Loyalty Card Schematic</figcaption>
-</figure>
+	<p style="text-align: center;">Loyalty Card Schematic</p>
+</div>
 
-<figure style="float: right;  margin: 0; padding: 0; width: 50%">
+<div style="float: right;  margin: 0; padding: 0; width: 50%">
 	<img src="https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/bayroast_coffee_guidelines.png"></img>
-	<figcaption>Bayroast Coffee Loyalty Card</figcaption>
-</figure>
+	<p style="text-align: center">Bayroast Coffee Loyalty Card</p>
+</div>
 
 <p style="clear: both;">
 
