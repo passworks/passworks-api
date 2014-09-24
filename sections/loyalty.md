@@ -8,9 +8,28 @@ The Loyalty API can be used to create loyalty or event tier programs to reward y
 Example of Loyalty passes
 ------------
 
-PLEASE PLACE HERE THE SAMPLE PASS IMAGES
+<div>
 
-Creating a Loyalty "Campaign"
+<figure style="float:left; margin: 0; padding: 0; width: 50%">
+	<img src="https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/store_card_2x.png" />
+	<figcaption>Loyalty Card Schematic</figcaption>
+</figure>
+
+<figure style="float: right;  margin: 0; padding: 0; width: 50%">
+	<img src="https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/bayroast_coffee_guidelines.png"></img>
+	<figcaption>Bayroast Coffee Loyalty Card</figcaption>
+</figure>
+
+<p style="clear: both;">
+
+</div>
+
+
+
+
+
+
+Creating a Loyalty "campaign" for the "Bayroast Coffee"
 ------------
 
 
