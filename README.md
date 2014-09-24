@@ -101,7 +101,7 @@ Creating things using the API
 -----------------
 
 
-* [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md)
+* [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md) (Upload images to use in your passes)
 * [Event Ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
 * [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
 * [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generic.md) (Business cards and and anything else)
