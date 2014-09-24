@@ -1,4 +1,4 @@
-Loyalty
+Store Card
 ================
 
 
