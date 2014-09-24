@@ -25,6 +25,37 @@ Prefered image format is .png since it supports transparencies.
 
 Maximum upload size if 1 Megabyte (1025 Kb)
 
+Listing the assets
+----------------
+
+```shell
+GET /v1/assets
+```
+
+Response:
+
+```json
+{
+  "assets": [
+    {
+      "id": "aab705bb-5bf0-4c14-93e0-f5fe01a4d3f5",
+      "asset_type": "strip",
+      "created_at": "2014-08-25T14:52:49Z"
+    },
+    {
+      "id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+      "asset_type": "icon",
+      "created_at": "2014-09-24T09:38:48Z"
+    },
+    {
+      "id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+      "asset_type": "logo",
+      "created_at": "2014-09-24T09:39:40Z"
+    }
+  ]
+}
+```
+
 Creating a asset
 ----------------
 
@@ -70,3 +101,14 @@ Response:
   }
 }
 ```
+
+Deleting a asset
+----------------
+
+```shell
+DELETE /v1/assets/{asset-id}
+```
+
+If the asset is deleted successfully the endpoint returns a HTTP 200.
+
+In case an asset can't be deleted because it's being used by a "campaing" an HTTP 412 error code is returned. 
