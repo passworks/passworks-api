@@ -5,13 +5,13 @@ Loyalty
 The Loyalty API can be used to create loyalty or event tier programs to reward your customers for using your services.
 
 
-Example of Loyalty passes
+Example of a Loyalty Pass
 ------------
 
 
 | ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/store_card_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/bayroast_coffee_guidelines.png) |
 |---|---|
-| Loyalty Card Schematic | Bayroast Coffe Loyalty Card |
+| Generic Loyalty Card Schematic | Bayroast Coffe Loyalty Card |
 
 
 
@@ -27,26 +27,32 @@ POST Content
 
 ```json
 {
-  "campaign": {
-    "name": "starbucks card",
-    "icon_id": "75217291-d227-40d8-a741-4df9a4baf915",
-    "logo_text": "Starbucks Card",
-    "header_fields": [
+  "loyalty": {
+    "name": "Bayroast Coffee Loyalty Cards",
+    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",    
+    "logo_text": "Bayroast Coffee",
+    "background_color": "#764a32",
+    "text_color": "#f5f2f0",
+    "label_color": "#643e2a",
+    "barcode": "pdf417",
+    "primary_fields": [
       {
         "key": "balance",
-        "label": "Balance"
+        "label": "$0",
+        "value": "remaining balance"
       }
     ],
-    "strip_id": "aab705bb-5bf0-4c14-93e0-f5fe01a4d3f5",
-    "background_color": "#0505ff",
-    "text_color": "#ffffff",
-    "label_color": "#cccccc",
-    "barcode": "pdf417",
     "secondary_fields": [
       {
-        "key": "username",
-        "label": "Name"
-      }
+        "key": "level",
+        "label": "LEVEL"
+      },
+      {
+        "key": "usual_beverage",
+        "label": "THE USUAL"
+      }      
     ]
   }
 }
@@ -56,46 +62,56 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "campaign": {
-    "id": "0c2272b8-b48b-44b8-b697-37f6fd41d481",
-    "name": "starbucks card",
-    "logo_text": "Starbucks Card",
-    "background_color": "#0505ff ",
-    "text_color": "#ffffff ",
-    "label_color": "#cccccc ",
-    "header_fields": [
+  "loyalty": {
+    "id": "61e5f9ed-54fc-409c-9e95-49e9872a8236",
+    "name": "Bayroast Coffee Loyalty Cards",
+    "description": "Bayroast Coffee Loyalty Cards",        
+    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
+    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+    "organization_name": "Passworks, S.A",
+    "logo_text": "Bayroast Coffee",
+    "background_color": "#764a32",
+    "text_color": "#f5f2f0",
+    "label_color": "#643e2a",
+    "header_fields": [],
+    "primary_fields": [
       {
         "key": "balance",
-        "value": "",
-        "label": "Balance"
+        "value": "remaining balance",
+        "label": "$0"
       }
     ],
     "secondary_fields": [
       {
-        "key": "username",
+        "key": "level",
         "value": "",
-        "label": "Name"
+        "label": "LEVEL"
+      },
+      {
+        "key": "usual_beverage",
+        "value": "",
+        "label": "THE USUAL"
       }
     ],
     "auxiliary_fields": [],
     "back_fields": [],
-    "beacons": [],
     "locations": [],
-    "created_at": "2014-09-23T15:20:21Z",
-    "updated_at": "2014-09-23T15:20:21Z"
+    "beacons": [],
+    "created_at": "2014-09-24T10:50:53Z",
+    "updated_at": "2014-09-24T10:50:53Z"
   }
 }
 ```
 
-NOTE: All date fields (`created_at`, `updated_at`) are in the [ISO8601](http://en.wikipedia.org/wiki/ISO_8601) format for example: 2014-09-22T20:51:53+00:00
-
+NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format (e.g:  `2014-09-22T20:51:53+00:00`).
 
 ##### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
 | name | string | Required. The loyaty program name must be unique
-| description | string | Required. Brief description of the pass, used by the iOS accessibility technologies.
+| description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
 | strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
@@ -109,8 +125,8 @@ NOTE: All date fields (`created_at`, `updated_at`) are in the [ISO8601](http://e
 | background_color| rgb string | Required. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Required. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
-| certificate_id | uuid | Required. The certificate uuid if not supplied a passworks.io default certificate is used
-| organization_name | string | optional. Organization name showned in the unlock screen, if none is supplied the your current organization name is used
+| certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
+| organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
 
 ##### Location hash object format
@@ -160,19 +176,22 @@ POST Content
 ```json
 {
   "pass": {
-    "header_fields": [
+    "primary_fields": [
       {
         "key": "balance",
-        "value": "$20.75"
+        "label": "$25,00"
       }
     ],
     "secondary_fields": [
       {
-        "key": "user_name",
-        "label": "My Card"
+        "key": "level",
+        "value": "Gold"
+      },
+      {
+        "key": "usual_beverage",
+        "value": "Iced Mocha"
       }
-    ],
-    "merge": true
+    ]
   }
 }
 ```
