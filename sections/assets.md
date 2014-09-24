@@ -1,16 +1,21 @@
 Assets
 ===============
 
-Assets are the buiding blocks of a pass, they are the imagens that are showned in your pass.
+Assets are the visual elements of the pass.
+
+Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of passe uses one or more assets.
 
 Types of assets
 ----------------
 
-| Asset Name | Recommended Size | Used in                          | 
-|------------|------------------|----------------------------------|
-| icon       | 118x118			  | All type of passes               |
-| logo		   | 320x100			  | All type of passes               |
-| strip	   | 640x84 if Event Ticket or 640x246 for other types of passes 			   | Coupon, Event Ticket, Store Card |
-| thumbnail  | 180x180 the aspect ratio should be in the range of 2:3 to 3:2, otherwise the image is cropped.				     | Event ticket, Generic            |
-| background | 360x440		     | Event Ticket                     |
-| footer	   | 286x30           | Boarding Pass                   |
+Each pass type (store card, event ticket, boarding pass, generic pass and coupons) have there specific set of images.
+
+
+| Asset Name |  Used in       | Size
+|------------|----------------------------------|----------------------------------|
+| icon       | All type of passes               | 118x118 |
+| logo		   | All type of passes 		        | 320x100 
+| strip	   | Coupon, Event Ticket, Store Card | 640x84 for Event Tickets or 640x246 for other types of passes 
+| thumbnail  | Event ticket, Generic | 180x180 The aspect ratio should be in the range of 2:3 to 3:2, otherwise the image is cropped.
+| background | Event Ticket | 360x440	        |
+| footer	   | Boarding Pass | 286x30           |               
