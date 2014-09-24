@@ -5,7 +5,7 @@ Loyalty
 The Loyalty API can be used to create loyalty or event tier programs to reward your customers for using your services.
 
 
-Example of a Loyalty Pass
+Example of a Store Card
 ------------
 
 
@@ -15,19 +15,19 @@ Example of a Loyalty Pass
 
 
 
-Creating a Loyalty "campaign" for the "Bayroast Coffee"
+Creating a Store Card "campaign" for the "Bayroast Coffee"
 ------------
 
 
 ```shell
-POST /v1/loyalty/
+POST /v1/store_cards/
 ```
 
 POST Content
 
 ```json
 {
-  "loyalty": {
+  "store_card": {
     "name": "Bayroast Coffee Loyalty Cards",
     "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
     "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
@@ -62,7 +62,7 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "loyalty": {
+  "store_card": {
     "id": "61e5f9ed-54fc-409c-9e95-49e9872a8236",
     "name": "Bayroast Coffee Loyalty Cards",
     "description": "Bayroast Coffee Loyalty Cards",        
@@ -164,11 +164,11 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-Creating a loyaty pass for a customer
+Creating a Store Card for a customer
 ------------
 
 ```shell
-POST /v1/loyalty/{event-ticket-id}/passes
+POST /v1/store_cards/{store_card_id}/passes
 ```
 
 POST Content
@@ -202,7 +202,7 @@ In case of success HTTP 201 response code is returned with the following body co
 {
     "pass": {
         "id": "92ae983a-0ffc-46c8-97ac-c046105f0e77",
-        "loyalty_id": "e1084d75-099c-4752-85d0-1088c6056d0e",
+        "store_card_id": "e1084d75-099c-4752-85d0-1088c6056d0e",
         "voided": false,
         "authentication_token": "ZaBKnTf1NMKGkORXQBpC7A",
         "serial_number": "d2484829-43f5-4edb-8c90-b5413b1db1bc",
@@ -260,7 +260,7 @@ Updating the customer pass
 ------------
 
 ```shell
-PATCH /v1/loyalty/{loyalty_id}/passes/{pass_id}/
+PATCH /v1/store_cards/{store_card_id}/passes/{pass_id}/
 ```
 
 POST Content
@@ -292,7 +292,7 @@ In case of success HTTP 201 response code is returned with the complete passe de
 {
   "pass": {
     "id": "ce7e7800-d2c5-4080-9032-9b4a06370bcc",
-    "loyalty_id": "75217291-d227-40d8-a741-4df9a4baf915",
+    "store_card_id": "75217291-d227-40d8-a741-4df9a4baf915",
     "donwload_page_link": "https://get.passworks.io/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA",
     "direct_link": "http://gets.passworks.io:3000/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA.pkpass",
     "voided": false,
@@ -349,6 +349,6 @@ Forcing a push update of a specific pass
 You can force a push notification of a passe (provided that it was changed since the user last fetched it) by using the following URL
 
 ```shell
-POST /v1/loyalty/{loyalty_id}/passes/{pass_id}/push
+POST /v1/store_cards/{store_card_id}/passes/{pass_id}/push
 ```
 
