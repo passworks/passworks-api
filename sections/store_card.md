@@ -28,7 +28,7 @@ POST Content
 ```json
 {
   "store_card": {
-    "name": "Bayroast Coffee Loyalty Cards",
+    "name": "Bayroast Coffee Store Cards",
     "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
     "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
     "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",    
@@ -63,13 +63,13 @@ In case of success HTTP 201 response code is returned with the following body co
 ```json
 {
   "store_card": {
-    "id": "61e5f9ed-54fc-409c-9e95-49e9872a8236",
-    "name": "Bayroast Coffee Loyalty Cards",
-    "description": "Bayroast Coffee Loyalty Cards",        
+    "id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+    "name": "Bayroast Coffee Store Cards",
+    "description": "Bayroast Coffee Store Cards",
     "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
     "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
     "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-    "organization_name": "Passworks, S.A",
+    "organization_name": "passworks",
     "logo_text": "Bayroast Coffee",
     "background_color": "#764a32",
     "text_color": "#f5f2f0",
@@ -98,8 +98,8 @@ In case of success HTTP 201 response code is returned with the following body co
     "back_fields": [],
     "locations": [],
     "beacons": [],
-    "created_at": "2014-09-24T10:50:53Z",
-    "updated_at": "2014-09-24T10:50:53Z"
+    "created_at": "2014-09-24T17:07:38Z",
+    "updated_at": "2014-09-24T17:07:38Z"
   }
 }
 ```
@@ -164,7 +164,7 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-Creating a Store Card for a customer
+Creating a Store Card pass for a customer
 ------------
 
 ```shell
@@ -200,49 +200,49 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-    "pass": {
-        "id": "92ae983a-0ffc-46c8-97ac-c046105f0e77",
-        "store_card_id": "e1084d75-099c-4752-85d0-1088c6056d0e",
-        "voided": false,
-        "authentication_token": "ZaBKnTf1NMKGkORXQBpC7A",
-        "serial_number": "d2484829-43f5-4edb-8c90-b5413b1db1bc",
-        "header_fields": [],
-        "primary_fields": [
-            {
-                "key": "balance",
-                "label": "$25,00",
-                "value": "remaining balance"
-            }
-        ],
-        "secondary_fields": [
-            {
-                "key": "level",
-                "label": "LEVEL",
-                "value": "Gold"
-            },
-            {
-                "key": "usual_beverage",
-                "label": "THE USUAL",
-                "value": "Iced Mocha"
-            }
-        ],
-        "auxiliary_fields": [],
-        "back_fields": [],
-        "barcode": {
-            "format": "pdf417",
-            "message": "0000034",
-            "alt_text": "0000034"
-        },
-        "beacons": [],
-        "locations": [],
-        "redeemed_count": 0,
-        "donwload_page_link": "http://get.passworks.io/kimi2WHGoQ/uSD8y8Xz4QySfpjq47_aBQ",
-        "direct_link": "http://get.passworks.io/kimi2WHGoQ/uSD8y8Xz4QySfpjq47_aBQ.pkpass",
-        "expiration_date": null,
-        "redeemed_at": null,
-        "created_at": "2014-09-24T14:33:39Z",
-        "updated_at": "2014-09-24T14:33:39Z"
-    }
+  "pass": {
+    "id": "8506a086-0de1-4f67-8258-bbcb6bfab6f9",
+    "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+    "voided": false,
+    "authentication_token": "QWli3jb05oHkdUqQQ2RstA",
+    "serial_number": "01ab6ea6-6d82-49f1-b252-e969e449e378",
+    "header_fields": [],
+    "primary_fields": [
+      {
+        "key": "balance",
+        "label": "$25,00",
+        "value": "remaining balance"
+      }
+    ],
+    "secondary_fields": [
+      {
+        "key": "level",
+        "label": "LEVEL",
+        "value": "Gold"
+      },
+      {
+        "key": "usual_beverage",
+        "label": "THE USUAL",
+        "value": "Iced Mocha"
+      }
+    ],
+    "auxiliary_fields": [],
+    "back_fields": [],
+    "barcode": {
+      "format": "pdf417",
+      "message": "0000001",
+      "alt_text": "0000001"
+    },
+    "beacons": [],
+    "locations": [],
+    "redeemed_count": 0,
+    "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
+    "direct_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg.pkpass",
+    "expiration_date": null,
+    "redeemed_at": null,
+    "created_at": "2014-09-24T17:10:16Z",
+    "updated_at": "2014-09-24T17:10:16Z"
+  }
 }
 ```
 
@@ -263,15 +263,15 @@ Updating the customer pass
 PATCH /v1/store_cards/{store_card_id}/passes/{pass_id}/
 ```
 
-POST Content
+PATCH Content
 
 ```json
 {
   "pass": {
-    "header_fields": [
+    "primary_fields": [
       {
         "key": "balance",
-        "value": "$10.75"
+        "label": "$15,00"
       }
     ],
     "merge": true,
@@ -291,53 +291,47 @@ In case of success HTTP 201 response code is returned with the complete passe de
 ```json
 {
   "pass": {
-    "id": "ce7e7800-d2c5-4080-9032-9b4a06370bcc",
-    "store_card_id": "75217291-d227-40d8-a741-4df9a4baf915",
-    "donwload_page_link": "https://get.passworks.io/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA",
-    "direct_link": "http://gets.passworks.io:3000/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA.pkpass",
+    "id": "1b0e0125-184d-4ad3-af4d-86c5e9d8196d",
+    "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
     "voided": false,
-    "authentication_token": "IBRlJKtl6eQ98Vo2N-Mwfg",
-    "serial_number": "c4aa51d2-8ded-45a4-b75e-631ef87a55c7",
-    "redeemed_count": 0,
-    "redeemed_at": null,
-    "created_at": "2014-09-23T17:04:11Z",
-    "updated_at": "2014-09-23T19:09:08Z",
-    "pass_data": {
-      "auxiliary_fields": [],
-      "back_fields": [],
-      "background_color": "#0505ff",
-      "barcode": {
-        "format": "pdf417",
-        "message": "0000001",
-        "alt_text": "0000001"
+    "authentication_token": "mtS6Ffa9v5wF_x6oQFOniw",
+    "serial_number": "bc56c0ec-b639-4f04-a9c6-a04382b80dd5",
+    "header_fields": [],
+    "primary_fields": [
+      {
+        "key": "balance",
+        "label": "$15,00",
+        "value": "remaining balance"
+      }
+    ],
+    "secondary_fields": [
+      {
+        "key": "level",
+        "label": "LEVEL",
+        "value": "Gold"
       },
-      "beacons": [],
-      "expiration_date": null,
-      "foreground_color": "#ffffff",
-      "header_fields": [
-        {
-          "key": "balance",
-          "label": "Balance",
-          "value": "$20.75"
-        }
-      ],
-      "locations": [],
-      "max_distance": null,
-      "primary_fields": [],
-      "relevant_date": null,
-      "secondary_fields": [
-        {
-          "key": "username",
-          "label": "Name",
-          "value": ""
-        },
-        {
-          "key": "user_name",
-          "label": "My Card",
-          "value": null
-        }
-      ]
-    }
+      {
+        "key": "usual_beverage",
+        "label": "THE USUAL",
+        "value": "Iced Mocha"
+      }
+    ],
+    "auxiliary_fields": [],
+    "back_fields": [],
+    "barcode": {
+      "format": "pdf417",
+      "message": "0000003",
+      "alt_text": "0000003"
+    },
+    "beacons": [],
+    "locations": [],
+    "redeemed_count": 0,
+    "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
+    "direct_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
+    "expiration_date": null,
+    "redeemed_at": null,
+    "created_at": "2014-09-24T17:22:28Z",
+    "updated_at": "2014-09-24T17:25:56Z"
   }
 }
 ```
