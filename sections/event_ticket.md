@@ -10,6 +10,8 @@ Example of Event Tickets
 
 PLEASE PLACE HERE THE SAMPLE PASS IMAGES
 
+NOTE: If you specify a strip image, do not specify a background image or a thumbnail.
+
 Creating a Event Ticket
 ------------
 
