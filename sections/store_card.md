@@ -200,12 +200,49 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "loyalty_card": {
-    "loyalty_id": "75217291-d227-40d8-a741-4df9a4baf915",
-    "pass_id": "ce7e7800-d2c5-4080-9032-9b4a06370bcc",
-    "donwload_page_link": "http://get.passworks.io/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA",
-    "direct_link": "http://get.passworks.io/9hpHLuq_TQ/ovm4e5GsAvhhA4Ynt8YMOA.pkpass"
-  }
+    "pass": {
+        "id": "92ae983a-0ffc-46c8-97ac-c046105f0e77",
+        "loyalty_id": "e1084d75-099c-4752-85d0-1088c6056d0e",
+        "voided": false,
+        "authentication_token": "ZaBKnTf1NMKGkORXQBpC7A",
+        "serial_number": "d2484829-43f5-4edb-8c90-b5413b1db1bc",
+        "header_fields": [],
+        "primary_fields": [
+            {
+                "key": "balance",
+                "label": "$25,00",
+                "value": "remaining balance"
+            }
+        ],
+        "secondary_fields": [
+            {
+                "key": "level",
+                "label": "LEVEL",
+                "value": "Gold"
+            },
+            {
+                "key": "usual_beverage",
+                "label": "THE USUAL",
+                "value": "Iced Mocha"
+            }
+        ],
+        "auxiliary_fields": [],
+        "back_fields": [],
+        "barcode": {
+            "format": "pdf417",
+            "message": "0000034",
+            "alt_text": "0000034"
+        },
+        "beacons": [],
+        "locations": [],
+        "redeemed_count": 0,
+        "donwload_page_link": "http://get.passworks.io/kimi2WHGoQ/uSD8y8Xz4QySfpjq47_aBQ",
+        "direct_link": "http://get.passworks.io/kimi2WHGoQ/uSD8y8Xz4QySfpjq47_aBQ.pkpass",
+        "expiration_date": null,
+        "redeemed_at": null,
+        "created_at": "2014-09-24T14:33:39Z",
+        "updated_at": "2014-09-24T14:33:39Z"
+    }
 }
 ```
 
