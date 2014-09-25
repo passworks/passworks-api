@@ -73,6 +73,18 @@ Most collection call's on our API paginate their results. The first request retu
 
 Each page returns a maximum of 25 objects you can increase (up to 50 items per page) or decrease (to 1 per item page) this value adding the `&per_page=50` .
 
+If a given resource is paginated the API will emit the following headers:
+
+| Header Name 			| Description |
+|----------------------|-------------|
+| X-Total: 42 			| Total number of items found |
+| X-Total-Pages: 5 		| Total number of pages |
+| X-Page: 3 				| Current page |
+| X-Per-Page: 10 		| Amount of items displayed per page |
+| X-Next-Page: 4 		| The number of the next page |
+| X-Prev-Page: 2 		| The number of the previews page |
+| X-Offset: 10   		| Offset window |
+
 
 Handling errors
 ---------------
