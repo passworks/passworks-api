@@ -79,11 +79,11 @@ If a given resource is paginated the API will emit the following headers:
 |----------------------|-------------|
 | X-Total: 42 			| Total number of items found |
 | X-Total-Pages: 5 		| Total number of pages |
-| X-Page: 3 				| Current page |
+| X-Page: 3 				| The current page |
 | X-Per-Page: 10 		| Amount of items displayed per page |
 | X-Next-Page: 4 		| The number of the next page |
 | X-Prev-Page: 2 		| The number of the previews page |
-| X-Offset: 10   		| Offset window |
+| X-Offset: 10   		| The offset to start from |
 
 
 Handling errors
