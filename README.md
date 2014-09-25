@@ -1,7 +1,34 @@
 Passworks API
 ====================
 
-The Passworks API is based on [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools. 
+The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
+
+
+Understanding the API workflow
+--------------------
+
+Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
+
+A pass is composed of at least one asset (an asset is a image) and a bunch of text fields.
+
+So to start creating passes you must first upload an image, usually it's an `icon` since all passes require it (the icon is used in the lock screen's notification).
+
+Second step is creating a "campaign": think of a "campaign" as an aggregator element for all your passes, for example, if you are creating an [event ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) for your birthday you create a "campaign", assign it a ``name`` like "my birthday" and a icon (asset). After that start adding passes to it.
+
+It's easy peasy!
+
+
+Creating things using the API
+-----------------
+
+
+* [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md) (Upload images to use in your passes)
+* [Store Card](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
+* [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
+* [Event Ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
+* [Boarding Pass](https://github.com/passworks/passworks-api/blob/master/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
+* [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generic.md) (Business cards and anything else)
+
 
 
 Making a request
@@ -20,7 +47,7 @@ curl -u account_id:api_key \
 Authentication
 --------------
 
-As stated previously Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests in made to `https://api.passworks.io` use SSL.
+As stated previously, Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests made to `https://api.passworks.io` use SSL.
 
 
 Identify for your account id and api key
@@ -34,17 +61,17 @@ Your `account_id` and `api_key` can be found here [http://www.passworks.io/organ
 Call me JSON
 -----------------
 
-We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
+We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This mean that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
 
 
 Pagination
 ----------
 
-Most collection APIs paginate their results. The first request returns up to
+Most collection call's on our API paginate their results. The first request returns up to
 25 records. Check the next page for more results by adding `&page=2`, then
 `&page=3`, and so on until you get an empty response.
 
-Each page returns a maximum of 25 objects you can increse (up to 50 items per page) or decrese (to 1 per item page) this value adding the `&per_page=50` .
+Each page returns a maximum of 25 objects you can increase (up to 50 items per page) or decrease (to 1 per item page) this value adding the `&per_page=50` .
 
 
 Handling errors
@@ -57,7 +84,7 @@ Rate limiting
 -------------
 
 ```
-The rate limit and api trotting are not implemented.
+The rate limit and api throttling are not yet implemented.
 ```
 
 Authenticated users can make up to **5000** requests per hour, each request is associated with the `account_id`.
@@ -83,30 +110,6 @@ X-RateLimit-Reset |	The time at which the current rate limit window resets in [U
 
 *Note: Unauthenticated requests are associated with your IP address, and not the user making requests. For unauthenticated you have 60 requests per hour.*
 
-Understanding the API workflow
---------------------
-
-Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
-
-A pass is composed of at least one asset (a asset is a image) and a bounch of text fields.
-
-So to start creating passes you must first upload an image, usually it's an `icon` since all passes require it (the icon is used in the lock screen's notification).
-
-Second step is creating a "campaign" think of a "campaign" as an aggregator element for all your passes, for example, if you are creating an [event ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) for your birthday you create a "campaing" assign it a ``name`` like "my birthday" and a icon (asset). After that start adding passes to it.
-
-It's easy peasy!
-
-
-Creating things using the API
------------------
-
-
-* [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md) (Upload images to use in your passes)
-* [Event Ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
-* [Coupons](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
-* [Generics](https://github.com/passworks/passworks-api/blob/master/sections/generic.md) (Business cards and and anything else)
-* [Store Card](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
-* [Boarding Pass](https://github.com/passworks/passworks-api/blob/master/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
 
 API libraries
 -------------
