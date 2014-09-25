@@ -61,7 +61,7 @@ Your `account_id` and `api_key` can be found here [http://www.passworks.io/organ
 Call me JSON
 -----------------
 
-We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This mean that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
+We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
 
 
 Pagination
