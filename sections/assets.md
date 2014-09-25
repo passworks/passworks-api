@@ -3,7 +3,7 @@ Assets
 
 Assets are the visual elements of the pass.
 
-Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of passe uses one or more types of assets.
+Passworks supports 6 types of assets (`icon`, `logo`, `strip`, `thumbnail`, `background` and `footer`) each type of pass uses one or more types of assets.
 
 You can reuse assets, meaning that you can assign the same asset to multiple passes, reducing the number of asset operations and also reducing the amount of bandwidth required to create a pass.
 
@@ -21,7 +21,7 @@ Each pass type (`store card`, `event ticket`, `boarding pass`, `generic pass` an
 | background | Event Ticket | 360x440	        |
 | footer	   | Boarding Pass | 286x30           |    
 
-Prefered image format is .png since it supports transparencies.
+Preferred image format is .png since it supports transparencies.
 
 Maximum upload size is 1 Megabyte (1024 Kb)
 
@@ -111,4 +111,4 @@ DELETE /v1/assets/{asset-id}
 
 If the asset is deleted successfully the endpoint returns a HTTP 200.
 
-In case an asset can't be deleted because it's being used by a "campaing" an HTTP 412 error code is returned. 
+In case an asset can't be deleted because it's being used by an active "campaign" an HTTP 412 error code is returned. 
