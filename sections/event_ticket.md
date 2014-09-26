@@ -8,7 +8,10 @@ Event Tickets are passes used for events such as concerts, movie tickets, galas,
 Example of Event Tickets
 ------------
 
-PLEASE PLACE HERE THE SAMPLE PASS IMAGES
+|-------|-------|
+| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/event_ticket_2x.png)||
+| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | missing image |
+| Generic Loyalty Card Schematic | Bayroast Coffe Loyalty Card |
 
 NOTE: If you specify a strip image, do not specify a background image or a thumbnail.
 
