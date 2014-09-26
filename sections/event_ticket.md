@@ -8,27 +8,63 @@ Event Tickets are passes used for events such as concerts, movie tickets, galas,
 Example of Event Tickets
 ------------
 
-|-------|-------|
-| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/event_ticket_2x.png)||
-| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | missing image |
-| Generic Loyalty Card Schematic | Bayroast Coffe Loyalty Card |
+|![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/event_ticket_2x.png)|
+|:--------------:|
+|Event Ticket with `background image` and one with a `strip image` (schematic)|
 
-NOTE: If you specify a strip image, do not specify a background image or a thumbnail.
 
-Creating a Event Ticket
+
+> Note: If you specify a strip image, do not specify a background image nor a thumbnail image.
+
+| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | (missing image) |
+|:-------------------:|:----------------:|
+| The Beat Goes On (Event ticket with background) | Event Ticket with a strip image |
+
+
+
+Creating a Event Ticket for "The Beat Goes On"
 ------------
 
+The **Beat Goes On** pass is straightforward example, the pass is the same for all the persons with the minor diference that each issued pass has it's own redeem code (barcode redeem code).
 
 ```shell
-POST /v1/event-tickets/
+POST /v1/event_tickets/
 ```
 
 POST content
 
 ```json
 {
-	"name": "My birthday party",
-	"icon_id": "f2faadec-13f2-4cf2-8297-2b85e8a2cae3"
+  "event_ticket": {
+    "name": "The Beat Goes On Event",
+    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+    "thumbnail_id": "8de6562c-06dd-4505-8661-280472234ade",
+    "background_id": "3cac4ba6-3f0b-438b-adbf-d0706c6267f8",
+    "barcode": "pdf417",
+    "text_color": "#ffffff",
+    "background_color": "#3c414c",
+    "primary_fields": [
+      {
+        "key": "event_name",
+        "label": "EVENT",
+        "value": "The Beat Goes On"
+      }
+    ],
+    "secondary_fields": [
+      {
+        "key": "loc",
+        "label": "LOCATION",
+        "value": "Moscone West"
+      }
+    ],
+    "locations": [
+		{
+      		"longitude" : -122.3748889,
+      		"latitude" : 37.6189722,
+      		"relevant_text": "Welcome! Enjoy the show."
+    	}    
+    ]
+  }
 }
 ```
 
@@ -36,7 +72,45 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-	"id": "c9234384-6ef3-417f-a7b2-14746af0335d"
+    "event_ticket": {
+        "id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+        "name": "The Beat Goes On Event",
+        "description": "The Beat Goes On Event",
+        "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+        "organization_name": "passworks",
+        "logo_text": "",
+        "background_color": "#3c414c",
+        "text_color": "#ffffff",
+        "label_color": "",
+        "header_fields": [],
+        "primary_fields": [
+            {
+                "key": "event_name",
+                "value": "The Beat Goes On",
+                "label": "EVENT"
+            }
+        ],
+        "secondary_fields": [
+            {
+                "key": "loc",
+                "value": "Moscone West",
+                "label": "LOCATION"
+            }
+        ],
+        "auxiliary_fields": [],
+        "back_fields": [],
+        "locations": [
+            {
+                "latitude": 37.6189722,
+                "longitude": -122.3748889,
+                "altitude": null,
+                "relevant_text": "Welcome! Enjoy the show."
+            }
+        ],
+        "beacons": [],
+        "created_at": "2014-09-26T14:16:42Z",
+        "updated_at": "2014-09-26T14:16:42Z"
+    }
 }
 ```
 
@@ -45,9 +119,12 @@ In case of success HTTP 201 response code is returned with the following body co
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
 | name | string | Required. The loyaty program name must be unique
+| description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
 | strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| background_id | uuid | Optional. Strip image id (the id of a background type asset)
+| thumbnail_id | uuid | Optional. Strip image id (the id of a logo type asset)
 | logo_text | string | Optional. Top card text
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
@@ -55,11 +132,13 @@ In case of success HTTP 201 response code is returned with the following body co
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
 | locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
-| background_color| rgb string | Required. Color defining the pass background color ranging from `#00000` to `#ffffff`
-| text_color | rgb string | Required. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
-| certificate_id | uuid | Required. The certificate uuid if not supplied a passworks.io default certificate is used 
-| description | string | Required. Used for accessibility reasons, provide a description of your pass
+| background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
+| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
+| certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
+| organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
+
+
 
 
 ##### Location hash object format
@@ -101,6 +180,67 @@ Creating a event ticket pass
 ------------
 
 ```shell
-POST /v1/event-tickets/{event-ticket-id}/passes
+POST /v1/event_tickets/{event_ticket-id}/passes
 ```
 
+```json
+{
+  "pass": {
+    "barcode": {
+      "message": "123456789"
+    }
+  }
+}
+```
+
+Response
+
+```json
+{
+  "pass": {
+    "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
+    "store_card_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+    "voided": false,
+    "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
+    "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
+    "header_fields": [],
+    "primary_fields": [
+      {
+        "key": "event_name",
+        "label": "EVENT",
+        "value": "The Beat Goes On"
+      }
+    ],
+    "secondary_fields": [
+      {
+        "key": "loc",
+        "label": "LOCATION",
+        "value": "Moscone West"
+      }
+    ],
+    "auxiliary_fields": [],
+    "back_fields": [],
+    "barcode": {
+      "format": "qrcode",
+      "message": "0000001",
+      "alt_text": "0000001"
+    },
+    "beacons": [],
+    "locations": [
+      {
+        "altitude": null,
+        "latitude": 37.6189722,
+        "longitude": -122.3748889,
+        "relevant_text": "Welcome! Enjoy the show."
+      }
+    ],
+    "redeemed_count": 0,
+    "donwload_page_link": "http://get.192.168.10.40.xip.io:3000/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+    "direct_link": "http://get.192.168.10.40.xip.io:3000/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+    "expiration_date": null,
+    "redeemed_at": null,
+    "created_at": "2014-09-26T14:19:42Z",
+    "updated_at": "2014-09-26T14:19:42Z"
+  }
+}
+```
