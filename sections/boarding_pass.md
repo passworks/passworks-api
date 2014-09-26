@@ -161,6 +161,7 @@ Response:
 |-------------|------|-----------------------------------
 | name | string | Required. The loyaty program name must be unique
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
+| transit_type | string | Required. Must be one of the following values `air`, `boat`, `train`, `boat` or `generic`
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
 | footer_id | uuid | Optional. Footer image id (the id of a logo type asset)
