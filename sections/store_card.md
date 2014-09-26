@@ -337,7 +337,7 @@ In case of success HTTP 201 response code is returned with the complete passe de
 ```
 
 
-Forcing a push update of a specific pass
+Forcing a push update of a pass
 ------------
 
 You can force a push notification of a passe (provided that it was changed since the user last fetched it) by using the following URL
