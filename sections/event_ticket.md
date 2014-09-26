@@ -22,7 +22,7 @@ Example of Event Tickets
 
 
 
-Creating a Event Ticket for "The Beat Goes On"
+Creating a Event Ticket "Campaign" for "The Beat Goes On" Event
 ------------
 
 The **Beat Goes On** pass is straightforward example, the pass is the same for all the persons with the minor diference that each issued pass has it's own redeem code (barcode redeem code).
@@ -176,7 +176,7 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-Creating a event ticket pass
+Creating a "The Beat Goes On" Event Ticket
 ------------
 
 ```shell
