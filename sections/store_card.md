@@ -2,7 +2,7 @@ Store Card
 ================
 
 
-The Loyalty API can be used to create loyalty or event tier programs to reward your customers for using your services.
+The Passworks API can be used to create loyalty or event tier programs to reward your customers for using your services.
 
 
 Example of a Store Card
@@ -110,7 +110,7 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
-| name | string | Required. The loyaty program name must be unique
+| name | string | Required. Must be unique, it's used to identify the Store Card/Loyalty "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)

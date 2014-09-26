@@ -118,7 +118,7 @@ In case of success HTTP 201 response code is returned with the following body co
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
-| name | string | Required. The loyaty program name must be unique
+| name | string | Required. Must be unique, it's used to identify the Event Ticket "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
@@ -176,13 +176,7 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-Creating a "The Beat Goes On" Event Ticket
-------------
-
-The "Beat  Goes On" event ticket doesn't require much data to be created, in this case we will only be adding the individual `barcode` to each of the individual tickets.
-
-```shell
-POST /v1/event_tickets/{event_ticket_id}/passes
+Required. Must be unique, it's used to identify the Boarding Pass "Campaign"{event_ticket_id}/passes
 ```
 
 ```json

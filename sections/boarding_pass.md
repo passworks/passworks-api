@@ -159,7 +159,7 @@ Response:
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
-| name | string | Required. The loyaty program name must be unique
+| name | string | Required. Must be unique, it's used to identify the Boarding Pass "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | transit_type | string | Required. Must be one of the following values `air`, `boat`, `train`, `boat` or `generic`
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
