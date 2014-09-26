@@ -179,8 +179,10 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 Creating a "The Beat Goes On" Event Ticket
 ------------
 
+The "Beat  Goes On" event ticket doesn't require much data to be created, in this case we will only be adding the individual `barcode` to each of the individual tickets.
+
 ```shell
-POST /v1/event_tickets/{event_ticket-id}/passes
+POST /v1/event_tickets/{event_ticket_id}/passes
 ```
 
 ```json
@@ -235,12 +237,113 @@ Response
       }
     ],
     "redeemed_count": 0,
-    "donwload_page_link": "http://get.192.168.10.40.xip.io:3000/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
-    "direct_link": "http://get.192.168.10.40.xip.io:3000/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+    "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+    "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
     "expiration_date": null,
     "redeemed_at": null,
     "created_at": "2014-09-26T14:19:42Z",
     "updated_at": "2014-09-26T14:19:42Z"
   }
 }
+```
+
+Updating a "The Beat Goes On" Event Ticket
+------------
+
+Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated. 
+
+```shell
+PATCH /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
+```
+
+
+```json
+{
+	"pass": {
+	    "secondary_fields": [
+	      {
+	        "key": "loc",
+	        "label": "LOCATION",
+	        "value": "Moscone West"
+	      }
+	    ],
+	    "locations": [
+	      {
+          	"latitude": 38.725488,
+             	"longitude": -9.1501,
+             	"relevant_text": "Welcome! Enjoy the show."
+	      }
+	    ]    
+	}
+}    
+```
+
+Response:
+
+```json
+{
+    "pass": {
+        "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
+        "store_card_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+        "voided": false,
+        "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
+        "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
+        "header_fields": [],
+        "primary_fields": [
+            {
+                "key": "event_name",
+                "label": "EVENT",
+                "value": "The Beat Goes On"
+            }
+        ],
+        "secondary_fields": [
+            {
+                "key": "loc",
+                "label": "LOCATION",
+                "value": "Moscone West"
+            }
+        ],
+        "auxiliary_fields": [],
+        "back_fields": [],
+        "barcode": {
+            "format": "qrcode",
+            "message": "0000001",
+            "alt_text": "0000001"
+        },
+        "beacons": [],
+        "locations": [
+            {
+                "altitude": null,
+                "latitude": 38.725488,
+                "longitude": -9.1501,
+                "relevant_text": "Welcome! Enjoy the show."
+            }
+        ],
+        "redeemed_count": 0,
+        "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+        "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+        "expiration_date": null,
+        "redeemed_at": null,
+        "created_at": "2014-09-26T14:19:42Z",
+        "updated_at": "2014-09-26T14:33:32Z"
+    }
+}
+```
+
+Updating a "The Beat Goes On" Event Ticket
+------------
+
+Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`.
+
+```shell
+DELETE /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
+```
+
+Forcing a push update of a pass
+------------
+
+You can force a push notification of a passe (provided that it was changed since the user last fetched it) by using the following URL
+
+```shell
+POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
 ```
