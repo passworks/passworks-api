@@ -18,7 +18,7 @@ Example of Event Tickets
 
 | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | (missing image) |
 |:-------------------:|:----------------:|
-| The Beat Goes On (Event ticket with background) | Event Ticket with a strip image |
+| The Beat Goes On (Event ticket with background and thumbnail image) | Event Ticket with a strip image |
 
 
 
