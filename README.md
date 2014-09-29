@@ -61,7 +61,7 @@ To use the API you must provide your `account_id` and `api_key` in each request 
 Your `account_id` and `api_key` can be found here [http://www.passworks.io/organizations/roles](http://www.passworks.io/organizations/roles)
 
 
-Call me JSON
+No XML, just JSON
 -----------------
 
 We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
