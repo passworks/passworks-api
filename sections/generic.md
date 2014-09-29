@@ -221,6 +221,18 @@ Let's imagine that Johnny's new favorite toys are now *airplanes* so let's updat
 PATCH /v1/generics/{generic_id}/passes/{pass_id}
 ```
 
+```json
+"pass": {
+	"auxiliary_fields": [
+		{
+		 	"key": "favorite",
+		 	"value": "Airplanes"
+		}
+	]
+}
+```	 
+
+
 
 Deleting "Johnny Appleseed" Generic Pass
 ------------
