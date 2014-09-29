@@ -13,6 +13,6 @@ Example of Generic passes
 |Generic Pass (schematic)|
 
 
-| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/generic/generic_pass_toy_town_guidelines) | (missing image) |
+| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/generic/generic_pass_toy_town_guidelines.png) | (missing image) |
 |:-------------------:|:----------------:|
 | Generic Pass with rectangular barcode | Generic Pass with square barcode |
