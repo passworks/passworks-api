@@ -9,11 +9,14 @@ Understanding the API workflow
 
 Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
 
-A pass is composed of at least one asset (an asset is a image) and a bunch of text fields.
+There are 3 inherent concepts that are at work here:
 
-So to start creating passes you must first upload an image, usually it's an `icon` since all passes require it (the icon is used in the lock screen's notification).
+- The first is the concept of a campaign. A campaign, as viewed in the API, is simply seen as the aggregator for all of the generated passes for a given context.
+A campaign can be, in pratical terms, a collection of "[Membership or Loyalty](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md)" passes, a "[Bus Boarding](https://github.com/passworks/passworks-api/blob/master/sections/boarding_pass.md)" pass, and several others. The type of campaign dictates what sort of data and purpose it can serve.
 
-Second step is creating a "campaign": think of a "campaign" as an aggregator element for all your passes, for example, if you are creating an [event ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) for your birthday you create a "campaign", assign it a ``name`` like "my birthday" and a icon (asset). After that start adding passes to it.
+- Then there's the concept of a pass. A pass, by itself, is simply a representation of all the information that your target consumer will see when he installs it on his mobile device, it's the "boarding pass" the "event ticket" or simply a discount "[coupon](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md)".
+
+- Finally, there's the concept of an asset. All of the passes support the insertion of at least 1 or more images, being one of them the 'icon', which is required on all passes, regardless of campaign type. Therefore, in order to start creating any type of campaign, you need to have uploaded at least one asset, which you supply to the campaign upon creation.
 
 It's easy peasy!
 
