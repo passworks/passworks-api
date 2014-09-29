@@ -324,10 +324,8 @@ Response:
 }
 ```
 
-Updating a "The Beat Goes On" Event Ticket
+Deleting a "The Beat Goes On" Event Ticket
 ------------
-
-Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`.
 
 ```shell
 DELETE /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
