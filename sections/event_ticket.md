@@ -195,7 +195,7 @@ Response
 {
   "pass": {
     "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-    "store_card_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+    "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
     "voided": false,
     "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
     "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
@@ -278,7 +278,7 @@ Response:
 {
     "pass": {
         "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-        "store_card_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+        "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
         "voided": false,
         "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
         "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",

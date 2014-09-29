@@ -163,7 +163,7 @@ Response:
 {
     "pass": {
         "id": "523ea1eb-54ff-4759-a0f3-507586aedb40",
-        "store_card_id": "5ba6ad9e-f15d-4fc2-90e7-b2b83a97cf82",
+        "generic_id": "5ba6ad9e-f15d-4fc2-90e7-b2b83a97cf82",
         "voided": false,
         "authentication_token": "ymWYYmKLyk6WS_hl49hSSg",
         "serial_number": "bf3b7280-f30b-4bd6-9289-d4768744c2eb",
@@ -240,7 +240,7 @@ Response:
 {
   "pass": {
     "id": "523ea1eb-54ff-4759-a0f3-507586aedb40",
-    "store_card_id": "5ba6ad9e-f15d-4fc2-90e7-b2b83a97cf82",
+    "generic_id": "5ba6ad9e-f15d-4fc2-90e7-b2b83a97cf82",
     "voided": false,
     "authentication_token": "ymWYYmKLyk6WS_hl49hSSg",
     "serial_number": "bf3b7280-f30b-4bd6-9289-d4768744c2eb",

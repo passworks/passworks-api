@@ -145,7 +145,7 @@ In case of success HTTP 201 response code is returned with the following body co
 {
     "pass": {
         "id": "d920fcae-8237-4071-9685-53f7886e821b",
-        "store_card_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
+        "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
         "voided": false,
         "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
         "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
@@ -227,7 +227,7 @@ Response:
 {
   "pass": {
     "id": "d920fcae-8237-4071-9685-53f7886e821b",
-    "store_card_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
+    "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
     "voided": false,
     "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
     "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
