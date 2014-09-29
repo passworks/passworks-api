@@ -222,13 +222,15 @@ PATCH /v1/generics/{generic_id}/passes/{pass_id}
 ```
 
 ```json
-"pass": {
-	"auxiliary_fields": [
-		{
-		 	"key": "favorite",
-		 	"value": "Airplanes"
-		}
-	]
+{
+	"pass": {
+		"auxiliary_fields": [
+			{
+			 	"key": "favorite",
+			 	"value": "Airplanes"
+			}
+		]
+	}
 }
 ```	 
 
