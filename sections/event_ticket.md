@@ -177,7 +177,6 @@ proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy l
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
 Required. Must be unique, it's used to identify the Boarding Pass "Campaign"{event_ticket_id}/passes
-```
 
 ```json
 {
@@ -334,7 +333,7 @@ DELETE /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
 Forcing a push update of a pass
 ------------
 
-You can force a push notification of a passe (provided that it was changed since the user last fetched it) by using the following URL
+You can force a push notification of a pass (provided that it was changed since the user last fetched it) by using the following URL
 
 ```shell
 POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
