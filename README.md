@@ -125,6 +125,12 @@ X-RateLimit-Reset |	The time at which the current rate limit window resets in [U
 
 *Note: Unauthenticated requests are associated with your IP address, and not the user making requests. For unauthenticated you have 60 requests per hour.*
 
+Using your own Passbook certificates
+-------------
+Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so at the moment you can't do it via an API call.
+
+It's recommended that you add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
+
 
 API libraries
 -------------
