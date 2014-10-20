@@ -60,35 +60,33 @@ Response:
 
 ```json
 {
-  "coupon": {
-    "name": "Paw Planet",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "barcode": "pdf417",
-    "locations": [
-      {
-        "longitude": -122.3748889,
-        "latitude": 37.6189722
-      }
-    ],
-    "logo_text": "Paw Planet",
-    "description": "20% off premium dog food",
-    "foreground_color": "#ffffff",
-    "background_color": "#ce8c46",
-    "primary_fields": [
-      {
-        "key": "offer",
-        "label": "Any premium dog food",
-        "value": "20% off"
-      }
-    ],
-    "auxiliary_fields": [
-      {
-        "key": "expires",
-        "label": "EXPIRES",
-        "value": "2 weeks"
-      }
-    ]
-  }
+  "name": "Paw Planet",
+  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+  "barcode": "pdf417",
+  "locations": [
+    {
+      "longitude": -122.3748889,
+      "latitude": 37.6189722
+    }
+  ],
+  "logo_text": "Paw Planet",
+  "description": "20% off premium dog food",
+  "foreground_color": "#ffffff",
+  "background_color": "#ce8c46",
+  "primary_fields": [
+    {
+      "key": "offer",
+      "label": "Any premium dog food",
+      "value": "20% off"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "expires",
+      "label": "EXPIRES",
+      "value": "2 weeks"
+    }
+  ]
 }
 ```
 
@@ -143,51 +141,49 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-    "pass": {
-        "id": "d920fcae-8237-4071-9685-53f7886e821b",
-        "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
-        "voided": false,
-        "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
-        "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
-        "header_fields": [],
-        "primary_fields": [
-            {
-                "key": "offer",
-                "label": "Any premium dog food",
-                "value": "20% off"
-            }
-        ],
-        "secondary_fields": [],
-        "auxiliary_fields": [
-            {
-                "key": "expires",
-                "label": "EXPIRES",
-                "value": "2 weeks"
-            }
-        ],
-        "back_fields": [],
-        "barcode": {
-            "format": "qrcode",
-            "message": "0000001",
-            "alt_text": "0000001"
-        },
-        "beacons": [],
-        "locations": [
-            {
-                "altitude": null,
-                "latitude": 37.6189722,
-                "longitude": -122.3748889,
-                "relevant_text": null
-            }
-        ],
-        "redeemed_count": 0,
-        "donwload_page_link": "https://get.passworks.io:3000/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA",
-        "direct_link": "https://get.get.passworks.io:3000/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA.pkpass",
-        "expiration_date": null,
-        "redeemed_at": null,
-        "created_at": "2014-09-26T17:33:11Z",
-        "updated_at": "2014-09-26T17:33:11Z"
+  "id": "d920fcae-8237-4071-9685-53f7886e821b",
+  "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
+  "voided": false,
+  "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
+  "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "offer",
+      "label": "Any premium dog food",
+      "value": "20% off"
     }
+  ],
+  "secondary_fields": [],
+  "auxiliary_fields": [
+    {
+      "key": "expires",
+      "label": "EXPIRES",
+      "value": "2 weeks"
+    }
+  ],
+  "back_fields": [],
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [
+    {
+      "altitude": null,
+      "latitude": 37.6189722,
+      "longitude": -122.3748889,
+      "relevant_text": null
+    }
+  ],
+  "redeemed_count": 0,
+  "donwload_page_link": "https://get.passworks.io:3000/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA",
+  "direct_link": "https://get.get.passworks.io:3000/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T17:33:11Z",
+  "updated_at": "2014-09-26T17:33:11Z"
 }
 ```
 
@@ -225,51 +221,49 @@ Response:
 
 ```json
 {
-  "pass": {
-    "id": "d920fcae-8237-4071-9685-53f7886e821b",
-    "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
-    "voided": false,
-    "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
-    "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
-    "header_fields": [],
-    "primary_fields": [
-      {
-        "key": "offer",
-        "label": "Any premium dog food",
-        "value": "30% off"
-      }
-    ],
-    "secondary_fields": [],
-    "auxiliary_fields": [
-      {
-        "key": "expires",
-        "label": "EXPIRES",
-        "value": "1 week"
-      }
-    ],
-    "back_fields": [],
-    "barcode": {
-      "format": "qrcode",
-      "message": "0000001",
-      "alt_text": "0000001"
-    },
-    "beacons": [],
-    "locations": [
-      {
-        "altitude": null,
-        "latitude": 37.6189722,
-        "longitude": -122.3748889,
-        "relevant_text": null
-      }
-    ],
-    "redeemed_count": 0,
-    "donwload_page_link": "http://get.passworks.io/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA",
-    "direct_link": "http://get.passworks.io/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA.pkpass",
-    "expiration_date": null,
-    "redeemed_at": null,
-    "created_at": "2014-09-26T17:33:11Z",
-    "updated_at": "2014-09-26T17:42:18Z"
-  }
+  "id": "d920fcae-8237-4071-9685-53f7886e821b",
+  "coupon_id": "7cd1dbb7-7540-4dc7-b4ae-1f553f3bbf3c",
+  "voided": false,
+  "authentication_token": "F0u23SVrG_pgkEXr5tC68g",
+  "serial_number": "a5f44994-7457-4b00-8448-e862a51ece3d",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "offer",
+      "label": "Any premium dog food",
+      "value": "30% off"
+    }
+  ],
+  "secondary_fields": [],
+  "auxiliary_fields": [
+    {
+      "key": "expires",
+      "label": "EXPIRES",
+      "value": "1 week"
+    }
+  ],
+  "back_fields": [],
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [
+    {
+      "altitude": null,
+      "latitude": 37.6189722,
+      "longitude": -122.3748889,
+      "relevant_text": null
+    }
+  ],
+  "redeemed_count": 0,
+  "donwload_page_link": "http://get.passworks.io/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA",
+  "direct_link": "http://get.passworks.io/p5QtGY8a4Q/gMV5Lil2OG0DtwQDTdI1aA.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T17:33:11Z",
+  "updated_at": "2014-09-26T17:42:18Z"
 }
 ```
 

@@ -72,45 +72,43 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-    "event_ticket": {
-        "id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
-        "name": "The Beat Goes On Event",
-        "description": "The Beat Goes On Event",
-        "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-        "organization_name": "passworks",
-        "logo_text": "",
-        "background_color": "#3c414c",
-        "text_color": "#ffffff",
-        "label_color": "",
-        "header_fields": [],
-        "primary_fields": [
-            {
-                "key": "event_name",
-                "value": "The Beat Goes On",
-                "label": "EVENT"
-            }
-        ],
-        "secondary_fields": [
-            {
-                "key": "loc",
-                "value": "Moscone West",
-                "label": "LOCATION"
-            }
-        ],
-        "auxiliary_fields": [],
-        "back_fields": [],
-        "locations": [
-            {
-                "latitude": 37.6189722,
-                "longitude": -122.3748889,
-                "altitude": null,
-                "relevant_text": "Welcome! Enjoy the show."
-            }
-        ],
-        "beacons": [],
-        "created_at": "2014-09-26T14:16:42Z",
-        "updated_at": "2014-09-26T14:16:42Z"
+  "id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+  "name": "The Beat Goes On Event",
+  "description": "The Beat Goes On Event",
+  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+  "organization_name": "passworks",
+  "logo_text": "",
+  "background_color": "#3c414c",
+  "text_color": "#ffffff",
+  "label_color": "",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "event_name",
+      "value": "The Beat Goes On",
+      "label": "EVENT"
     }
+  ],
+  "secondary_fields": [
+    {
+      "key": "loc",
+      "value": "Moscone West",
+      "label": "LOCATION"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "locations": [
+    {
+      "latitude": 37.6189722,
+      "longitude": -122.3748889,
+      "altitude": null,
+      "relevant_text": "Welcome! Enjoy the show."
+    }
+  ],
+  "beacons": [],
+  "created_at": "2014-09-26T14:16:42Z",
+  "updated_at": "2014-09-26T14:16:42Z"
 }
 ```
 
@@ -192,51 +190,49 @@ Response
 
 ```json
 {
-  "pass": {
-    "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-    "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
-    "voided": false,
-    "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
-    "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
-    "header_fields": [],
-    "primary_fields": [
-      {
-        "key": "event_name",
-        "label": "EVENT",
-        "value": "The Beat Goes On"
-      }
-    ],
-    "secondary_fields": [
-      {
-        "key": "loc",
-        "label": "LOCATION",
-        "value": "Moscone West"
-      }
-    ],
-    "auxiliary_fields": [],
-    "back_fields": [],
-    "barcode": {
-      "format": "qrcode",
-      "message": "0000001",
-      "alt_text": "0000001"
-    },
-    "beacons": [],
-    "locations": [
-      {
-        "altitude": null,
-        "latitude": 37.6189722,
-        "longitude": -122.3748889,
-        "relevant_text": "Welcome! Enjoy the show."
-      }
-    ],
-    "redeemed_count": 0,
-    "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
-    "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
-    "expiration_date": null,
-    "redeemed_at": null,
-    "created_at": "2014-09-26T14:19:42Z",
-    "updated_at": "2014-09-26T14:19:42Z"
-  }
+  "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
+  "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+  "voided": false,
+  "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
+  "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "event_name",
+      "label": "EVENT",
+      "value": "The Beat Goes On"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "loc",
+      "label": "LOCATION",
+      "value": "Moscone West"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [
+    {
+      "altitude": null,
+      "latitude": 37.6189722,
+      "longitude": -122.3748889,
+      "relevant_text": "Welcome! Enjoy the show."
+    }
+  ],
+  "redeemed_count": 0,
+  "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+  "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T14:19:42Z",
+  "updated_at": "2014-09-26T14:19:42Z"
 }
 ```
 
@@ -275,51 +271,49 @@ Response:
 
 ```json
 {
-    "pass": {
-        "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-        "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
-        "voided": false,
-        "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
-        "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
-        "header_fields": [],
-        "primary_fields": [
-            {
-                "key": "event_name",
-                "label": "EVENT",
-                "value": "The Beat Goes On"
-            }
-        ],
-        "secondary_fields": [
-            {
-                "key": "loc",
-                "label": "LOCATION",
-                "value": "Moscone West"
-            }
-        ],
-        "auxiliary_fields": [],
-        "back_fields": [],
-        "barcode": {
-            "format": "qrcode",
-            "message": "0000001",
-            "alt_text": "0000001"
-        },
-        "beacons": [],
-        "locations": [
-            {
-                "altitude": null,
-                "latitude": 38.725488,
-                "longitude": -9.1501,
-                "relevant_text": "Welcome! Enjoy the show."
-            }
-        ],
-        "redeemed_count": 0,
-        "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
-        "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
-        "expiration_date": null,
-        "redeemed_at": null,
-        "created_at": "2014-09-26T14:19:42Z",
-        "updated_at": "2014-09-26T14:33:32Z"
+  "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
+  "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+  "voided": false,
+  "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
+  "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "event_name",
+      "label": "EVENT",
+      "value": "The Beat Goes On"
     }
+  ],
+  "secondary_fields": [
+    {
+      "key": "loc",
+      "label": "LOCATION",
+      "value": "Moscone West"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [
+    {
+      "altitude": null,
+      "latitude": 38.725488,
+      "longitude": -9.1501,
+      "relevant_text": "Welcome! Enjoy the show."
+    }
+  ],
+  "redeemed_count": 0,
+  "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+  "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T14:19:42Z",
+  "updated_at": "2014-09-26T14:33:32Z"
 }
 ```
 
