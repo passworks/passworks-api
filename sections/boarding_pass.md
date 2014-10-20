@@ -85,72 +85,70 @@ Response:
 
 ```json
 {
-  "boarding_pass": {
-    "id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
-    "name": "Skyport Airways flight 815",
-    "description": "Skyport Airways flight 815",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-    "organization_name": "passworks",
-    "transit_type": "air",
-    "logo_text": "Skyport Airways",
-    "background_color": "#325bb9",
-    "text_color": null,
-    "label_color": "",
-    "header_fields": [
-      {
-        "key": "gate",
-        "value": "23",
-        "label": "GATE"
-      }
-    ],
-    "primary_fields": [
-      {
-        "key": "depart",
-        "value": "SFO",
-        "label": "SAN FRANCISCO"
-      },
-      {
-        "key": "arrive",
-        "value": "JFK",
-        "label": "NEW YORK"
-      }
-    ],
-    "secondary_fields": [
-      {
-        "key": "passenger",
-        "value": "",
-        "label": "PASSENGER"
-      }
-    ],
-    "auxiliary_fields": [
-      {
-        "key": "boardingTime",
-        "value": "",
-        "label": "DEPART"
-      },
-      {
-        "key": "flightNewName",
-        "value": "815",
-        "label": "FLIGHT"
-      },
-      {
-        "key": "class",
-        "value": "",
-        "label": "DESIG."
-      },
-      {
-        "key": "date",
-        "value": "7/22",
-        "label": "DATE"
-      }
-    ],
-    "back_fields": [],
-    "locations": [],
-    "beacons": [],
-    "created_at": "2014-09-26T16:05:13Z",
-    "updated_at": "2014-09-26T16:05:13Z"
-  }
+  "id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
+  "name": "Skyport Airways flight 815",
+  "description": "Skyport Airways flight 815",
+  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+  "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+  "organization_name": "passworks",
+  "transit_type": "air",
+  "logo_text": "Skyport Airways",
+  "background_color": "#325bb9",
+  "text_color": null,
+  "label_color": "",
+  "header_fields": [
+    {
+      "key": "gate",
+      "value": "23",
+      "label": "GATE"
+    }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "value": "SFO",
+      "label": "SAN FRANCISCO"
+    },
+    {
+      "key": "arrive",
+      "value": "JFK",
+      "label": "NEW YORK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "value": "",
+      "label": "PASSENGER"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "value": "",
+      "label": "DEPART"
+    },
+    {
+      "key": "flightNewName",
+      "value": "815",
+      "label": "FLIGHT"
+    },
+    {
+      "key": "class",
+      "value": "",
+      "label": "DESIG."
+    },
+    {
+      "key": "date",
+      "value": "7/22",
+      "label": "DATE"
+    }
+  ],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "created_at": "2014-09-26T16:05:13Z",
+  "updated_at": "2014-09-26T16:05:13Z"
 }
 ```
 
@@ -217,77 +215,75 @@ Response:
 
 ```json
 {
-    "pass": {
-        "id": "a42d3503-11c2-4b4f-adfc-9e4ed6e146ba",
-        "boarding_pass_id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
-        "voided": false,
-        "authentication_token": "_fVGtDHG1oRm9QY5tml_0Q",
-        "serial_number": "778161b7-4fc6-47df-9ec8-65d0b2d24244",
-        "transit_type": "air",
-        "header_fields": [
-            {
-                "key": "gate",
-                "label": "GATE",
-                "value": "23"
-            }
-        ],
-        "primary_fields": [
-            {
-                "key": "depart",
-                "label": "SAN FRANCISCO",
-                "value": "SFO"
-            },
-            {
-                "key": "arrive",
-                "label": "NEW YORK",
-                "value": "JFK"
-            }
-        ],
-        "secondary_fields": [
-            {
-                "key": "passenger",
-                "label": "PASSENGER",
-                "value": "John Appleseed"
-            }
-        ],
-        "auxiliary_fields": [
-            {
-                "key": "boardingTime",
-                "label": "DEPART",
-                "value": "2:25 PM"
-            },
-            {
-                "key": "flightNewName",
-                "label": "FLIGHT",
-                "value": "815"
-            },
-            {
-                "key": "class",
-                "label": "DESIG.",
-                "value": "Coach"
-            },
-            {
-                "key": "date",
-                "label": "DATE",
-                "value": "7/22"
-            }
-        ],
-        "back_fields": [],
-        "barcode": {
-            "format": "pdf417",
-            "message": "0000001",
-            "alt_text": "0000001"
-        },
-        "beacons": [],
-        "locations": [],
-        "redeemed_count": 0,
-        "donwload_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
-        "direct_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g.pkpass",
-        "expiration_date": null,
-        "redeemed_at": null,
-        "created_at": "2014-09-26T16:24:45Z",
-        "updated_at": "2014-09-26T16:24:45Z"
+  "id": "a42d3503-11c2-4b4f-adfc-9e4ed6e146ba",
+  "boarding_pass_id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
+  "voided": false,
+  "authentication_token": "_fVGtDHG1oRm9QY5tml_0Q",
+  "serial_number": "778161b7-4fc6-47df-9ec8-65d0b2d24244",
+  "transit_type": "air",
+  "header_fields": [
+    {
+      "key": "gate",
+      "label": "GATE",
+      "value": "23"
     }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "label": "SAN FRANCISCO",
+      "value": "SFO"
+    },
+    {
+      "key": "arrive",
+      "label": "NEW YORK",
+      "value": "JFK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "label": "PASSENGER",
+      "value": "John Appleseed"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "label": "DEPART",
+      "value": "2:25 PM"
+    },
+    {
+      "key": "flightNewName",
+      "label": "FLIGHT",
+      "value": "815"
+    },
+    {
+      "key": "class",
+      "label": "DESIG.",
+      "value": "Coach"
+    },
+    {
+      "key": "date",
+      "label": "DATE",
+      "value": "7/22"
+    }
+  ],
+  "back_fields": [],
+  "barcode": {
+    "format": "pdf417",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [],
+  "redeemed_count": 0,
+  "donwload_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
+  "direct_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T16:24:45Z",
+  "updated_at": "2014-09-26T16:24:45Z"
 }
 ```
 
@@ -318,77 +314,75 @@ Response:
 
 ```json
 {
-    "pass": {
-        "id": "a42d3503-11c2-4b4f-adfc-9e4ed6e146ba",
-        "boarding_pass_id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
-        "voided": false,
-        "authentication_token": "_fVGtDHG1oRm9QY5tml_0Q",
-        "serial_number": "778161b7-4fc6-47df-9ec8-65d0b2d24244",
-        "transit_type": "air",
-        "header_fields": [
-            {
-                "key": "gate",
-                "label": "GATE",
-                "value": "23"
-            }
-        ],
-        "primary_fields": [
-            {
-                "key": "depart",
-                "label": "SAN FRANCISCO",
-                "value": "SFO"
-            },
-            {
-                "key": "arrive",
-                "label": "NEW YORK",
-                "value": "JFK"
-            }
-        ],
-        "secondary_fields": [
-            {
-                "key": "passenger",
-                "label": "PASSENGER",
-                "value": "John Appleseed"
-            }
-        ],
-        "auxiliary_fields": [
-            {
-                "key": "boardingTime",
-                "label": "DEPART",
-                "value": "3:25 PM"
-            },
-            {
-                "key": "flightNewName",
-                "label": "FLIGHT",
-                "value": "815"
-            },
-            {
-                "key": "class",
-                "label": "DESIG.",
-                "value": "Coach"
-            },
-            {
-                "key": "date",
-                "label": "DATE",
-                "value": "7/22"
-            }
-        ],
-        "back_fields": [],
-        "barcode": {
-            "format": "pdf417",
-            "message": "0000001",
-            "alt_text": "0000001"
-        },
-        "beacons": [],
-        "locations": [],
-        "redeemed_count": 0,
-        "donwload_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
-        "direct_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g.pkpass",
-        "expiration_date": null,
-        "redeemed_at": null,
-        "created_at": "2014-09-26T16:24:45Z",
-        "updated_at": "2014-09-26T16:29:42Z"
+  "id": "a42d3503-11c2-4b4f-adfc-9e4ed6e146ba",
+  "boarding_pass_id": "3ca93a6c-c822-4dee-b867-5c9f4b25a2a5",
+  "voided": false,
+  "authentication_token": "_fVGtDHG1oRm9QY5tml_0Q",
+  "serial_number": "778161b7-4fc6-47df-9ec8-65d0b2d24244",
+  "transit_type": "air",
+  "header_fields": [
+    {
+      "key": "gate",
+      "label": "GATE",
+      "value": "23"
     }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "label": "SAN FRANCISCO",
+      "value": "SFO"
+    },
+    {
+      "key": "arrive",
+      "label": "NEW YORK",
+      "value": "JFK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "label": "PASSENGER",
+      "value": "John Appleseed"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "label": "DEPART",
+      "value": "3:25 PM"
+    },
+    {
+      "key": "flightNewName",
+      "label": "FLIGHT",
+      "value": "815"
+    },
+    {
+      "key": "class",
+      "label": "DESIG.",
+      "value": "Coach"
+    },
+    {
+      "key": "date",
+      "label": "DATE",
+      "value": "7/22"
+    }
+  ],
+  "back_fields": [],
+  "barcode": {
+    "format": "pdf417",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [],
+  "redeemed_count": 0,
+  "donwload_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
+  "direct_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-26T16:24:45Z",
+  "updated_at": "2014-09-26T16:29:42Z"
 }
 ```
 

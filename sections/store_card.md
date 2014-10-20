@@ -62,45 +62,43 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "store_card": {
-    "id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
-    "name": "Bayroast Coffee Store Cards",
-    "description": "Bayroast Coffee Store Cards",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
-    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-    "organization_name": "passworks",
-    "logo_text": "Bayroast Coffee",
-    "background_color": "#764a32",
-    "text_color": "#f5f2f0",
-    "label_color": "#643e2a",
-    "header_fields": [],
-    "primary_fields": [
-      {
-        "key": "balance",
-        "value": "remaining balance",
-        "label": "$0"
-      }
-    ],
-    "secondary_fields": [
-      {
-        "key": "level",
-        "value": "",
-        "label": "LEVEL"
-      },
-      {
-        "key": "usual_beverage",
-        "value": "",
-        "label": "THE USUAL"
-      }
-    ],
-    "auxiliary_fields": [],
-    "back_fields": [],
-    "locations": [],
-    "beacons": [],
-    "created_at": "2014-09-24T17:07:38Z",
-    "updated_at": "2014-09-24T17:07:38Z"
-  }
+  "id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+  "name": "Bayroast Coffee Store Cards",
+  "description": "Bayroast Coffee Store Cards",
+  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+  "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
+  "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+  "organization_name": "passworks",
+  "logo_text": "Bayroast Coffee",
+  "background_color": "#764a32",
+  "text_color": "#f5f2f0",
+  "label_color": "#643e2a",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "balance",
+      "value": "remaining balance",
+      "label": "$0"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "level",
+      "value": "",
+      "label": "LEVEL"
+    },
+    {
+      "key": "usual_beverage",
+      "value": "",
+      "label": "THE USUAL"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "created_at": "2014-09-24T17:07:38Z",
+  "updated_at": "2014-09-24T17:07:38Z"
 }
 ```
 
@@ -200,49 +198,47 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "pass": {
-    "id": "8506a086-0de1-4f67-8258-bbcb6bfab6f9",
-    "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
-    "voided": false,
-    "authentication_token": "QWli3jb05oHkdUqQQ2RstA",
-    "serial_number": "01ab6ea6-6d82-49f1-b252-e969e449e378",
-    "header_fields": [],
-    "primary_fields": [
-      {
-        "key": "balance",
-        "label": "$25,00",
-        "value": "remaining balance"
-      }
-    ],
-    "secondary_fields": [
-      {
-        "key": "level",
-        "label": "LEVEL",
-        "value": "Gold"
-      },
-      {
-        "key": "usual_beverage",
-        "label": "THE USUAL",
-        "value": "Iced Mocha"
-      }
-    ],
-    "auxiliary_fields": [],
-    "back_fields": [],
-    "barcode": {
-      "format": "pdf417",
-      "message": "0000001",
-      "alt_text": "0000001"
+  "id": "8506a086-0de1-4f67-8258-bbcb6bfab6f9",
+  "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+  "voided": false,
+  "authentication_token": "QWli3jb05oHkdUqQQ2RstA",
+  "serial_number": "01ab6ea6-6d82-49f1-b252-e969e449e378",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "balance",
+      "label": "$25,00",
+      "value": "remaining balance"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "level",
+      "label": "LEVEL",
+      "value": "Gold"
     },
-    "beacons": [],
-    "locations": [],
-    "redeemed_count": 0,
-    "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
-    "direct_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg.pkpass",
-    "expiration_date": null,
-    "redeemed_at": null,
-    "created_at": "2014-09-24T17:10:16Z",
-    "updated_at": "2014-09-24T17:10:16Z"
-  }
+    {
+      "key": "usual_beverage",
+      "label": "THE USUAL",
+      "value": "Iced Mocha"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "barcode": {
+    "format": "pdf417",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "beacons": [],
+  "locations": [],
+  "redeemed_count": 0,
+  "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
+  "direct_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-24T17:10:16Z",
+  "updated_at": "2014-09-24T17:10:16Z"
 }
 ```
 
@@ -290,49 +286,47 @@ In case of success HTTP 201 response code is returned with the complete passe de
 
 ```json
 {
-  "pass": {
-    "id": "1b0e0125-184d-4ad3-af4d-86c5e9d8196d",
-    "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
-    "voided": false,
-    "authentication_token": "mtS6Ffa9v5wF_x6oQFOniw",
-    "serial_number": "bc56c0ec-b639-4f04-a9c6-a04382b80dd5",
-    "header_fields": [],
-    "primary_fields": [
-      {
-        "key": "balance",
-        "label": "$15,00",
-        "value": "remaining balance"
-      }
-    ],
-    "secondary_fields": [
-      {
-        "key": "level",
-        "label": "LEVEL",
-        "value": "Gold"
-      },
-      {
-        "key": "usual_beverage",
-        "label": "THE USUAL",
-        "value": "Iced Mocha"
-      }
-    ],
-    "auxiliary_fields": [],
-    "back_fields": [],
-    "barcode": {
-      "format": "pdf417",
-      "message": "0000003",
-      "alt_text": "0000003"
+  "id": "1b0e0125-184d-4ad3-af4d-86c5e9d8196d",
+  "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+  "voided": false,
+  "authentication_token": "mtS6Ffa9v5wF_x6oQFOniw",
+  "serial_number": "bc56c0ec-b639-4f04-a9c6-a04382b80dd5",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "balance",
+      "label": "$15,00",
+      "value": "remaining balance"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "level",
+      "label": "LEVEL",
+      "value": "Gold"
     },
-    "beacons": [],
-    "locations": [],
-    "redeemed_count": 0,
-    "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
-    "direct_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
-    "expiration_date": null,
-    "redeemed_at": null,
-    "created_at": "2014-09-24T17:22:28Z",
-    "updated_at": "2014-09-24T17:25:56Z"
-  }
+    {
+      "key": "usual_beverage",
+      "label": "THE USUAL",
+      "value": "Iced Mocha"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "barcode": {
+    "format": "pdf417",
+    "message": "0000003",
+    "alt_text": "0000003"
+  },
+  "beacons": [],
+  "locations": [],
+  "redeemed_count": 0,
+  "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
+  "direct_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
+  "expiration_date": null,
+  "redeemed_at": null,
+  "created_at": "2014-09-24T17:22:28Z",
+  "updated_at": "2014-09-24T17:25:56Z"
 }
 ```
 
