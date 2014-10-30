@@ -62,7 +62,7 @@ POST content
       		"longitude" : -122.3748889,
       		"latitude" : 37.6189722,
       		"relevant_text": "Welcome! Enjoy the show."
-    	}    
+    	}
     ]
   }
 }
@@ -76,6 +76,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "name": "The Beat Goes On Event",
   "description": "The Beat Goes On Event",
   "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
+  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
   "organization_name": "passworks",
   "logo_text": "",
   "background_color": "#3c414c",
@@ -132,7 +133,7 @@ In case of success HTTP 201 response code is returned with the following body co
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
@@ -227,7 +228,7 @@ Response
     }
   ],
   "redeemed_count": 0,
-  "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+  "download_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
   "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
@@ -239,7 +240,7 @@ Response
 Updating a "The Beat Goes On" Event Ticket
 ------------
 
-Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated. 
+Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated.
 
 ```shell
 PATCH /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
@@ -262,9 +263,9 @@ PATCH /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
              	"longitude": -9.1501,
              	"relevant_text": "Welcome! Enjoy the show."
 	      }
-	    ]    
+	    ]
 	}
-}    
+}
 ```
 
 Response:
@@ -308,7 +309,7 @@ Response:
     }
   ],
   "redeemed_count": 0,
-  "donwload_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
+  "download_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
   "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
   "expiration_date": null,
   "redeemed_at": null,

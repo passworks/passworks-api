@@ -15,11 +15,11 @@ Each pass type (`store card`, `event ticket`, `boarding pass`, `generic pass` an
 | Asset Name |  Used in       | Size
 |------------|----------------------------------|----------------------------------|
 | icon       | All type of passes               | 118x118 |
-| logo		   | All type of passes 		        | 320x100 
-| strip	   | Coupon, Event Ticket, Store Card | 640x84 for Event Tickets or 640x246 for other types of passes 
+| logo		   | All type of passes 		        | 320x100
+| strip	   | Coupon, Event Ticket, Store Card | 640x84 for Event Tickets or 640x246 for other types of passes
 | thumbnail  | Event ticket, Generic | 180x180 The aspect ratio should be in the range of 2:3 to 3:2, otherwise the image is cropped.
 | background | Event Ticket | 360x440	        |
-| footer	   | Boarding Pass | 286x30           |    
+| footer	   | Boarding Pass | 286x30           |
 
 Preferred image format is .png since it supports transparencies.
 
@@ -66,7 +66,7 @@ Images must be uploaded using `multipart` upload.
 POST /v1/assets
 ```
 
-Body payload:
+Example body payload of the multipart request:
 
 ```json
 	asset[file]       = <multipart upload>
@@ -105,4 +105,4 @@ DELETE /v1/assets/{asset-id}
 
 If the asset is deleted successfully the endpoint returns a HTTP 200.
 
-In case an asset can't be deleted because it's being used by an active "campaign" an HTTP 412 error code is returned. 
+In case an asset can't be deleted because it's being used by an active "campaign" an HTTP 412 error code is returned.

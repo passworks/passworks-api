@@ -161,6 +161,7 @@ Response:
 {
   "id": "523ea1eb-54ff-4759-a0f3-507586aedb40",
   "generic_id": "5ba6ad9e-f15d-4fc2-90e7-b2b83a97cf82",
+  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
   "voided": false,
   "authentication_token": "ymWYYmKLyk6WS_hl49hSSg",
   "serial_number": "bf3b7280-f30b-4bd6-9289-d4768744c2eb",
@@ -200,7 +201,7 @@ Response:
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "donwload_page_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig",
+  "download_page_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig",
   "direct_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
@@ -228,7 +229,7 @@ PATCH /v1/generics/{generic_id}/passes/{pass_id}
 		]
 	}
 }
-```	 
+```
 
 Response:
 
@@ -275,7 +276,7 @@ Response:
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "donwload_page_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig",
+  "download_page_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig",
   "direct_link": "http://get.passworks.io/WuCRpFsXvg/cXVY5Ql4UJ19C0ewlmiDig.pkpass",
   "assets": {},
   "expiration_date": null,

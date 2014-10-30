@@ -31,7 +31,7 @@ POST Content
     "name": "Bayroast Coffee Store Cards",
     "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
     "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",    
+    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
     "logo_text": "Bayroast Coffee",
     "background_color": "#764a32",
     "text_color": "#f5f2f0",
@@ -52,7 +52,7 @@ POST Content
       {
         "key": "usual_beverage",
         "label": "THE USUAL"
-      }      
+      }
     ]
   }
 }
@@ -68,6 +68,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
   "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
   "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
   "organization_name": "passworks",
   "logo_text": "Bayroast Coffee",
   "background_color": "#764a32",
@@ -122,7 +123,7 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | background_color| rgb string | Required. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Required. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
+| label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
@@ -233,7 +234,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
+  "download_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
   "direct_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
@@ -321,7 +322,7 @@ In case of success HTTP 201 response code is returned with the complete passe de
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "donwload_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
+  "download_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
   "direct_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
   "expiration_date": null,
   "redeemed_at": null,

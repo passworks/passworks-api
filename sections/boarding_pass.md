@@ -9,7 +9,7 @@ Examples of Boarding Passes
 
 | ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/boarding_pass/boarding_pass_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/boarding_pass/skyport_airways_boarding_pass_guidelines.png) |
 |---|---|
-| Generic Boarding Schematic | Skyport Airways (Flight 815) | 
+| Generic Boarding Schematic | Skyport Airways (Flight 815) |
 
 
 Creating a Airplane Boarding Pass "Campaign" for "Skyport Airways" fight 815
@@ -90,6 +90,7 @@ Response:
   "description": "Skyport Airways flight 815",
   "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
   "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
   "organization_name": "passworks",
   "transit_type": "air",
   "logo_text": "Skyport Airways",
@@ -172,7 +173,7 @@ Response:
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff` 
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
@@ -278,7 +279,7 @@ Response:
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "donwload_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
+  "download_page_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g",
   "direct_link": "https://get.passworks.io/1lV7wnDr8Q/fb9-_LvhFtBYuN5D5Vgi7g.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
