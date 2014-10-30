@@ -8,10 +8,10 @@ changes here when sending pull requests. Also send corrections if you spot any m
 * Feature
   - Campaigns (Coupon, Boarding Pass, Store Card, Generic, Event Ticket) now return `template_id` attribute in there playload.
   - Listing campaigns now return the model payload instead of a reduced version of it:
-      GET /boarding_passes
-      GET /store_cards
-      GET /generics
-      GET /event_tickets
+      GET /boarding_passes \
+      GET /store_cards \
+      GET /generics \
+      GET /event_tickets \
       GET /coupons
 * Fixed
   - Pass payload returned `download_page_url` with a typo (was `donwload_page_url`)
