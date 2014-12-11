@@ -44,7 +44,7 @@ To create objects using the API each request must include the `Content-Type` hea
 ```shell
 curl -u account_id:api_key \
   -H 'Content-Type: application/json' \
-  https://api.passworks.io/v1/loyalty
+  https://api.passworks.io/v1/ping
 ```
 
 Authentication
