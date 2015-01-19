@@ -294,3 +294,17 @@ Deleting "Johnny Appleseed" Generic Pass
 DELETE /v1/generics/{generic_id}/passes/{pass_id}
 ```
 
+Sending a push notification (or forcing a pass update)
+------------
+
+You can force the retrivel of an pass via push notification by simply calling the following URL:
+
+```shell
+POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
+```
+
+You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
+
+```json
+	{ "push_message": "Hello!" }
+```

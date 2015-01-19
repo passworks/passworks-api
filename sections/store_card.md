@@ -331,13 +331,18 @@ In case of success HTTP 201 response code is returned with the complete passe de
 }
 ```
 
-
-Forcing a push update of a pass
+Sending a push notification (or forcing a pass update)
 ------------
 
-You can force a push notification of a passe (provided that it was changed since the user last fetched it) by using the following URL
+You can force the retrivel of an pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v1/store_cards/{store_card_id}/passes/{pass_id}/push
+POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
+```
+
+You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
+
+```json
+	{ "push_message": "Hello!" }
 ```
 
