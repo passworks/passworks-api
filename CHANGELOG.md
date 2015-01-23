@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.1.3 (2015-01-23) - Tiago Parreira
+
+* Feature
+  - Now able to create campaigns by sending in a custom certificate_id in order to use a specific certificate.
+
 ## v0.1.2 (2014-10-20)
 
 * Feature

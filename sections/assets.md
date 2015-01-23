@@ -68,7 +68,7 @@ POST /v1/assets
 
 Example body payload of the multipart request:
 
-```json
+```shell
 	asset[file]       = <multipart upload>
 	asset[asset_type] = 'background'
 ```
