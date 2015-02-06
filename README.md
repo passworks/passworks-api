@@ -29,13 +29,12 @@ Creating things using the API
 
 
 * [Asset](https://github.com/passworks/passworks-api/blob/master/sections/assets.md) (Upload images to use in your passes)
-* [Certificate](https://github.com/passworks/passworks-api/blob/master/sections/certificates) (List certificates for use in your campaigns)
 * [Store Card](https://github.com/passworks/passworks-api/blob/master/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
 * [Coupon](https://github.com/passworks/passworks-api/blob/master/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
 * [Event Ticket](https://github.com/passworks/passworks-api/blob/master/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
 * [Boarding Pass](https://github.com/passworks/passworks-api/blob/master/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
 * [Generic](https://github.com/passworks/passworks-api/blob/master/sections/generic.md) (Business cards and anything else)
-
+* [Certificate](https://github.com/passworks/passworks-api/blob/master/sections/certificates) (List certificates for use in your campaigns)
 
 
 Making a request
