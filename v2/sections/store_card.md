@@ -9,7 +9,7 @@ Example of a Store Card
 ------------
 
 
-| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/store_card_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/store_card/bayroast_coffee_guidelines.png) |
+| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/store_card/store_card_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/store_card/bayroast_coffee_guidelines.png) |
 |---|---|
 | Generic Loyalty Card Schematic | Bayroast Coffe Loyalty Card |
 

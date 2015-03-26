@@ -8,12 +8,12 @@ Generic passes can be used for anything that don't fit in the other passes categ
 Example of Generic passes
 ------------
 
-|![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/generic/generic_2x.png)|
+|![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/generic/generic_2x.png)|
 |:--------------:|
 |Generic Pass (schematic)|
 
 
-| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/generic/generic_pass_toy_town_guidelines.png) | (missing image) |
+| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/generic/generic_pass_toy_town_guidelines.png) | (missing image) |
 |:-------------------:|:----------------:|
 | Generic Pass with rectangular barcode | Generic Pass with square barcode |
 

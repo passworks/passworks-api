@@ -8,7 +8,7 @@ Event Tickets are passes used for events such as concerts, movie tickets, galas,
 Example of Event Tickets
 ------------
 
-|![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/event_ticket_2x.png)|
+|![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/event_ticket/event_ticket_2x.png)|
 |:--------------:|
 |Event Ticket with `background image` and one with a `strip image` (schematic)|
 
@@ -16,7 +16,7 @@ Example of Event Tickets
 
 > Note: If you specify a strip image, do not specify a background image nor a thumbnail image.
 
-| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | (missing image) |
+| ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/event_ticket/the_beat_goes_on_guidelines.png) | (missing image) |
 |:-------------------:|:----------------:|
 | The Beat Goes On (Event ticket with background and thumbnail image) | Event Ticket with a strip image |
 

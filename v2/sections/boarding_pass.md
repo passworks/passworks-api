@@ -7,7 +7,7 @@ Examples of Boarding Passes
 ------------
 
 
-| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/boarding_pass/boarding_pass_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/assets/images/boarding_pass/skyport_airways_boarding_pass_guidelines.png) |
+| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/boarding_pass/boarding_pass_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/boarding_pass/skyport_airways_boarding_pass_guidelines.png) |
 |---|---|
 | Generic Boarding Schematic | Skyport Airways (Flight 815) |
 
