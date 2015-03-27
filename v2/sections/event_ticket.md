@@ -28,7 +28,7 @@ Creating a Event Ticket "Campaign" for "The Beat Goes On" Event
 The **Beat Goes On** pass is straightforward example, the pass is the same for all the persons with the minor diference that each issued pass has it's own redeem code (barcode redeem code).
 
 ```shell
-POST /v1/event_tickets/
+POST /v2/event_tickets/
 ```
 
 POST content
@@ -37,10 +37,12 @@ POST content
 {
   "event_ticket": {
     "name": "The Beat Goes On Event",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "thumbnail_id": "8de6562c-06dd-4505-8661-280472234ade",
-    "background_id": "3cac4ba6-3f0b-438b-adbf-d0706c6267f8",
-    "barcode": "pdf417",
+    "icon_id": "e365088d-27db-4d5e-9915-466d06385426",
+    "thumbnail_id": "c1c65182-441c-4ecf-bc9f-2783127de070",
+    "background_id": "e725642d-00b8-433c-a967-11b712498488",
+    "barcode": {
+      "format": "pdf417"
+    },
     "text_color": "#ffffff",
     "background_color": "#3c414c",
     "primary_fields": [
@@ -58,11 +60,11 @@ POST content
       }
     ],
     "locations": [
-		{
-      		"longitude" : -122.3748889,
-      		"latitude" : 37.6189722,
-      		"relevant_text": "Welcome! Enjoy the show."
-    	}
+        {
+            "longitude" : -122.3748889,
+            "latitude" : 37.6189722,
+            "relevant_text": "Welcome! Enjoy the show."
+        }
     ]
   }
 }
@@ -72,16 +74,10 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+  "id": "c7aab24b-a076-4e59-885a-726e80ca64e7",
   "name": "The Beat Goes On Event",
-  "description": "The Beat Goes On Event",
-  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
-  "organization_name": "passworks",
-  "logo_text": "",
-  "background_color": "#3c414c",
-  "text_color": "#ffffff",
-  "label_color": "",
+  "template_id": "19293ad0-9ecf-4e31-9c07-b555cb276d13",
+  "organization_name": "onomecompany",  
   "header_fields": [],
   "primary_fields": [
     {
@@ -108,10 +104,27 @@ In case of success HTTP 201 response code is returned with the following body co
     }
   ],
   "beacons": [],
-  "created_at": "2014-09-26T14:16:42Z",
-  "updated_at": "2014-09-26T14:16:42Z"
+  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",  
+  "created_at": "2015-03-27T13:08:57Z",
+  "updated_at": "2015-03-27T13:08:57Z"
 }
 ```
+
+##### Presentation fields (when template_id is not supplied)
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
+| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
+| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| background_id | uuid | Optional. Strip image id (the id of a background type asset)
+| thumbnail_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| logo_text | string | Optional. Top card text
+| background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
+| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
+
 
 ##### Available fields
 
@@ -119,25 +132,16 @@ In case of success HTTP 201 response code is returned with the following body co
 |-------------|------|-----------------------------------
 | name | string | Required. Must be unique, it's used to identify the Event Ticket "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
-| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
-| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
-| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
-| background_id | uuid | Optional. Strip image id (the id of a background type asset)
-| thumbnail_id | uuid | Optional. Strip image id (the id of a logo type asset)
-| logo_text | string | Optional. Top card text
+| template_id | uuid | Optional. If not supplied, you **must supply the presentation fields presented in the table above!** 
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
 | locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
-| background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
-| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
-
-
+| associated_store_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 
 
 ##### Location hash object format
@@ -158,7 +162,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### iBeacon hash object format
+##### Beacon hash object format
 
 ```json
 {
@@ -175,81 +179,36 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-Required. Must be unique, it's used to identify the Boarding Pass "Campaign"{event_ticket_id}/passes
+##### Barcode hash object format
 
 ```json
 {
-  "pass": {
-    "barcode": {
-      "message": "123456789"
-    }
-  }
+	"alt_text": "Text shown below the barcode.",
+	"format": "pdf417",
+	"message": "Message encoded in the barcode."
 }
 ```
 
-Response
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
-```json
-{
-  "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-  "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
-  "voided": false,
-  "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
-  "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
-  "header_fields": [],
-  "primary_fields": [
-    {
-      "key": "event_name",
-      "label": "EVENT",
-      "value": "The Beat Goes On"
-    }
-  ],
-  "secondary_fields": [
-    {
-      "key": "loc",
-      "label": "LOCATION",
-      "value": "Moscone West"
-    }
-  ],
-  "auxiliary_fields": [],
-  "back_fields": [],
-  "barcode": {
-    "format": "qrcode",
-    "message": "0000001",
-    "alt_text": "0000001"
-  },
-  "beacons": [],
-  "locations": [
-    {
-      "altitude": null,
-      "latitude": 37.6189722,
-      "longitude": -122.3748889,
-      "relevant_text": "Welcome! Enjoy the show."
-    }
-  ],
-  "redeemed_count": 0,
-  "download_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
-  "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
-  "expiration_date": null,
-  "redeemed_at": null,
-  "created_at": "2014-09-26T14:19:42Z",
-  "updated_at": "2014-09-26T14:19:42Z"
-}
-```
 
-Updating a "The Beat Goes On" Event Ticket
-------------
+Updating a "The Beat Goes On" Event Ticket Campaign
+------------	
 
-Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated.
+Let's imagine that the location of your event changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
 ```shell
-PATCH /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
+PATCH /v2/event_tickets/{event_ticket_id}
 ```
 
 
 ```json
 {
-	"pass": {
+	"event_ticket": {
 	    "secondary_fields": [
 	      {
 	        "key": "loc",
@@ -265,6 +224,84 @@ PATCH /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
 	      }
 	    ]
 	}
+}
+```
+
+Response:
+
+```json
+{
+  "id": "c7aab24b-a076-4e59-885a-726e80ca64e7",
+  "name": "The Beat Goes On Event",
+  "template_id": "19293ad0-9ecf-4e31-9c07-b555cb276d13",
+  "organization_name": "onomecompany",
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "event_name",
+      "value": "The Beat Goes On",
+      "label": "EVENT"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "loc",
+      "value": "Moscone West",
+      "label": "LOCATION"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "locations": [
+    {
+      "latitude": 38.725488,
+      "longitude": -9.1501,
+      "altitude": null,
+      "relevant_text": "Welcome! Enjoy the show."
+    }
+  ],
+  "beacons": [],
+  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",
+  "created_at": "2015-03-27T13:08:57Z",
+  "updated_at": "2015-03-27T17:49:50Z"
+}
+```
+
+Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push PUT request:
+
+```shell
+PUT /v2/event_tickets/{event_ticket_id}/push
+```
+
+Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
+
+```json
+{
+	"event_ticket": {
+	    "push_message": "Venue has changed!"
+	}
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+push_message | string | Optional. Text shown on the lock screen. | No message sent.
+
+This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
+
+
+Creating a "The Beat Goes On" Event Ticket Pass
+------------	
+
+In order to create passes, you need to issue a POST request to the following URL:
+
+```shell
+POST /v2/event_tickets/{event_ticket_id}/passes/
+```
+
+```json
+{
+	"pass": {}
 }
 ```
 
@@ -318,24 +355,103 @@ Response:
 }
 ```
 
-Deleting a "The Beat Goes On" Event Ticket
-------------
+Updating a "The Beat Goes On" Event Ticket Pass
+------------	
+
+Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated.
 
 ```shell
-DELETE /v1/event_tickets/{event_ticket_id}/passes/{pass_id}
+PATCH /v2/event_tickets/{event_ticket_id}/passes/{pass_id}
+```
+
+
+```json
+{
+	"pass": {
+	    "secondary_fields": [
+	      {
+	        "key": "loc",
+	        "label": "LOCATION",
+	        "value": "Moscone West"
+	      }
+	    ],
+	    "locations": [
+	      {
+          	"latitude": 38.725488,
+             	"longitude": -9.1501,
+             	"relevant_text": "Welcome! Enjoy the show."
+	      }
+	    ]
+	}
+}
+```
+
+Response:
+
+```json
+{
+  "id": "2e997002-6df6-4cfd-849e-16dcb1f5dd02",
+  "campaign_id": "c7aab24b-a076-4e59-885a-726e80ca64e7",
+  "voided": false,
+  "serial_number": "c2070b68-aa87-487a-ae9a-c99e3f2701f8",
+  "redeemed_count": 0,
+  "barcode": {
+    "format": "qrcode",
+    "message": "",
+    "alt_text": ""
+  },
+  "expiration_date": null,
+  "max_distance": null,
+  "relevant_date": null,
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "event_name",
+      "value": "The Beat Goes On",
+      "label": "EVENT"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "loc",
+      "value": "Moscone West",
+      "label": "LOCATION"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "locations": [
+    {
+      "name": null,
+      "altitude": null,
+      "latitude": 38.725488,
+      "longitude": -9.1501,
+      "relevant_text": "Welcome! Enjoy the show."
+    }
+  ],
+  "beacons": [],
+  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
+  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
+  "created_at": "2015-03-27T18:11:49Z",
+  "updated_at": "2015-03-27T18:12:20Z"
+}
 ```
 
 Forcing a push update of a pass
 ------------
 
-You can force the retrivel of an pass via push notification by simply calling the following URL:
+You can force the update of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
+POST /v2/event_tickets/{event_ticket_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
 
 ```json
-	{ "push_message": "Hello!" }
+{
+	"event_ticket": {
+	    "push_message": "Venue has changed!"
+	}
+}
 ```
