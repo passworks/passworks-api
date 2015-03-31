@@ -1,15 +1,14 @@
-[Click here for the old v1.0 API documentation](https://github.com/passworks/passworks-api/blob/master/v1/README.md)
-----------------
-
-
 Passworks API
 ====================
 
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation `last updated at 23/Jan/2015` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
+Documentation `last updated at 31/Mar/2015` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
 
+```shell
+Our v1 API has been deprecated, use the new v2 API.
+```
 
 Understanding the API workflow
 --------------------
@@ -141,6 +140,8 @@ It's recommended that you add your own certificates via our site [http://www.pas
 
 API libraries
 -------------
+
+_**These libraries currently only work for our API v1!**_
 
 * [passworks-php](https://github.com/passworks/passworks-php) - PHP library, composer compatible
 * [passworks-ruby](https://github.com/passworks/passworks-ruby) - Ruby gem

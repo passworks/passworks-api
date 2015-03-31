@@ -3,6 +3,12 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.1.4 (2015-03-31) - Tiago Parreira, Miguel Veríssimo
+
+* Documentation
+  - Namespaced old API documentation under v1 folder, and new one under v2 folder.
+  - Revamped Event Ticket and Store Card vertical pages for our API v2, others are on-going.
+
 ## v0.1.3 (2015-01-23) - Tiago Parreira
 
 * Feature
