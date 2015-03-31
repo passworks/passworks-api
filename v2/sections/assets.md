@@ -29,7 +29,7 @@ Listing the assets
 ----------------
 
 ```shell
-GET /v1/assets
+GET /v2/assets
 ```
 
 Response:
@@ -63,7 +63,7 @@ Images must be uploaded using `multipart` upload.
 
 
 ```shell
-POST /v1/assets
+POST /v2/assets
 ```
 
 Example body payload of the multipart request:
@@ -93,14 +93,14 @@ Response:
 Example of a multipart upload using [curl](http://en.wikipedia.org/wiki/CURL#cURL):
 
 ```shell
-curl -u <api username>:<api key> -v -H 'Content-Type: multipart/form-data' -H 'Accept: application/json' -F "asset[asset_type]=background" -F "asset[file]=@/images-folder/my-background.png" http://api.passworks.io/v1/assets
+curl -u <api username>:<api key> -v -H 'Content-Type: multipart/form-data' -H 'Accept: application/json' -F "asset[asset_type]=background" -F "asset[file]=@/images-folder/my-background.png" http://api.passworks.io/v2/assets
 ```
 
 Deleting a asset
 ----------------
 
 ```shell
-DELETE /v1/assets/{asset-id}
+DELETE /v2/assets/{asset-id}
 ```
 
 If the asset is deleted successfully the endpoint returns a HTTP 200.

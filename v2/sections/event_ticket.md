@@ -77,7 +77,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "id": "c7aab24b-a076-4e59-885a-726e80ca64e7",
   "name": "The Beat Goes On Event",
   "template_id": "19293ad0-9ecf-4e31-9c07-b555cb276d13",
-  "organization_name": "onomecompany",  
+  "organization_name": "onomecompany",
   "header_fields": [],
   "primary_fields": [
     {
@@ -104,7 +104,7 @@ In case of success HTTP 201 response code is returned with the following body co
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",  
+  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T13:08:57Z"
 }
@@ -132,7 +132,7 @@ In case of success HTTP 201 response code is returned with the following body co
 |-------------|------|-----------------------------------
 | name | string | Required. Must be unique, it's used to identify the Event Ticket "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
-| template_id | uuid | Optional. If not supplied, you **must supply the presentation fields presented in the table above!** 
+| template_id | uuid | Optional. If not supplied, you **must supply the presentation fields presented in the table above!**
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
@@ -192,12 +192,12 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Updating a "The Beat Goes On" Event Ticket Campaign
-------------	
+Updating the "The Beat Goes On" Event Ticket Campaign
+------------
 
 Let's imagine that the location of your event changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
@@ -291,7 +291,7 @@ This request will push all existing passes once again, guaranteeing that all tha
 
 
 Creating a "The Beat Goes On" Event Ticket Pass
-------------	
+------------
 
 In order to create passes, you need to issue a POST request to the following URL:
 
@@ -356,7 +356,7 @@ Response:
 ```
 
 Updating a "The Beat Goes On" Event Ticket Pass
-------------	
+------------
 
 Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated.
 
