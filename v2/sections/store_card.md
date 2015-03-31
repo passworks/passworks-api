@@ -20,7 +20,7 @@ Creating a Store Card "campaign" for the "Bayroast Coffee"
 
 
 ```shell
-POST /v1/store_cards/
+POST /v2/store_cards/
 ```
 
 POST Content
@@ -28,15 +28,17 @@ POST Content
 ```json
 {
   "store_card": {
-    "name": "Bayroast Coffee Store Cards",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-    "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
-    "logo_text": "Bayroast Coffee",
+    "name": "Bayroast Coffee Store cards",
+    "icon_id": "e365088d-27db-4d5e-9915-466d06385426",
+    "logo_id": "a798fbf5-033f-4334-99f5-3196751e0595",
+    "strip_id": "1f278e8f-7efc-4536-a940-09de39ad8599",
+    "logo_text": "Bayroast Coffee esp",
     "background_color": "#764a32",
     "text_color": "#f5f2f0",
     "label_color": "#643e2a",
-    "barcode": "pdf417",
+    "barcode": {
+        "format": "pdf417"
+    },
     "primary_fields": [
       {
         "key": "balance",
@@ -62,18 +64,15 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
-  "name": "Bayroast Coffee Store Cards",
-  "description": "Bayroast Coffee Store Cards",
-  "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-  "strip_id": "a79c77af-9640-4758-ab23-41e2a0f27fa6",
-  "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
-  "template_id": "53403cc6-8d42-4e81-a422-05f0d99feade",
-  "organization_name": "passworks",
-  "logo_text": "Bayroast Coffee",
-  "background_color": "#764a32",
-  "text_color": "#f5f2f0",
-  "label_color": "#643e2a",
+  "id": "df570ca9-2fd4-462f-8d12-f0882ca38302",
+  "name": "Bayroast Coffee Store cards",
+  "template_id": "e9e16386-a432-4956-877e-1f5edc999126",
+  "organization_name": "onomecompany",
+  "barcode": {
+    "format": "pdf417",
+    "message": "",
+    "alt_text": ""
+  },
   "header_fields": [],
   "primary_fields": [
     {
@@ -85,12 +84,12 @@ In case of success HTTP 201 response code is returned with the following body co
   "secondary_fields": [
     {
       "key": "level",
-      "value": "",
+      "value": null,
       "label": "LEVEL"
     },
     {
       "key": "usual_beverage",
-      "value": "",
+      "value": null,
       "label": "THE USUAL"
     }
   ],
@@ -98,12 +97,26 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "created_at": "2014-09-24T17:07:38Z",
-  "updated_at": "2014-09-24T17:07:38Z"
+  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg",
+  "created_at": "2015-03-30T11:11:46Z",
+  "updated_at": "2015-03-30T11:11:46Z"
 }
 ```
 
 NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format (e.g:  `2014-09-22T20:51:53+00:00`).
+
+##### Presentation fields (when template_id is not supplied)
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
+| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
+| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| logo_text | string | Optional. Top card text
+| background_color| rgb string | Optional. Color defining the pass background color ranging from `#000000` to `#ffffff`
+| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
 ##### Available fields
 
@@ -111,19 +124,12 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 |-------------|------|-----------------------------------
 | name | string | Required. Must be unique, it's used to identify the Store Card/Loyalty "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
-| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
-| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
-| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
-| logo_text | string | Optional. Top card text
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
 | locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
-| background_color| rgb string | Required. Color defining the pass background color ranging from `#00000` to `#ffffff`
-| text_color | rgb string | Required. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Required. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
@@ -146,7 +152,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### iBeacon hash object format
+##### Beacon hash object format
 
 ```json
 {
@@ -163,11 +169,212 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
+##### Barcode hash object format
+
+```json
+{
+	"alt_text": "Text shown below the barcode.",
+	"format": "pdf417",
+	"message": "Message encoded in the barcode."
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
+
+
+
+Updating a Store Card "campaign" for the "Bayroast Coffee"
+------------
+
+
+```shell
+PATCH /v2/store_cards/{store_card_id}
+```
+
+POST Content
+
+```json
+{
+  "store_card": {
+    "primary_fields": [
+      {
+        "key": "balance",
+        "label": "$10",
+        "value": "remaining balance"
+      }
+    ],
+    "secondary_fields": [
+      {
+        "key": "level",
+        "label": "1"
+      },
+      {
+        "key": "usual_beverage",
+        "label": "NEW BEVERAGE"
+      }
+    ]
+  }
+}
+```
+
+In case of success HTTP 201 response code is returned with the following body content:
+
+```json
+{
+  "id": "df570ca9-2fd4-462f-8d12-f0882ca38302",
+  "name": "Bayroast Coffee Store cards",
+  "template_id": "e9e16386-a432-4956-877e-1f5edc999126",
+  "organization_name": "onomecompany",
+  "barcode": {
+    "format": "pdf417",
+    "message": "",
+    "alt_text": ""
+  },
+  "header_fields": [],
+  "primary_fields": [
+    {
+      "key": "balance",
+      "value": "remaining balance",
+      "label": "$10"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "level",
+      "value": null,
+      "label": "1"
+    },
+    {
+      "key": "usual_beverage",
+      "value": null,
+      "label": "NEW BEVERAGE"
+    }
+  ],
+  "auxiliary_fields": [],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg",
+  "created_at": "2015-03-30T11:11:46Z",
+  "updated_at": "2015-03-30T11:11:46Z"
+}
+```
+
+NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format (e.g:  `2014-09-22T20:51:53+00:00`).
+
+##### Presentation fields (when template_id is not supplied)
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
+| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
+| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| logo_text | string | Optional. Top card text
+| background_color| rgb string | Optional. Color defining the pass background color ranging from `#000000` to `#ffffff`
+| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
+
+##### Available fields
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| name | string | Required. Must be unique, it's used to identify the Store Card/Loyalty "Campaign"
+| description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
+| header_fields | array | Optional. Collection of *field hash objects*
+| secondary_fields | array | Optional. Collection of *field hash objects*
+| auxiliary_fields | array | Optional. Collection of *field hash objects*
+| back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
+| locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
+| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
+| certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
+| organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
+
+
+##### Location hash object format
+
+```json
+{
+	"altitude": 0.0,
+	"latitude": 0.0,
+	"longitude": 0.0,
+	"relevant_text": "notification to display"
+}
+```
+|  Field name  | Type |  Description  |
+|--------------|------|----------------|
+altitude  | double | Optional. Altitude, in meters, of the location.
+latitude  | double | Required. Latitude, in degrees, of the location.
+longitude | double | Required. Longitude, in degrees, of the location.
+relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
+
+
+##### Beacon hash object format
+
+```json
+{
+	"major": 0,
+	"minor": 0,
+	"proximity_uuid": "30b5d792-48c9-4f12-80ff-082cae62e80f",
+	"relevant_text": "notification to display"
+}
+```
+|  Field name  | Type |  Description  |
+|--------------|------|----------------|
+major| 16-bit unsigned integer | Optional. Major identifier of a Bluetooth Low Energy location beacon
+minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low Energy location beacon
+proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
+relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
+
+##### Barcode hash object format
+
+```json
+{
+	"alt_text": "Text shown below the barcode.",
+	"format": "pdf417",
+	"message": "Message encoded in the barcode."
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
+
+
+Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
+
+```shell
+POST /v2/store_cards/{store_card_id}/push
+```
+
+Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
+
+```json
+{
+	"store_card": {
+	    "push_message": "New drink discounts!"
+	}
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+push_message | string | Optional. Text shown on the lock screen. | No message sent.
+
+This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
+
+
 Creating a Store Card pass for a customer
 ------------
 
 ```shell
-POST /v1/store_cards/{store_card_id}/passes
+POST /v2/store_cards/{store_card_id}/passes/
 ```
 
 POST Content
@@ -199,55 +406,56 @@ In case of success HTTP 201 response code is returned with the following body co
 
 ```json
 {
-  "id": "8506a086-0de1-4f67-8258-bbcb6bfab6f9",
-  "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+  "id": "abe15069-8326-4d2a-86f9-25fa11229a68",
+  "campaign_id": "df570ca9-2fd4-462f-8d12-f0882ca38302",
   "voided": false,
-  "authentication_token": "QWli3jb05oHkdUqQQ2RstA",
-  "serial_number": "01ab6ea6-6d82-49f1-b252-e969e449e378",
+  "serial_number": "878d8095-be05-4799-b697-72cdd9f6449c",
+  "redeem_code": "0000001",
+  "redeemed_count": 0,
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "expiration_date": null,
+  "max_distance": null,
+  "relevant_date": null,
   "header_fields": [],
   "primary_fields": [
     {
       "key": "balance",
-      "label": "$25,00",
-      "value": "remaining balance"
+      "value": "remaining balance",
+      "label": "$25,00"
     }
   ],
   "secondary_fields": [
     {
       "key": "level",
-      "label": "LEVEL",
-      "value": "Gold"
+      "value": "Gold",
+      "label": "LEVEL"
     },
     {
       "key": "usual_beverage",
-      "label": "THE USUAL",
-      "value": "Iced Mocha"
+      "value": "Iced Mocha",
+      "label": "THE USUAL"
     }
   ],
   "auxiliary_fields": [],
   "back_fields": [],
-  "barcode": {
-    "format": "pdf417",
-    "message": "0000001",
-    "alt_text": "0000001"
-  },
-  "beacons": [],
   "locations": [],
-  "redeemed_count": 0,
-  "download_page_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg",
-  "direct_link": "http://get.passworks.io/oPDKThBkcg/fUaYHdEvfKKT6KsAAIpokg.pkpass",
-  "expiration_date": null,
-  "redeemed_at": null,
-  "created_at": "2014-09-24T17:10:16Z",
-  "updated_at": "2014-09-24T17:10:16Z"
+  "beacons": [],
+  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng",
+  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng.pkpass",
+  "created_at": "2015-03-31T13:55:57Z",
+  "updated_at": "2015-03-31T13:55:57Z"
 }
 ```
 
 |  Field name  | Type |  Description  |
 |--------------|------|----------------|
-loyalty_id | uuid | The loyalty campaign id that the created passe belongs
-pass_id | uuid | The created pass that belongs
-donwload_page_link | string | The HTML page with the download link
+loyalty_id | uuid | The loyalty campaign id that the created pass belongs to.
+pass_id | uuid | The created pass's ID.
+download\_page\_link | string | The HTML page with the download link
 direct_link | string | The direct download link for the pass
 
 
@@ -257,7 +465,7 @@ Updating the customer pass
 ------------
 
 ```shell
-PATCH /v1/store_cards/{store_card_id}/passes/{pass_id}/
+PATCH /v2/store_cards/{store_card_id}/passes/{pass_id}/
 ```
 
 PATCH Content
@@ -334,15 +542,19 @@ In case of success HTTP 201 response code is returned with the complete passe de
 Sending a push notification (or forcing a pass update)
 ------------
 
-You can force the retrivel of an pass via push notification by simply calling the following URL:
+You can force the retrieval of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v1/event_tickets/{event_ticket_id}/passes/{pass_id}/push
+POST /v2/store_cards/{store_card_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
 
 ```json
-	{ "push_message": "Hello!" }
+{
+	"store_card": { 
+		"push_message": "Hello!" 
+	}
+}
 ```
 
