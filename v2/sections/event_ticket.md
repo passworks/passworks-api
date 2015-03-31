@@ -141,7 +141,7 @@ In case of success HTTP 201 response code is returned with the following body co
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
-| associated_store_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
+| associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 
 
 ##### Location hash object format
@@ -267,10 +267,10 @@ Response:
 }
 ```
 
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push PUT request:
+Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
 
 ```shell
-PUT /v2/event_tickets/{event_ticket_id}/push
+POST /v2/event_tickets/{event_ticket_id}/push
 ```
 
 Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
