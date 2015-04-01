@@ -67,7 +67,7 @@ Response:
   "id": "5fd663d1-4ed4-4800-8d5a-caea4131358a",
   "name": "Paw Planetz",
   "template_id": "9bd46ecb-20c8-41cb-a8d8-f848a07c220c",
-  "organization_name": "foobar",
+  "organization_name": "your company",
   "barcode": {
     "format": "pdf417",
     "message": "",
@@ -100,7 +100,7 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q",
+  "page_url": "http://get.passworks.io/I5dPyf_j2Q",
   "created_at": "2015-03-31T18:01:44Z",
   "updated_at": "2015-03-31T18:01:45Z"
 }
@@ -114,6 +114,7 @@ Response:
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
 | strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| thumbnail_id | uuid | Optional. Strip image id (the id of a logo type asset)
 | logo_text | string | Optional. Top card text
 | background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
@@ -256,13 +257,25 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",
+  "page_url": "http://get.passworks.io/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T17:49:50Z"
 }
 ```
 
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
+Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes.
+
+**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
+
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+`GET /v2/coupons/{campaign_id}/passes`
+
+and then [updating each pass](#updating-each-pass) with the fields you wish to change.
+
+Please contact support@passworks.io for advisement on updating a boarding_pass campaign.
+
+If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
+
 
 
 
@@ -272,7 +285,7 @@ Updating the "Paw Planet" Coupon Campaign
 Sometimes you might want to run a special campaign, and update all of your client's passes with the new conditions:
 
 ```shell
-PATCH /v2/coupons/{coupon_id}
+PATCH /v2/coupons/{campaign_id}
 ```
 
 
@@ -304,7 +317,7 @@ Response:
   "id": "5fd663d1-4ed4-4800-8d5a-caea4131358a",
   "name": "Paw Planet",
   "template_id": "9bd46ecb-20c8-41cb-a8d8-f848a07c220c",
-  "organization_name": "foobar",
+  "organization_name": "your company",
   "barcode": {
     "format": "qrcode",
     "message": "",
@@ -337,7 +350,7 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q",
+  "page_url": "http://get.passworks.io/I5dPyf_j2Q",
   "created_at": "2015-03-31T18:01:44Z",
   "updated_at": "2015-03-31T18:22:50Z"
 }
@@ -347,7 +360,7 @@ Response:
 Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
 
 ```shell
-POST /v2/coupons/{coupon_id}/push
+POST /v2/coupons/{campaign_id}/push
 ```
 
 Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
@@ -373,7 +386,7 @@ Creating a "Paw Planet" Coupon Pass
 In order to create passes, you need to issue a POST request to the following URL:
 
 ```shell
-POST /v2/coupons/{coupon_id}/passes/
+POST /v2/coupons/{campaign_id}/passes/
 ```
 
 ```json
@@ -427,8 +440,8 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ.pkpass",
+  "page_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ",
+  "pkpass_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ.pkpass",
   "created_at": "2015-03-31T18:25:20Z",
   "updated_at": "2015-03-31T18:25:20Z"
 }
@@ -440,7 +453,7 @@ Updating a "The Beat Goes On" Coupon Pass
 Imagine that you want to offer a special campaign to your top customer, you can offer a promotion to a specific client, by updating his pass.
 
 ```shell
-PATCH /v2/coupons/{coupon_id}/passes/{pass_id}
+PATCH /v2/coupons/{campaign_id}/passes/{pass_id}
 ```
 
 
@@ -510,8 +523,8 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ.pkpass",
+  "page_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ",
+  "pkpass_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ.pkpass",
   "created_at": "2015-03-31T18:25:20Z",
   "updated_at": "2015-03-31T18:29:04Z"
 }
@@ -523,7 +536,7 @@ Forcing a push update of a pass
 You can force the update of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v2/coupon/{coupon_id}/passes/{pass_id}/push
+POST /v2/coupon/{campaign_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
@@ -535,3 +548,18 @@ You can also send a custom message that will be displayed in the lock screen via
   }
 }
 ```
+
+Aditional routes available
+------------
+
+Get all the Coupon campaigns:
+```shell
+GET /v2/coupons/
+```
+
+Get all the passes for a specific Coupon campaign:
+```shell
+GET /v2/coupons/{campaign_id}/passes
+```
+
+get.

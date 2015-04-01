@@ -1,7 +1,6 @@
 Event Ticket
 ================
 
-
 Event Tickets are passes used for events such as concerts, movie tickets, galas, meetings or other types of activity that happen in a specific time or day.
 
 
@@ -104,7 +103,7 @@ In case of success HTTP 201 response code is returned with the following body co
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",
+  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T13:08:57Z"
 }
@@ -138,7 +137,7 @@ In case of success HTTP 201 response code is returned with the following body co
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
 | locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
-| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
+| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#beacon-hash-object-format)
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
@@ -202,7 +201,7 @@ Updating the "The Beat Goes On" Event Ticket Campaign
 Let's imagine that the location of your event changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
 ```shell
-PATCH /v2/event_tickets/{event_ticket_id}
+PATCH /v2/event_tickets/{campaign_id}
 ```
 
 
@@ -261,16 +260,25 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ",
+  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T17:49:50Z"
 }
 ```
 
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
+**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
+
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+`GET /v2/event_tickets/{campaign_id}/passes`
+
+and then [updating each pass](#updating-each-pass) with the fields you wish to change.
+
+Please contact support@passworks.io for advisement on updating a event ticket campaign.
+
+If, however any old passes that had already been generated and you wish to reset them to the new changes,  you **must**, following a campaign update, issue a push POST request:
 
 ```shell
-POST /v2/event_tickets/{event_ticket_id}/push
+POST /v2/event_tickets/{campaign_id}/push
 ```
 
 Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
@@ -296,7 +304,7 @@ Creating a "The Beat Goes On" Event Ticket Pass
 In order to create passes, you need to issue a POST request to the following URL:
 
 ```shell
-POST /v2/event_tickets/{event_ticket_id}/passes/
+POST /v2/event_tickets/{campaign_id}/passes/
 ```
 
 ```json
@@ -310,7 +318,7 @@ Response:
 ```json
 {
   "id": "5bf7ff15-0efd-4e5e-9291-4762d8b8a1bd",
-  "event_ticket_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
+  "campaign_id": "6d29a933-98e0-4827-a8ca-9dbccf1474ef",
   "voided": false,
   "authentication_token": "HjEg2ptvS_ZG6xjgXUibqg",
   "serial_number": "35e83baa-df47-4be7-8829-322a37137a4e",
@@ -358,10 +366,11 @@ Response:
 Updating a "The Beat Goes On" Event Ticket Pass
 ------------
 
-Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`. NOTE: After a successful pass update if you don't pass the `push: false` flag, the system will issue a push notification to that user, notifying him that the pass was updated.
+Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`.
+
 
 ```shell
-PATCH /v2/event_tickets/{event_ticket_id}/passes/{pass_id}
+PATCH /v2/event_tickets/{campaign_id}/passes/{pass_id}
 ```
 
 
@@ -430,8 +439,8 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
+  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
+  "pkpass_url": "http://get.passworks.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
   "created_at": "2015-03-27T18:11:49Z",
   "updated_at": "2015-03-27T18:12:20Z"
 }
@@ -443,7 +452,7 @@ Forcing a push update of a pass
 You can force the update of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v2/event_tickets/{event_ticket_id}/passes/{pass_id}/push
+POST /v2/event_tickets/{campaign_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
@@ -455,3 +464,17 @@ You can also send a custom message that will be displayed in the lock screen via
 	}
 }
 ```
+
+Aditional routes available
+------------
+
+Get all the Event Ticket campaigns:
+```shell
+GET /v2/event_tickets/
+```
+
+Get all the passes for a specific Event Ticket campaign:
+```shell
+GET /v2/event_tickets/{campaign_id}/passes
+```
+

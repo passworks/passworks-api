@@ -74,7 +74,7 @@ Response
   "id": "19a8ca5f-5eb0-4ff6-a7b2-f5a865ad8451",
   "name": "Toy Town Generic Passes!",
   "template_id": "b2651552-5abb-4ff2-b701-d74cd000784f",
-  "organization_name": "onomecompany",
+  "organization_name": "your company",
   "barcode": {
     "format": "pdf417",
     "message": "",
@@ -111,7 +111,7 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/ahStMTeuCw",
+  "page_url": "http://get.passworks.io/ahStMTeuCw",
   "created_at": "2015-03-31T17:27:48Z",
   "updated_at": "2015-03-31T17:27:50Z"
 }
@@ -203,7 +203,7 @@ Updating a Generic "campaign" for the "Toy Town"
 ------------
 
 ```shell
-PATCH /v2/generics/{generic_id}
+PATCH /v2/generics/{campaign_id}
 ```
 
 ```json
@@ -221,7 +221,7 @@ Response
   "id": "5b6168a3-0611-4948-91a4-91f5de730bc3",
   "name": "Toy Town Generic Passes",
   "template_id": "ba808b03-c0f1-4843-84c7-6f6da81c1c69",
-  "organization_name": "onomecompany",
+  "organization_name": "your company",
   "barcode": {
     "format": "qrcode",
     "message": "",
@@ -258,7 +258,7 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/IGYIYEydVw",
+  "page_url": "http://get.passworks.io/IGYIYEydVw",
   "created_at": "2015-03-31T17:03:01Z",
   "updated_at": "2015-03-31T18:01:11Z"
 }
@@ -345,13 +345,46 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
+**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
+
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+`GET /v2/generics/{campaign_id}/passes`
+
+and then [updating each pass](#updating-each-pass) with the fields you wish to change.
+
+Please contact support@passworks.io for advisement on updating a store card campaign.
+
+If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
+
+```shell
+POST /v2/generics/{store_card_id}/push
+```
+
+Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
+
+```json
+{
+	"store_card": {
+	    "push_message": "Look at your new pass!"
+	}
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+push_message | string | Optional. Text shown on the lock screen. | No message sent.
+
+This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
+
+
+
 Creating a Generic Pass for "Johnny Appleseed"
 ------------
 
 Creating Johnny's pass is rather straightforward, we will pass the thumbnail asset (`tumbnaill_id`) with his photo. And supply the remaining \*_fields with the information corresponding to each key.
 
 ```shell
-POST /v2/generics/{generic_id}/passes
+POST /v2/generics/{campaign_id}/passes
 ```
 
 
@@ -433,8 +466,8 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
+  "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
+  "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
   "updated_at": "2015-03-31T17:33:28Z"
 }
@@ -445,7 +478,7 @@ Updating "Johnny Appleseed" Generic Pass
 Let's imagine that Johnny's new favorite toys are now *airplanes* so let's update the `favorite` key inside the `auxiliary_fields ` fields with the new value (Airplanes).
 
 ```shell
-PATCH /v1/generics/{generic_id}/passes/{pass_id}
+PATCH /v1/generics/{campaign_id}/passes/{pass_id}
 ```
 
 ```json
@@ -509,8 +542,8 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
+  "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
+  "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
   "updated_at": "2015-03-31T17:35:33Z"
 }
@@ -523,7 +556,7 @@ Sending a push notification (or forcing a pass update)
 You can force the retrieval of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v2/generics/{generic_id}/passes/{pass_id}/push
+POST /v2/generics/{campaign_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
@@ -535,3 +568,17 @@ You can also send a custom message that will be displayed in the lock screen via
     }
   }
 ```
+
+Aditional routes available
+------------
+
+Get all the Generic campaigns:
+```shell
+GET /v2/generics/
+```
+
+Get all the passes for a specific Generic campaign:
+```shell
+GET /v2/generic/{campaign_id}/passes
+```
+

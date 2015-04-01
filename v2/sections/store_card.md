@@ -67,7 +67,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "id": "df570ca9-2fd4-462f-8d12-f0882ca38302",
   "name": "Bayroast Coffee Store cards",
   "template_id": "e9e16386-a432-4956-877e-1f5edc999126",
-  "organization_name": "onomecompany",
+  "organization_name": "your company",
   "barcode": {
     "format": "pdf417",
     "message": "",
@@ -97,7 +97,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg",
+  "page_url": "http://get.passworks.io/MqixNhgUdg",
   "created_at": "2015-03-30T11:11:46Z",
   "updated_at": "2015-03-30T11:11:46Z"
 }
@@ -192,7 +192,7 @@ Updating a Store Card "campaign" for the "Bayroast Coffee"
 
 
 ```shell
-PATCH /v2/store_cards/{store_card_id}
+PATCH /v2/store_cards/{campaign_id}
 ```
 
 POST Content
@@ -228,7 +228,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "id": "df570ca9-2fd4-462f-8d12-f0882ca38302",
   "name": "Bayroast Coffee Store cards",
   "template_id": "e9e16386-a432-4956-877e-1f5edc999126",
-  "organization_name": "onomecompany",
+  "organization_name": "your company",
   "barcode": {
     "format": "pdf417",
     "message": "",
@@ -258,7 +258,7 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg",
+  "page_url": "http://get.passworks.io/MqixNhgUdg",
   "created_at": "2015-03-30T11:11:46Z",
   "updated_at": "2015-03-30T11:11:46Z"
 }
@@ -347,34 +347,14 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
 
-```shell
-POST /v2/store_cards/{store_card_id}/push
-```
-
-Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
-
-```json
-{
-	"store_card": {
-	    "push_message": "New drink discounts!"
-	}
-}
-```
-
-|  Field name  | Type |  Description   | Default |
-|--------------|------|----------------|---------|
-push_message | string | Optional. Text shown on the lock screen. | No message sent.
-
-This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
-
+your company
 
 Creating a Store Card pass for a customer
 ------------
 
 ```shell
-POST /v2/store_cards/{store_card_id}/passes/
+POST /v2/store_cards/{campaign_id}/passes/
 ```
 
 POST Content
@@ -444,8 +424,8 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng",
-  "pkpass_url": "http://get.192.168.1.67.xip.io:3000/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng.pkpass",
+  "page_url": "http://get.passworks.io/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng",
+  "pkpass_url": "http://get.passworks.io/MqixNhgUdg/AezEnfl4KszrYKM1dLZUng.pkpass",
   "created_at": "2015-03-31T13:55:57Z",
   "updated_at": "2015-03-31T13:55:57Z"
 }
@@ -465,7 +445,7 @@ Updating the customer pass
 ------------
 
 ```shell
-PATCH /v2/store_cards/{store_card_id}/passes/{pass_id}/
+PATCH /v2/store_cards/{campaign_id}/passes/{pass_id}/
 ```
 
 PATCH Content
@@ -496,7 +476,7 @@ In case of success HTTP 201 response code is returned with the complete passe de
 ```json
 {
   "id": "1b0e0125-184d-4ad3-af4d-86c5e9d8196d",
-  "store_card_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
+  "campaign_id": "a9ecf81e-e64e-4ce8-b4fb-33621bb29452",
   "voided": false,
   "authentication_token": "mtS6Ffa9v5wF_x6oQFOniw",
   "serial_number": "bc56c0ec-b639-4f04-a9c6-a04382b80dd5",
@@ -545,7 +525,7 @@ Sending a push notification (or forcing a pass update)
 You can force the retrieval of a pass via push notification by simply calling the following URL:
 
 ```shell
-POST /v2/store_cards/{store_card_id}/passes/{pass_id}/push
+POST /v2/store_cards/{campaign_id}/passes/{pass_id}/push
 ```
 
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
@@ -558,3 +538,18 @@ You can also send a custom message that will be displayed in the lock screen via
 }
 ```
 
+Aditional routes available
+------------
+
+Get all the Store Card campaigns:
+```shell
+GET /v2/store_cards/
+```
+
+Get all the passes for a specific Store Card campaign:
+```shell
+GET /v2/store_cards/{campaign_id}/passes
+```
+
+
+get.
