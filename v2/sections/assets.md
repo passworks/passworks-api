@@ -96,13 +96,12 @@ Example of a multipart upload using [curl](http://en.wikipedia.org/wiki/CURL#cUR
 curl -u <api username>:<api key> -v -H 'Content-Type: multipart/form-data' -H 'Accept: application/json' -F "asset[asset_type]=background" -F "asset[file]=@/images-folder/my-background.png" http://api.passworks.io/v2/assets
 ```
 
-Deleting a asset
+Aditional routes
 ----------------
 
+Get a specific asset:
+
 ```shell
-DELETE /v2/assets/{asset-id}
+GET /v2/assets/{asset_id}
 ```
 
-If the asset is deleted successfully the endpoint returns a HTTP 200.
-
-In case an asset can't be deleted because it's being used by an active "campaign" an HTTP 412 error code is returned.

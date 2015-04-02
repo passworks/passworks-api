@@ -260,7 +260,7 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
+  "page_url": "http://get.passworks.io/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T17:49:50Z"
 }
@@ -268,7 +268,7 @@ Response:
 
 **NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
 
-The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
 `GET /v2/event_tickets/{campaign_id}/passes`
 
 and then [updating each pass](#updating-each-pass) with the fields you wish to change.
@@ -439,8 +439,8 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
-  "pkpass_url": "http://get.passworks.io:3000/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
+  "page_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
+  "pkpass_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
   "created_at": "2015-03-27T18:11:49Z",
   "updated_at": "2015-03-27T18:12:20Z"
 }

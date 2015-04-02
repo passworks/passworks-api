@@ -194,7 +194,7 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
@@ -208,8 +208,8 @@ PATCH /v2/generics/{campaign_id}
 
 ```json
 {
-  "generic": {    
-  	"background_color": "#facada"  
+  "generic": {
+  	"background_color": "#facada"
   }
 }
 ```
@@ -341,23 +341,23 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
 **NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
 
-The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
 `GET /v2/generics/{campaign_id}/passes`
 
 and then [updating each pass](#updating-each-pass) with the fields you wish to change.
 
-Please contact support@passworks.io for advisement on updating a store card campaign.
+Please contact support@passworks.io for advisement on updating a generic campaign.
 
 If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
 
 ```shell
-POST /v2/generics/{store_card_id}/push
+POST /v2/generics/{campaign_id}/push
 ```
 
 Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.

@@ -31,13 +31,14 @@ Creating things using the API
 -----------------
 
 
-* [Asset](https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md) (Upload images to use in your passes)
-* [Store Card](https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
-* [Coupon](https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
-* [Event Ticket](https://github.com/passworks/passworks-api/blob/master/v2/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
-* [Boarding Pass](https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
+* [Assets](https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md) (Upload images to use in your passes)
+* [Store Cards](https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
+* [Coupons](https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
+* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/v2/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
+* [Boarding Passes](https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
 * [Generic](https://github.com/passworks/passworks-api/blob/master/v2/sections/generic.md) (Business cards and anything else)
-* [Certificate](https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md) (List certificates for use in your campaigns)
+* [Certificates](https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md) (List certificates for use in your campaigns)
+* [Templates](https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md) (List templates for use in your campaigns)
 
 
 Making a request
@@ -62,15 +63,15 @@ As stated previously, Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/B
 Identify for your account id and api key
 -----------------
 
-To use the API you must provide your `account_id` and `api_key` in each request via Basic Auth.
+To use the API you must provide your `username` and `api_key` in each request via Basic Auth.
 
-Your `account_id` and `api_key` can be found here [http://www.passworks.io/organizations/roles](http://www.passworks.io/organizations/roles)
+Your `username` and `api_key` can be found here [http://www.passworks.io/api_index](http://www.passworks.io/api_index)
 
 
 No XML, just JSON
 -----------------
 
-We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, PUTing or PATCHing data into Passworks.
+We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, or PATCHing data into Passworks.
 
 
 Pagination
@@ -108,7 +109,7 @@ Rate limiting
 The rate limit and api throttling are not yet implemented.
 ```
 
-Authenticated users can make up to **5000** requests per hour, each request is associated with the `account_id`.
+Authenticated users can make up to **5000** requests per hour, each request is associated with the `username`.
 
 You can check the returned HTTP headers of any API request to see your current rate limit status:
 
@@ -135,7 +136,7 @@ Using your own Passbook certificates
 -------------
 Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so at the moment you can't do it via an API call.
 
-It's recommended that you add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
+You can add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
 
 
 API libraries

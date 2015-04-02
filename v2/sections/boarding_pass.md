@@ -25,8 +25,8 @@ Payload:
 {
   "boarding_pass": {
     "name": "Skyport Airways flight 815",
-    "icon_id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
-    "logo_id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
+    "icon_id": "ffe0d88f-916d-4a12-8244-9ecd0178ca45",
+    "logo_id": "a8d93197-3a26-4b91-9551-6091f42a5be4",
     "barcode": {
     	"format": "pdf417"
     },
@@ -86,6 +86,72 @@ Payload:
 Response:
 
 ```json
+{
+  "id": "485d2a26-efc5-4f85-8855-fa2f4b6cd2e2",
+  "name": "Skyport Airways flight 815",
+  "template_id": "492d648f-559b-482f-a3c2-2a43aa194aed",
+  "organization_name": "foobar",
+  "barcode": {
+    "format": "pdf417",
+    "message": "",
+    "alt_text": ""
+  },
+  "allow_multiple_redeems": false,
+  "header_fields": [
+    {
+      "key": "gate",
+      "value": "23",
+      "label": "GATE"
+    }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "value": "SFO",
+      "label": "SAN FRANCISCO"
+    },
+    {
+      "key": "arrive",
+      "value": "JFK",
+      "label": "NEW YORK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "value": null,
+      "label": "PASSENGER"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "value": null,
+      "label": "DEPART"
+    },
+    {
+      "key": "flightNewName",
+      "value": "815",
+      "label": "FLIGHT"
+    },
+    {
+      "key": "class",
+      "value": null,
+      "label": "DESIG."
+    },
+    {
+      "key": "date",
+      "value": "7/22",
+      "label": "DATE"
+    }
+  ],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "page_url": "http://get.passworks.io/G1mbmsPWkw",
+  "created_at": "2015-04-01T10:06:33Z",
+  "updated_at": "2015-04-01T10:06:33Z"
+}
 ```
 
 
@@ -182,7 +248,7 @@ Updating the "Skyport Airways" flight 815 Campaign
 Let's imagine that the gate of the flight changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
 ```shell
-PATCH /v2/boarding_passes/{boarding_pass_id}
+PATCH /v2/boarding_passes/{campaign_id}
 ```
 
 
@@ -195,7 +261,7 @@ PATCH /v2/boarding_passes/{boarding_pass_id}
         "key": "gate",
         "value": "A3"
       }
-    ],
+    ]
 	}
 }
 ```
@@ -203,23 +269,89 @@ PATCH /v2/boarding_passes/{boarding_pass_id}
 Response:
 
 ```json
+{
+  "id": "485d2a26-efc5-4f85-8855-fa2f4b6cd2e2",
+  "name": "Skyport Airways flight 815",
+  "template_id": "492d648f-559b-482f-a3c2-2a43aa194aed",
+  "organization_name": "foobar",
+  "barcode": {
+    "format": "qrcode",
+    "message": "",
+    "alt_text": ""
+  },
+  "allow_multiple_redeems": false,
+  "header_fields": [
+    {
+      "key": "gate",
+      "value": "A3",
+      "label": "GATE"
+    }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "value": "SFO",
+      "label": "SAN FRANCISCO"
+    },
+    {
+      "key": "arrive",
+      "value": "JFK",
+      "label": "NEW YORK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "value": null,
+      "label": "PASSENGER"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "value": null,
+      "label": "DEPART"
+    },
+    {
+      "key": "flightNewName",
+      "value": "815",
+      "label": "FLIGHT"
+    },
+    {
+      "key": "class",
+      "value": null,
+      "label": "DESIG."
+    },
+    {
+      "key": "date",
+      "value": "7/22",
+      "label": "DATE"
+    }
+  ],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "page_url": "http://get.passworks.io/G1mbmsPWkw",
+  "created_at": "2015-04-01T10:06:33Z",
+  "updated_at": "2015-04-01T10:18:15Z"
+}
 ```
 
 Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes.
 
 **NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
 
-The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
 `GET /v2/boarding_passes/{campaign_id}/passes`
 
 and then [updating each pass](#updating-each-pass) with the fields you wish to change.
 
-Please contact support@passworks.io for advisement on updating a boarding_pass campaign.
+Please contact support@passworks.io for advisement on updating a boarding pass campaign.
 
 If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
 
 ```shell
-POST /v2/boarding_passes/{boarding_pass_id}/push
+POST /v2/boarding_passes/{campaign_id}/push
 ```
 
 Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
@@ -234,7 +366,12 @@ Along with this push, you may also, optionally, send in a payload with a push me
 
 Response:
 
+You'll get a contextualized message, informing on the start of the pass updates, or that there are no passes to be updated.
+
 ```json
+{
+	"message": "There are no passes to update for campaing 'Skyport Airways flight 815'."
+}
 ```
 
 |  Field name  | Type |  Description   | Default |
@@ -249,7 +386,7 @@ Creating a Boarding Pass for "John Appleseed"
 
 
 ```shell
-POST /v2/boarding_passes/{boarding_passes_id}/passes
+POST /v2/boarding_passes/{campaign_id}/passes
 ```
 
 Request payload:
@@ -280,6 +417,77 @@ Request payload:
 Response:
 
 ```json
+{
+  "id": "7d131a35-66df-4fc2-9d78-b5373558ffd9",
+  "campaign_id": "485d2a26-efc5-4f85-8855-fa2f4b6cd2e2",
+  "voided": false,
+  "serial_number": "51950d75-5d4a-48fc-a187-2f4d5a577ae2",
+  "redeem_code": "0000001",
+  "redeemed_count": 0,
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "expiration_date": null,
+  "max_distance": null,
+  "relevant_date": null,
+  "header_fields": [
+    {
+      "key": "gate",
+      "value": "A3",
+      "label": "GATE"
+    }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "value": "SFO",
+      "label": "SAN FRANCISCO"
+    },
+    {
+      "key": "arrive",
+      "value": "JFK",
+      "label": "NEW YORK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "value": "John Appleseed",
+      "label": "PASSENGER"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "value": "2:25 PM",
+      "label": "DEPART"
+    },
+    {
+      "key": "flightNewName",
+      "value": "815",
+      "label": "FLIGHT"
+    },
+    {
+      "key": "class",
+      "value": "Coach",
+      "label": "DESIG."
+    },
+    {
+      "key": "date",
+      "value": "7/22",
+      "label": "DATE"
+    }
+  ],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "page_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q",
+  "pkpass_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q.pkpass",
+  "created_at": "2015-04-01T10:29:34Z",
+  "updated_at": "2015-04-01T10:29:34Z"
+}
 ```
 
 Updating the Boarding Pass of John Appleseed
@@ -289,7 +497,7 @@ As mentioned before, updating a specific pass ensures that the personalization y
 
 
 ```shell
-POST /v2/boarding_passes/{boarding_passes_id}/passes/{pass_id}
+POST /v2/boarding_passes/{campaign_id}/passes/{pass_id}
 ```
 
 Request payload:
@@ -310,6 +518,77 @@ Request payload:
 Response:
 
 ```json
+{
+  "id": "7d131a35-66df-4fc2-9d78-b5373558ffd9",
+  "campaign_id": "485d2a26-efc5-4f85-8855-fa2f4b6cd2e2",
+  "voided": false,
+  "serial_number": "51950d75-5d4a-48fc-a187-2f4d5a577ae2",
+  "redeem_code": "0000001",
+  "redeemed_count": 0,
+  "barcode": {
+    "format": "qrcode",
+    "message": "0000001",
+    "alt_text": "0000001"
+  },
+  "expiration_date": null,
+  "max_distance": null,
+  "relevant_date": null,
+  "header_fields": [
+    {
+      "key": "gate",
+      "value": "A3",
+      "label": "GATE"
+    }
+  ],
+  "primary_fields": [
+    {
+      "key": "depart",
+      "value": "SFO",
+      "label": "SAN FRANCISCO"
+    },
+    {
+      "key": "arrive",
+      "value": "JFK",
+      "label": "NEW YORK"
+    }
+  ],
+  "secondary_fields": [
+    {
+      "key": "passenger",
+      "value": "John Appleseed",
+      "label": "PASSENGER"
+    }
+  ],
+  "auxiliary_fields": [
+    {
+      "key": "boardingTime",
+      "value": "3:25 PM",
+      "label": "DEPART"
+    },
+    {
+      "key": "flightNewName",
+      "value": "815",
+      "label": "FLIGHT"
+    },
+    {
+      "key": "class",
+      "value": "Coach",
+      "label": "DESIG."
+    },
+    {
+      "key": "date",
+      "value": "7/22",
+      "label": "DATE"
+    }
+  ],
+  "back_fields": [],
+  "locations": [],
+  "beacons": [],
+  "page_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q",
+  "pkpass_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q.pkpass",
+  "created_at": "2015-04-01T10:29:34Z",
+  "updated_at": "2015-04-01T10:30:41Z"
+}
 ```
 
 Sending a push notification (or forcing a pass update)
@@ -324,10 +603,20 @@ POST /v2/event_tickets/{campaign_id}/passes/{pass_id}/push
 You can also send a custom message that will be displayed in the lock screen via push notification sending the following content in the above request
 
 ```json
-{ 
+{
 	"pass": {
-		"push_message": "Boarding time changed." 
+		"push_message": "Boarding time changed."
 	}
+}
+```
+
+Response:
+
+You'll get a contextualized message, informing on the start of the pass update, or that there are no passes to be updated.
+
+```json
+{
+	"message": "push notifications sent for pass with id: 7d131a35-66df-4fc2-9d78-b5373558ffd9 on campaign 'Skyport Airways flight 815'"
 }
 ```
 

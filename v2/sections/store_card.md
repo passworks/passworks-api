@@ -182,9 +182,8 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
-
 
 
 Updating a Store Card "campaign" for the "Bayroast Coffee"
@@ -343,12 +342,42 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode 
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
+**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
 
-your company
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
+`GET /v2/store_cards/{campaign_id}/passes`
+
+and then [updating each pass](#updating-each-pass) with the fields you wish to change.
+
+Please contact support@passworks.io for advisement on updating a store card campaign.
+
+If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
+
+```shell
+POST /v2/store_cards/{campaign_id}/push
+```
+
+Along with this push, you may also, optionally, send in a payload with a push message that will be presented to the users when the update is done, shown on the lock screen.
+
+```json
+{
+  "store_card": {
+      "push_message": "New beverage!"
+  }
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+push_message | string | Optional. Text shown on the lock screen. | No message sent.
+
+This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
+
+
 
 Creating a Store Card pass for a customer
 ------------
@@ -437,8 +466,6 @@ loyalty_id | uuid | The loyalty campaign id that the created pass belongs to.
 pass_id | uuid | The created pass's ID.
 download\_page\_link | string | The HTML page with the download link
 direct_link | string | The direct download link for the pass
-
-
 
 
 Updating the customer pass
@@ -532,8 +559,8 @@ You can also send a custom message that will be displayed in the lock screen via
 
 ```json
 {
-	"store_card": { 
-		"push_message": "Hello!" 
+	"store_card": {
+		"push_message": "Hello!"
 	}
 }
 ```
@@ -550,6 +577,3 @@ Get all the passes for a specific Store Card campaign:
 ```shell
 GET /v2/store_cards/{campaign_id}/passes
 ```
-
-
-get.

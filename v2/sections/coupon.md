@@ -65,7 +65,7 @@ Response:
 ```json
 {
   "id": "5fd663d1-4ed4-4800-8d5a-caea4131358a",
-  "name": "Paw Planetz",
+  "name": "Paw Planet",
   "template_id": "9bd46ecb-20c8-41cb-a8d8-f848a07c220c",
   "organization_name": "your company",
   "barcode": {
@@ -192,92 +192,6 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Updating the "The Beat Goes On" Event Ticket Campaign
-------------
-
-Let's imagine that the location of your event changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
-
-```shell
-PATCH /v2/event_tickets/{event_ticket_id}
-```
-
-
-```json
-{
-	"event_ticket": {
-	    "secondary_fields": [
-	      {
-	        "key": "loc",
-	        "label": "LOCATION",
-	        "value": "Moscone West"
-	      }
-	    ],
-	    "locations": [
-	      {
-          	"latitude": 38.725488,
-             	"longitude": -9.1501,
-             	"relevant_text": "Welcome! Enjoy the show."
-	      }
-	    ]
-	}
-}
-```
-
-Response:
-
-```json
-{
-  "id": "c7aab24b-a076-4e59-885a-726e80ca64e7",
-  "name": "The Beat Goes On Event",
-  "template_id": "19293ad0-9ecf-4e31-9c07-b555cb276d13",
-  "organization_name": "onomecompany",
-  "header_fields": [],
-  "primary_fields": [
-    {
-      "key": "event_name",
-      "value": "The Beat Goes On",
-      "label": "EVENT"
-    }
-  ],
-  "secondary_fields": [
-    {
-      "key": "loc",
-      "value": "Moscone West",
-      "label": "LOCATION"
-    }
-  ],
-  "auxiliary_fields": [],
-  "back_fields": [],
-  "locations": [
-    {
-      "latitude": 38.725488,
-      "longitude": -9.1501,
-      "altitude": null,
-      "relevant_text": "Welcome! Enjoy the show."
-    }
-  ],
-  "beacons": [],
-  "page_url": "http://get.passworks.io/1VtFTG8YwQ",
-  "created_at": "2015-03-27T13:08:57Z",
-  "updated_at": "2015-03-27T17:49:50Z"
-}
-```
-
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes.
-
-**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
-
-The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from 
-`GET /v2/coupons/{campaign_id}/passes`
-
-and then [updating each pass](#updating-each-pass) with the fields you wish to change.
-
-Please contact support@passworks.io for advisement on updating a boarding_pass campaign.
-
-If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
-
-
-
 
 Updating the "Paw Planet" Coupon Campaign
 ------------
@@ -357,7 +271,18 @@ Response:
 
 ```
 
-Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes, however any old passes that had already been generated will need to be explicitly pushed out, so you **must**, following a campaign update, issue a push POST request:
+Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes.
+
+**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
+
+The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
+`GET /v2/coupons/{campaign_id}/passes`
+
+and then [updating each pass](#updating-each-pass) with the fields you wish to change.
+
+Please contact support@passworks.io for advisement on updating a coupon campaign.
+
+If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
 
 ```shell
 POST /v2/coupons/{campaign_id}/push
@@ -562,4 +487,3 @@ Get all the passes for a specific Coupon campaign:
 GET /v2/coupons/{campaign_id}/passes
 ```
 
-get.
