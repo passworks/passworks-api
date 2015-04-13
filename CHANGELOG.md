@@ -3,6 +3,13 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.1.5 (2015-04-13) - Miguel Veríssimo
+
+* Features
+  - Creating boilerplate (template based) passes do not require payload anymore
+  - Add the ability to redeem passes, in campaign, through the redeem code, and
+    directly in the pass
+
 ## v0.1.4 (2015-03-31) - Tiago Parreira, Miguel Veríssimo
 
 * Documentation

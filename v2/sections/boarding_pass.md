@@ -384,6 +384,13 @@ This request will push all existing passes once again, guaranteeing that all tha
 Creating a Boarding Pass for "John Appleseed"
 ------------
 
+You can create a boilerplate pass simply by POSTing to the passes route:
+
+```shell
+POST /v2/boarding_passes/{campaign_id}/passes
+```
+
+If you want to personalize the pass you can supply an hash with the parameters you want to override:
 
 ```shell
 POST /v2/boarding_passes/{campaign_id}/passes
@@ -620,16 +627,62 @@ You'll get a contextualized message, informing on the start of the pass update, 
 }
 ```
 
+
+Redeeming a pass
+------------
+
+There are two ways you can redeem a pass:
+
+- Redeeming a pass by referencing a redeem code
+	You can redeem a pass by referencing a redeem code (instead of the pass_id) by POSTing to the campaign `redeem` route
+	
+	```shell
+	/v2/boarding_passes/{campaign_id}/redeem
+	```
+	Issuing a payload with a root element `pass` and with the redeem code in the payload:
+	
+	```json
+	{
+		"pass": {
+			"redeem_code": "0000001",
+			"comment": "Redeemed in store"
+		}
+	}
+	```
+	The method accepts an optional `comment` key where you can specify some information you want to be stored for reference.
+	
+	
+- Redeem a pass directly
+	You can redeem a pass directly, by POSTing to the pass `redeem` route:
+	
+	```shell
+	POST /v2/boarding_passes/{campaign_id}/passes/{pass_id}/redeem
+	```
+	
+	You can supply an optional `comment` key where you can specify some information you want to be stored for reference:
+	
+	```json
+	{
+		"pass": {
+			"comment": "redeemed in store"
+		}
+	}
+	```
+
 Aditional routes available
 ------------
 
-Get all the Boarding Pass campaigns:
+#####Get all the Boarding Pass campaigns:
 ```shell
 GET /v2/boarding_passes/
 ```
 
-Get all the passes for a specific Boarding Pass campaign:
+#####Get all the passes for a specific Boarding Pass campaign:
 ```shell
 GET /v2/boarding_passes/{campaign_id}/passes
 ```
 
+#####Get a pass's id from its redeem code
+```shell
+GET /v2/boarding_passes/{campaign_id}/redeem/{redeem_code}
+```

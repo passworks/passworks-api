@@ -4,11 +4,12 @@ Passworks API
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation `last updated at 31/Mar/2015` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
+Documentation last updated at `Apr 13th, 2015` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
 
-```shell
-Our v1 API has been deprecated, use the new v2 API.
-```
+#NOTICE
+
+### As of April 13th, 2015 the API v1 has been deprecated, use the new v2 API - Contact `support@passworks.io` if you are having trouble migrating to v2.
+
 
 Understanding the API workflow
 --------------------
