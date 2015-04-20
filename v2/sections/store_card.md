@@ -365,7 +365,7 @@ Along with this push, you may also, optionally, send in a payload with a push me
 
 ```json
 {
-  "store_card": {
+  "pass": {
       "push_message": "New beverage!"
   }
 }
@@ -567,7 +567,7 @@ You can also send a custom message that will be displayed in the lock screen via
 
 ```json
 {
-	"store_card": {
+	"pass": {
 		"push_message": "Hello!"
 	}
 }
