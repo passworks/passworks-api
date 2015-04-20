@@ -358,7 +358,7 @@ Along with this push, you may also, optionally, send in a payload with a push me
 
 ```json
 {
-	"boarding_pass": {
+	"pass": {
 	    "push_message": "Gate has changed!"
 	}
 }
