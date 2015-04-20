@@ -475,7 +475,7 @@ You can also send a custom message that will be displayed in the lock screen via
 
 ```json
 {
-  "coupon": {
+  "pass": {
       "push_message": "Special offer just for you!"
   }
 }
