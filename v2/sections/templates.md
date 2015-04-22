@@ -156,7 +156,7 @@ POST /v2/templates
 | transit_type | string | Required if `pass_type` is `boardingPass`. Must be one of the following values `air`, `boat`, `train`, `boat` or `generic`.
 | icon_id | uuid | Required. Icon  id (the id of a icon type asset)
 | logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
-| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| strip_id | uuid | Optional. Strip image id (the id of a strip type asset)
 | background_id | uuid | Optional. Background image id (the id of a background type asset)
 | footer_id | uuid | Optional. Footer image id (the id of a footer type asset)
 | thumbnail_id | uuid | Optional. Thumbnail image id (the id of a thumbnail type asset)
