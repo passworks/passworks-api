@@ -126,21 +126,22 @@ POST /v2/templates
 
 ```json
 {
-  "id": "b5f3d710-6d02-43b7-880a-75d4e719cbaa",
-  "name": "My New Coupon Campaign",
-  "description": "My New Coupon Campaign",
-  "pass_type": "coupon",
-  "logo_text": "",
-  "background_color": "#44b084",
-  "text_color": "#ffffff",
-  "label_color": "#ffffff",
-  "barcode": {
-    "format": "qrcode",
-    "message": "",
-    "alt_text": ""
-  },
-  "icon_id": "0e63925f-da0b-46d7-81c4-56fdc78d6120",
-  "logo_id": "dfbd0f8f-c72f-4a1f-95cb-ef293967f02b"
+  "template": {
+    "name": "My New Coupon Campaign",
+    "description": "My New Coupon Campaign",
+    "pass_type": "coupon",
+    "logo_text": "",
+    "background_color": "#44b084",
+    "text_color": "#ffffff",
+    "label_color": "#ffffff",
+    "barcode": {
+      "format": "qrcode",
+      "message": "",
+      "alt_text": ""
+    },
+    "icon_id": "0e63925f-da0b-46d7-81c4-56fdc78d6120",
+    "logo_id": "dfbd0f8f-c72f-4a1f-95cb-ef293967f02b"
+  }
 }
 ```
 
