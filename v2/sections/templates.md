@@ -50,7 +50,7 @@ Response:
       "message": "",
       "alt_text": ""
     },
-    "icon_id": "0e63925f-da0b-46d7-81c4-56fdc78d6120",
+    "icon_id": "0e63925f-da0b-46d7-81c4-56fdc78d6120"
   },
   {
     "id": "d406d43e-59c8-485b-84b3-52ea37373ca7",
