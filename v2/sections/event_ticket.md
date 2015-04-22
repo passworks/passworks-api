@@ -103,9 +103,21 @@ In case of success HTTP 201 response code is returned with the following body co
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
-  "updated_at": "2015-03-27T13:08:57Z"
+  "updated_at": "2015-03-27T13:08:57Z",
+  "distributions": [
+     {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "https://get.passworks.io/KL73UMtA5g",
+        "pkpass_url": "https://get.passworks.io/KL73UMtA5g.pkpass",
+        "preview_url": "https://get.passworks.io/KL73UMtA5g.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+     }
+    ]  
 }
 ```
 
@@ -260,9 +272,21 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
-  "updated_at": "2015-03-27T17:49:50Z"
+  "updated_at": "2015-03-27T17:49:50Z",
+  "distributions": [
+     {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "https://get.passworks.io/KL73UMtA5g",
+        "pkpass_url": "https://get.passworks.io/KL73UMtA5g.pkpass",
+        "preview_url": "https://get.passworks.io/KL73UMtA5g.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+     }
+    ]   
 }
 ```
 
@@ -369,8 +393,8 @@ Response:
     }
   ],
   "redeemed_count": 0,
-  "download_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
-  "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
+  "download_page_link": "https://get.passworks.io/KL73UMtA5g/nopCEC8kUP0kQ6TwC8IZ-g",
+  "direct_link": "https://get.passworks.io/KL73UMtA5g/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
   "created_at": "2014-09-26T14:19:42Z",
@@ -454,8 +478,8 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
-  "pkpass_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
+  "page_url": "http://get.passworks.io/KL73UMtA5g/FCgAWVECzDyuLS-kdvNrpA",
+  "pkpass_url": "http://get.passworks.io/KL73UMtA5g/FCgAWVECzDyuLS-kdvNrpA.pkpass",
   "created_at": "2015-03-27T18:11:49Z",
   "updated_at": "2015-03-27T18:12:20Z"
 }

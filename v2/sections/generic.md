@@ -111,9 +111,21 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/ahStMTeuCw",
   "created_at": "2015-03-31T17:27:48Z",
-  "updated_at": "2015-03-31T17:27:50Z"
+  "updated_at": "2015-03-31T17:27:50Z",
+  "distributions": [
+    {
+    "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+    "distribution_type": "downloadPage",
+    "state": "published",
+    "page_url": "https://get.passworks.io/ahStMTeuCw",
+    "pkpass_url": "https://get.passworks.io/ahStMTeuCw.pkpass",
+    "preview_url": "https://get.passworks.io/ahStMTeuCw.png",
+    "created_at": "2015-04-21T11:50:21.971Z",
+    "updated_at": "2015-04-21T11:50:22.006Z",
+    "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]  
 }
 ```
 
@@ -258,9 +270,21 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/IGYIYEydVw",
   "created_at": "2015-03-31T17:03:01Z",
-  "updated_at": "2015-03-31T18:01:11Z"
+  "updated_at": "2015-03-31T18:01:11Z",
+  "distributions": [
+    {
+    "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+    "distribution_type": "downloadPage",
+    "state": "published",
+    "page_url": "https://get.passworks.io/ahStMTeuCw",
+    "pkpass_url": "https://get.passworks.io/ahStMTeuCw.pkpass",
+    "preview_url": "https://get.passworks.io/ahStMTeuCw.png",
+    "created_at": "2015-04-21T11:50:21.971Z",
+    "updated_at": "2015-04-21T11:50:22.006Z",
+    "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]    
 }
 ```
 
@@ -472,8 +496,8 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
-  "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
+  "page_url": "http://get.passworks.io/ahStMTeuCw/rzhfuD9mTdiAbGp14PGUoA",
+  "pkpass_url": "http://get.passworks.io/ahStMTeuCw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
   "updated_at": "2015-03-31T17:33:28Z"
 }
@@ -548,8 +572,8 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
-  "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
+  "page_url": "http://get.passworks.io/ahStMTeuCw/rzhfuD9mTdiAbGp14PGUoA",
+  "pkpass_url": "http://get.passworks.io/ahStMTeuCw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
   "updated_at": "2015-03-31T17:35:33Z"
 }

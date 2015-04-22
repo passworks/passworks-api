@@ -148,9 +148,21 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/G1mbmsPWkw",
   "created_at": "2015-04-01T10:06:33Z",
-  "updated_at": "2015-04-01T10:06:33Z"
+  "updated_at": "2015-04-01T10:06:33Z",
+  "distributions": [
+    {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw",
+        "pkpass_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw.pkpass",
+        "preview_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]  
 }
 ```
 
@@ -331,9 +343,21 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/G1mbmsPWkw",
   "created_at": "2015-04-01T10:06:33Z",
-  "updated_at": "2015-04-01T10:18:15Z"
+  "updated_at": "2015-04-01T10:18:15Z",
+  "distributions": [
+    {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw",
+        "pkpass_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw.pkpass",
+        "preview_url": "http://get.192.168.1.68.xip.io:3000/G1mbmsPWkw.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]    
 }
 ```
 

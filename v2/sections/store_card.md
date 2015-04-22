@@ -97,9 +97,21 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/MqixNhgUdg",
   "created_at": "2015-03-30T11:11:46Z",
-  "updated_at": "2015-03-30T11:11:46Z"
+  "updated_at": "2015-03-30T11:11:46Z",
+   "distributions": [
+    {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "https://get.passworks.io/MqixNhgUdg",
+        "pkpass_url": "https://get.passworks.io/MqixNhgUdg.pkpass",
+        "preview_url": "https://get.passworks.io/MqixNhgUdg.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]  
 }
 ```
 
@@ -257,9 +269,21 @@ In case of success HTTP 201 response code is returned with the following body co
   "back_fields": [],
   "locations": [],
   "beacons": [],
-  "page_url": "http://get.passworks.io/MqixNhgUdg",
   "created_at": "2015-03-30T11:11:46Z",
-  "updated_at": "2015-03-30T11:11:46Z"
+  "updated_at": "2015-03-30T11:11:46Z",
+   "distributions": [
+    {
+        "id": "0d67da36-5e8e-4816-a405-48be423b3044",
+        "distribution_type": "downloadPage",
+        "state": "published",
+        "page_url": "https://get.passworks.io/MqixNhgUdg",
+        "pkpass_url": "https://get.passworks.io/MqixNhgUdg.pkpass",
+        "preview_url": "https://get.passworks.io/MqixNhgUdg.png",
+        "created_at": "2015-04-21T11:50:21.971Z",
+        "updated_at": "2015-04-21T11:50:22.006Z",
+        "published_at": "2015-04-21T11:50:22.014Z"
+    }
+  ]   
 }
 ```
 
@@ -545,8 +569,8 @@ In case of success HTTP 201 response code is returned with the complete passe de
   "beacons": [],
   "locations": [],
   "redeemed_count": 0,
-  "download_page_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ",
-  "direct_link": "http://get.passworks.io/oPDKThBkcg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
+  "download_page_link": "http://get.passworks.io/MqixNhgUdg/cpVwFpziwSDqkvcBh0XjVQ",
+  "direct_link": "http://get.passworks.io/MqixNhgUdg/cpVwFpziwSDqkvcBh0XjVQ.pkpass",
   "expiration_date": null,
   "redeemed_at": null,
   "created_at": "2014-09-24T17:22:28Z",
