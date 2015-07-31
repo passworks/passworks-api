@@ -365,7 +365,7 @@ Along with this push, you may also, optionally, send in a payload with a push me
 
 ```json
 {
-  "pass": {
+  "store_card": {
       "push_message": "New beverage!"
   }
 }
