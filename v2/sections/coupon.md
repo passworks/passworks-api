@@ -292,7 +292,7 @@ Along with this push, you may also, optionally, send in a payload with a push me
 
 ```json
 {
-  "pass": {
+  "coupon": {
       "push_message": "New promotion!"
   }
 }
