@@ -174,17 +174,23 @@ Response:
 
 ```json
 {
+  "id": "469ff1fd-04de-494f-bf89-eda4f96c3a80",
   "name": "Template for valid campaign-3-1-1",
-  "description": "Valid Campaign Description",
+  "description": "My lovely template!",
   "pass_type": "coupon",
-  "logo_text": "",
-  "background_color": "#098765",
-  "text_color": "#123456",
-  "label_color": "#456789",
+  "logo_text": null,
+  "background_color": null,
+  "text_color": null,
+  "label_color": null,
   "barcode": {
-    "format": "qrcode",
+    "format": "none",
     "message": "",
-    "alt_text": ""
-  }
+    "alt_text": "",
+    "alt_text_type": "mirror"
+  },
+  "source": "api",
+  "icon_id": "47107096-3f26-4b85-8225-791dcccb4dbb",
+  "logo_id": null,
+  "strip_id": null
 }
 ```
