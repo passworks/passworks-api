@@ -141,6 +141,22 @@ POST /v2/templates/
 | pass_type | string | Required. Can be one of the following: ['boardingPass', 'coupon', 'eventTicket', 'storeCard', 'generic']
 | transit_type | string | Required. Only required IF pass_type is 'boardingPass'.
 
+##### Barcode hash object format
+
+```json
+{
+	"alt_text": "Text shown below the barcode.",
+	"format": "pdf417",
+	"message": "Message encoded in the barcode."
+}
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
+message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
+
 Payload:
 
 ```json
