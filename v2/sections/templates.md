@@ -118,6 +118,29 @@ Creating a template
 POST /v2/templates/
 ```
 
+
+##### Presentation fields (when template_id is not supplied)
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
+| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
+| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
+| logo_text | string | Optional. Top card text
+| background_color| rgb string | Optional. Color defining the pass background color ranging from `#000000` to `#ffffff`
+| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
+| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
+
+##### Available fields
+
+|  Field name  | Type | Description  |
+|-------------|------|-----------------------------------
+| name | string | Required. Must be unique, it's used to identify the Template
+| description | string | Optional. Brief description of the template.
+| pass_type | string | Required. Can be one of the following: ['boardingPass', 'coupon', 'eventTicket', 'storeCard', 'generic']
+| transit_type | string | Required. Only required IF pass_type is 'boardingPass'.
+
 Payload:
 
 ```json
@@ -149,26 +172,3 @@ Response:
   }
 }
 ```
-
-
-##### Presentation fields (when template_id is not supplied)
-
-|  Field name  | Type | Description  |
-|-------------|------|-----------------------------------
-| icon_id | uuid | Required. Icon  id (the id of a icon type asset)
-| logo_id | uuid | Optional. Logo image id (the id of a logo type asset)
-| strip_id | uuid | Optional. Strip image id (the id of a logo type asset)
-| logo_text | string | Optional. Top card text
-| background_color| rgb string | Optional. Color defining the pass background color ranging from `#000000` to `#ffffff`
-| text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
-
-##### Available fields
-
-|  Field name  | Type | Description  |
-|-------------|------|-----------------------------------
-| name | string | Required. Must be unique, it's used to identify the Template
-| description | string | Optional. Brief description of the template.
-| pass_type | string | Required. Can be one of the following: ['boardingPass', 'coupon', 'eventTicket', 'storeCard', 'generic']
-| transit_type | string | Required. Only required IF pass_type is 'boardingPass'.
