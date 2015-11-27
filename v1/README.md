@@ -1,3 +1,8 @@
+> #DEPRECATION NOTICE
+> This version of the API (v1) is deprecated please use API the lastest version see main page [https://github.com/passworks/passworks-api](https://github.com/passworks/passworks-api)
+>
+> This information is here for legacy reasons. 
+
 Passworks API
 ====================
 
