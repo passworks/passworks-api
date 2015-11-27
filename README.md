@@ -4,11 +4,17 @@ Passworks API
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `Apr 13th, 2015` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
+Documentation last updated at `Nov 27th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
 
-#NOTICE
+SDKs
+-------------
 
-### As of April 13th, 2015 the API v1 has been deprecated, use the new v2 API - Contact `support@passworks.io` if you are having trouble migrating to v2.
+Get started quickly using Passworks with our SDK's. The SDK helps take the complexity out of coding by providing native classes for operating Passworks API.
+
+* PHP 
+	* [passworks-php](https://github.com/passworks/passworks-php) - The SDK is also available through Packagist (composer compatible) ([Packagist](https://packagist.org/packages/passworks/passworks-php))
+* Ruby 
+	* [passworks-ruby](https://github.com/passworks/passworks-ruby) - The SDK is also available through Ruby Gems ([Ruby Gems](https://github.com/passworks/passworks-ruby)). 
 
 
 Understanding the API workflow
@@ -139,14 +145,6 @@ Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so 
 
 You can add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
 
-
-API libraries
--------------
-
-_**These libraries currently only work for our API v1!**_
-
-* [passworks-php](https://github.com/passworks/passworks-php) - PHP library, composer compatible
-* [passworks-ruby](https://github.com/passworks/passworks-ruby) - Ruby gem
 
 
 Help us make it better
