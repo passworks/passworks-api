@@ -3,6 +3,15 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+
+## v0.1.6 (2015-11-27) - Luís Mendes
+
+* Documentation
+  - Updated SDK's information.
+  - Removed API v1 deprecation notice from main page.
+  - Updated Ruby SDK
+  
+
 ## v0.1.5 (2015-04-13) - Miguel Veríssimo
 
 * Features
