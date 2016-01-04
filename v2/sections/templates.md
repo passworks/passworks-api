@@ -194,3 +194,35 @@ Response:
   "strip_id": null
 }
 ```
+
+
+
+Deleting a template
+----------------
+
+You can also delete a template:
+
+```shell
+DELETE /v2/templates/{template_id}
+```
+
+You can only delete templates that are not associated to any campaign, however.
+
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+delete_assets | string | Optional. Delete template's associated assets. | False
+
+Payload:
+
+```json
+{
+  "template": {
+    "delete_assets": "true"
+  }
+}
+```
+
+If delete_assets is 'true', an attempt will be made to delete the template's assets: if ALL of them were exclusively being used by this template, they will ALL be deleted. Otherwise, they will all be left intact (even if a single one wasn't exclusive: they are treated as a 'set').
+
+

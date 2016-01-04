@@ -54,7 +54,7 @@ Response:
 ]
 ```
 
-Creating a asset
+Creating an asset
 ----------------
 
 Passworks API allows you to upload images in the `.jpg`, `.png` and `.gif` format, note that all the uploads images will be reprocessed and converted to into `png`.
@@ -95,6 +95,17 @@ Example of a multipart upload using [curl](http://en.wikipedia.org/wiki/CURL#cUR
 ```shell
 curl -u <api username>:<api key> -v -H 'Content-Type: multipart/form-data' -H 'Accept: application/json' -F "asset[asset_type]=background" -F "asset[file]=@/images-folder/my-background.png" http://api.passworks.io/v2/assets
 ```
+
+Deleting an asset
+----------------
+
+You can also delete an asset:
+
+```shell
+DELETE /v2/assets/{asset_id}
+```
+
+You can only delete assets which are not being used by any templates.
 
 Aditional routes
 ----------------

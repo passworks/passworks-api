@@ -4,17 +4,17 @@ Passworks API
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `Nov 27th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
+Documentation last updated at `Jan 5th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
 
 SDKs
 -------------
 
 Get started quickly using Passworks with our SDK's. The SDK helps take the complexity out of coding by providing native classes for operating Passworks API.
 
-* PHP 
+* PHP
 	* [passworks-php](https://github.com/passworks/passworks-php) - The SDK is also available through Packagist (composer compatible) ([Packagist](https://packagist.org/packages/passworks/passworks-php))
-* Ruby 
-	* [passworks-ruby](https://github.com/passworks/passworks-ruby) - The SDK is also available through Ruby Gems ([Ruby Gems](https://github.com/passworks/passworks-ruby)). 
+* Ruby
+	* [passworks-ruby](https://github.com/passworks/passworks-ruby) - The SDK is also available through Ruby Gems ([Ruby Gems](https://github.com/passworks/passworks-ruby)).
 
 
 Understanding the API workflow
@@ -51,14 +51,14 @@ Creating things using the API
 Making a request
 ----------------
 
-All URLs start with `https://api.passworks.io/v1/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.
+All URLs start with `https://api.passworks.io/v2/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.
 
 To create objects using the API each request must include the `Content-Type` header with the value `application/json` and the body must contain data in the [JSON](http://en.wikipedia.org/wiki/JSON) format.
 
 ```shell
 curl -u account_id:api_key \
   -H 'Content-Type: application/json' \
-  https://api.passworks.io/v1/ping
+  https://api.passworks.io/v2/ping
 ```
 
 Authentication
@@ -121,7 +121,7 @@ Authenticated users can make up to **5000** requests per hour, each request is a
 You can check the returned HTTP headers of any API request to see your current rate limit status:
 
 ```shell
-$ curl -i https://api.passworks.io/v1/ping
+$ curl -i https://api.passworks.io/v2/ping
 
 HTTP/1.1 200 OK
 Date: Tue, 23 Sep 2014 09:09:54 GMT
