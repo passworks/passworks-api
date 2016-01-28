@@ -72,4 +72,4 @@ Creating a certificate
 
 In order to create a certificate, since this process cannot be automated because it requires an Apple Developer account, and is only needed just ocasionally, it makes no sense creating certificates through the API, which would just be complicated.
 
-Instead, log onto our SAAS and upload the certificate in [your certificates page](http://www.passworks.io/certificates).
+Instead, log onto our SAAS and upload the certificate in [your certificates page](https://passworks.io/certificates/new).
