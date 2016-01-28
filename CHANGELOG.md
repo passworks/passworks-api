@@ -4,6 +4,12 @@ This file is a manually maintained list of changes for each release. Feel free t
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
 
+## v0.1.8 (2016-01-28) - Luís Mendes
+
+* Documentation
+  - Barcode types updated, now showing "ean128" (EAN128/GS1)
+  - Webhooks
+
 ## v0.1.7 (2016-01-05) - Tiago Parreira
 
 * Documentation

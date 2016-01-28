@@ -51,9 +51,9 @@ Creating things using the API
 Webhooks
 -----------------
 
-Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook).
+Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook) (wikipedia link).
 
-The following events are monitored and sent to the the endpoint via wehbook:
+The following events are monitored and sent to the the endpoint via HTTP POST:
 
 | Event name      | Description    |
 |-------------|----------------|
