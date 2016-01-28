@@ -48,6 +48,22 @@ Creating things using the API
 * [Templates](https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md) (List templates for use in your campaigns)
 
 
+Webhooks
+-----------------
+
+Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook).
+
+The following events are monitored and sent to the the endpoint via wehbook:
+
+| Event name      | Description    |
+|-------------|----------------|
+| created     | Pass was created |
+| installed   | Pass was installed on the user's device |
+| uninstalled | Pass was uninstalled from the user's device |
+| fetched     | User device fetched the pass from the server |
+
+Please read more about webhooks here 
+
 Making a request
 ----------------
 
