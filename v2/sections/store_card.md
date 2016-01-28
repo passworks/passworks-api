@@ -182,7 +182,7 @@ relevant_text| string | Optional. Text displayed on the lock screen when the pas
 |  Field name  | Type |  Description   | Default |
 |--------------|------|----------------|---------|
 alt_text | string | Optional. Text shown below the barcode. | Pass's redeem code.
-format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, or **none**. | qrcode
+format | string | Optional. Must be one of the following if supplied: **qrcode**, **pdf417**, **aztec**, **ean128** or **none**. | qrcode
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
@@ -580,12 +580,12 @@ There are two ways you can redeem a pass:
 
 - Redeeming a pass by referencing a redeem code
 	You can redeem a pass by referencing a redeem code (instead of the pass_id) by POSTing to the campaign `redeem` route
-	
+
 	```shell
 	/v2/store_cards/{campaign_id}/redeem
 	```
 	Issuing a payload with a root element `pass` and with the redeem code in the payload:
-	
+
 	```json
 	{
 		"pass": {
@@ -595,17 +595,17 @@ There are two ways you can redeem a pass:
 	}
 	```
 	The method accepts an optional `comment` key where you can specify some information you want to be stored for reference.
-	
-	
+
+
 - Redeem a pass directly
 	You can redeem a pass directly, by POSTing to the pass `redeem` route:
-	
+
 	```shell
 	POST /v2/store_cards/{campaign_id}/passes/{pass_id}/redeem
 	```
-	
+
 	You can supply an optional `comment` key where you can specify some information you want to be stored for reference:
-	
+
 	```json
 	{
 		"pass": {
