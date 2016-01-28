@@ -62,7 +62,7 @@ The following events are monitored and sent to the the endpoint via HTTP POST:
 | uninstalled | Pass was uninstalled from the user's device |
 | fetched     | User device fetched the pass from the server |
 
-Please read more about webhooks [here](/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
+Please read more about webhooks [here](https://github.com/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
 
 Making a request
 ----------------
