@@ -4,11 +4,14 @@
 
 Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook) per organization.
 
-This allows you to specify an endpoint URL to be called for Pass event inside a given organization (the webkhook URL supports SSL if the URL starts with `https`).
+This allows you to specify an endpoint URL to be called for Pass event inside a given organization (the webkhook URL supports SSL if the URL starts with `https`, it's recommended to **always** use HTTPS endpoints).
 
-## Events
+Login in to the [Passworks Platform](http://passworks.io/api_index) and set the WebHooks endpoint / URL in the **API & WebHooks** menu.
 
-The following events are monitored and sent to the the endpoint via wehbook:
+
+## Events 
+
+The following events are monitored and sent to the the endpoint via HTTP POST:
 
 | Event name      | Description    |
 |-------------|----------------|
@@ -64,10 +67,10 @@ Details of the webhook payload:
 | Attribute | Format | Example | Description |
 |-----------|--------|---------|-------------|
 | event| String | "`installed`" | The `event` that this webhook refers to. It can be "`installed`", "`created`", "`uninstalled`", "`fetched`.
-| context| String | "pass" | The context for now is only "Pass", it's the events context
+| context| String | "pass" | The context for now is only "Pass", it's the events context       
 | campaign_id| UUIDv4 (String) | "b6179ee0-e753-403c-b0f7-5f4818e65b02" | This is the `campaign_id` there the passe belongs.
 | distribution_id| UUIDv4 (String) | "b792d7fa-193f-4ec7-8dc8-d3069a5b8e1c" | This is the `distribution_id`
-| pass_id| UUIDv4 (String) | "b6179ee0-e753-403c-b0f7-5f4818e65b02" |
+| pass_id| UUIDv4 (String) | "b6179ee0-e753-403c-b0f7-5f4818e65b02" | 
 | voided| Boolean (default: `false`) | false | Indicated if the pass is redeemable, if voided user can't redeem the pass |
 | serial_number| UUIDv4 (String) | "4b708882-dfd0-407f-9354-f70aa159008b" | Serial Number of the pass  |
 | redeemed_count| Integer (default: `0`) | 1 | Number of this the pass was redeemed.
