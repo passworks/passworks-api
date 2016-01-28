@@ -4,7 +4,7 @@ Passworks API
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `Jan 5th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
+Documentation last updated at `Jan 28th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/v2/CHANGELOG.md) for more details.
 
 SDKs
 -------------
