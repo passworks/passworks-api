@@ -62,7 +62,7 @@ The following events are monitored and sent to the the endpoint via wehbook:
 | uninstalled | Pass was uninstalled from the user's device |
 | fetched     | User device fetched the pass from the server |
 
-Please read more about webhooks here 
+Please read more about webhooks [here](/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
 
 Making a request
 ----------------
