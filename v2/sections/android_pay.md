@@ -34,7 +34,7 @@ So at our platform you'll find:
 Example
 ------------
 
-| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pass/android_schema.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pass/climb_gym_android_pass.png) |
+| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/android_schema.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/android-pay-pass.png) |
 |---|---|
 | Generic Boarding Schematic | Paw Planet Discount |
 
@@ -89,7 +89,7 @@ Android Life Cycle
 ------------
 
 
-| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pass/create_sequence.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pass/update_sequence.png) |
+| ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/create_sequence.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/update_sequence.png) |
 |---|---|
 | Creating Campaigns and Passes | Updating Campaigns and Passes |
 
