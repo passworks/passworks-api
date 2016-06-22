@@ -10,7 +10,7 @@ So far *Android Pay* has release only 3 types of passes. Their concept is upon `
 `Objects` however, we can make a correlation between those and `Campaigns` and `Passes`.
 Throughout all our documentation the terms `Campaigns` and `Passes` are going to be used instead.
 
-| Pass type     | Support    | Correlation     |
+| Android Pay Pass type     | Support    | Passworks Correlation     |
 |---------------|------------|-----------------|
 | Loyalty cards | &#10003;   | Store card      |
 | Gift cards    | N/A        | N/A             |
@@ -18,7 +18,7 @@ Throughout all our documentation the terms `Campaigns` and `Passes` are going to
 
 So at our platform you'll find:
 
-| Pass type     | Apple Wallet         | Android Pay | Description |
+| Passworks Pass type     | Apple Wallet         | Android Pay | Description |
 |---------------|----------------------|-------------|-------------|
 | Boarding pass |  Boarding Pass       |  N/A        | Boarding passes (train, bus, flights, etc) |
 | Coupon        |  Coupon              |  Offer      | Discounts, special offers, gift card, prepaid cards, return credits |
@@ -67,16 +67,16 @@ that may receive `true` for the supported pass types.
 
  * *local* - Just created
  * *updated* - Just updated
- * *failed* - Dync failed (check error message)
- * *sync_done* - the campaign was successfuly synchronized with *Android Pay* services
- * *syncing* - The sync is beign done
+ * *failed* - Sync failed (check error message)
+ * *sync_done* - the campaign was successfully synchronized with *Android Pay* services
+ * *syncing* - The sync is being done
 
 
 Errors
 ------------
 
 Most of the errors that may happen with the synchronization with the *Android Pay* services
-are raised by some missing field. Howerver, we mitigate it by creating default values for some
+are raised by some missing field. However, we mitigate it by creating default values for some
 of these fields and, sometimes, just trying the sync again.
 
 Other are raised by any failing over the communication between our and theirs servers.
@@ -85,7 +85,7 @@ Other are raised by any failing over the communication between our and theirs se
 > any, please contact us: api@passworks.io
 
 
-Android Life Cycle
+Android Lifecycle
 ------------
 
 
