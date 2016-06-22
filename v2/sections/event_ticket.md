@@ -1,6 +1,10 @@
 Event Ticket
 ================
 
+> Attention: This pass is not yet supported by Android Pay, please check the
+> [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
+> documentation for more details.
+
 Event Tickets are passes used for events such as concerts, movie tickets, galas, meetings or other types of activity that happen in a specific time or day.
 
 
@@ -104,6 +108,9 @@ In case of success HTTP 201 response code is returned with the following body co
   ],
   "beacons": [],
   "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
+  "gwallet_usage": false,
+  "gwallet_status": nil,
+  "gwallet_message": nil,
   "created_at": "2015-03-27T13:08:57Z",
   "updated_at": "2015-03-27T13:08:57Z"
 }

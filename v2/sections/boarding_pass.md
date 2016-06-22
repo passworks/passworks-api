@@ -1,6 +1,10 @@
 Boarding Passes
 ================
 
+> Attention: This pass is not yet supported by Android Pay, please check the
+> [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
+> documentation for more details.
+
 Boarding passes can be **airplane**, **bus**, **train**, or **boat tickets**. You also can create generic boarding passes.
 
 Examples of Boarding Passes
@@ -149,6 +153,9 @@ Response:
   "locations": [],
   "beacons": [],
   "page_url": "http://get.passworks.io/G1mbmsPWkw",
+  "gwallet_usage": false,
+  "gwallet_status": nil,
+  "gwallet_message": nil,
   "created_at": "2015-04-01T10:06:33Z",
   "updated_at": "2015-04-01T10:06:33Z"
 }
@@ -188,7 +195,6 @@ Response:
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
-
 
 ##### Location hash object format
 

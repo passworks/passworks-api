@@ -8,6 +8,9 @@ The Passworks API can be used to create loyalty or event tier programs to reward
 Example of a Store Card
 ------------
 
+> Attention: please check our
+> [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
+> documentation for details about the rendering on the Android Pay app.
 
 | ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/store_card/store_card_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/store_card/bayroast_coffee_guidelines.png) |
 |---|---|
@@ -98,6 +101,9 @@ In case of success HTTP 201 response code is returned with the following body co
   "locations": [],
   "beacons": [],
   "page_url": "http://get.passworks.io/MqixNhgUdg",
+  "gwallet_usage": false,
+  "gwallet_status": nil,
+  "gwallet_message": nil,
   "created_at": "2015-03-30T11:11:46Z",
   "updated_at": "2015-03-30T11:11:46Z"
 }
@@ -132,7 +138,7 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
-
+| gwallet_usage | boolean | Optional. Activate *Android Pay* for the campaign. Check the [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)  for detailed information.
 
 ##### Location hash object format
 

@@ -1,6 +1,9 @@
 Generic Pass
 ================
 
+> Attention: This pass is not yet supported by Android Pay, please check the
+> [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
+> documentation for more details.
 
 Generic passes can be used for anything that doesn't fit in the other pass categories.
 
@@ -112,6 +115,9 @@ Response
   "locations": [],
   "beacons": [],
   "page_url": "http://get.passworks.io/ahStMTeuCw",
+  "gwallet_usage": false,
+  "gwallet_status": nil,
+  "gwallet_message": nil,
   "created_at": "2015-03-31T17:27:48Z",
   "updated_at": "2015-03-31T17:27:50Z"
 }
