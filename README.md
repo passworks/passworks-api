@@ -162,6 +162,13 @@ Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so 
 You can add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
 
 
+Statistics
+----------------------
+
+In order to see the statistics for any kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint `/statistics` and `/statistics/totals`.
+
+Please check the [Statistics](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md) pages in order to understand the outputs and parameters.
+
 
 Help us make it better
 ----------------------

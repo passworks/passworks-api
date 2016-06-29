@@ -637,3 +637,14 @@ GET /v2/store_cards/{campaign_id}/passes
 ```shell
 GET /v2/store_cards/{campaign_id}/redeem/{redeem_code}
 ```
+
+#####Get campaigns statistics
+```shell
+GET /v2/store_cards/{campaign_id}/statistics
+```
+
+```shell
+GET /v2/store_cards/{campaign_id}/statistics/totals
+```
+
+For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
