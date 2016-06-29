@@ -1,7 +1,10 @@
-Campaign Statistics
-================
+# Campaign Statistics
 
-### Period Statistics
+
+There is two ways to retrieve statistics abour your campaign. You can have it either
+by period (grouped by day) or a totalization since the beginning of the campaign.
+
+## Period Statistics
 
 You can retrieve a daily basis statistics by request the `campaign_id/statistics` eg:
 
@@ -9,12 +12,17 @@ You can retrieve a daily basis statistics by request the `campaign_id/statistics
 GET http://api.passworks.io/v2/coupons/86d1772e-ac76-4be0-8844-0f54353307ba/statistics
 ```
 
-#### Parameters
+```
+GET http://api.passworks.io/v2/coupons/86d1772e-ac76-4be0-8844-0f54353307ba/statistics?start_date=2016-06-01&end_date=2016-06-10
+```
 
-| Parameter | Format | Description |
+### Parameters
+
+| Parameter | Format | Default |
 |-------------|------|------------
-| start_date | YYYY-MM-DD | The starting date |
-| end_date | YYYY-MM-DD | The ending date |
+| start_date | YYYY-MM-DD | 1 month before the current date |
+| end_date | YYYY-MM-DD | The current date |
+
 
 > Any other format (or invalid date) is going to raise an error
 
@@ -27,7 +35,6 @@ The output will return as follows:
   "end_date": "2016-06-29",
   "statistics": {
     "2016-06-28": {
-      "_id": "2016-06-28T10:52:53.350Z",
       "installs_count": 0,
       "uninstalls_count": 0,
       "redeems_count": 0,
@@ -60,7 +67,7 @@ The output will return as follows:
 
 > the "i" and "u" stands for __Installs__ and __Uninstalls__ respectively
 
-### Totals
+## Totals
 
 If you need a totalization for any specific campaign you can request `campaign_id/statistics/totals` as:
 
