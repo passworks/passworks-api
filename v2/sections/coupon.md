@@ -1,12 +1,9 @@
-Coupon
-================
-
+# Coupon
 
 Coupons can be used to offer customers a discount or promotion, or as a general proximity marketing asset.
 
 
-Example of a Coupon
-------------
+## Example of a Coupon
 
 > Attention: please check our
 > [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
@@ -17,9 +14,7 @@ Example of a Coupon
 | Generic Coupon Schematic | Paw Planet Coupon |
 
 
-
-Creating a Coupon Campaign for "Paw Planet" Store
-------------
+## Creating a Coupon Campaign for "Paw Planet" Store
 
 ```shell
 POST /v2/coupons/
@@ -113,7 +108,7 @@ Response:
 ```
 
 
-##### Presentation fields (when template_id is not supplied)
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -129,7 +124,7 @@ Response:
 
 
 
-##### Available fields
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -147,7 +142,8 @@ Response:
 | associated_store_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 | gwallet_usage | boolean | Optional. Activate *Android Pay* for the campaign. Check the [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)  for detailed information.
 
-##### Location hash object format
+
+### Location hash object format
 
 ```json
 {
@@ -165,7 +161,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -182,7 +178,7 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+### Barcode hash object format
 
 ```json
 {
@@ -200,8 +196,7 @@ message | string | Optional. Message encoded in the barcode. | Pass's redeem cod
 
 
 
-Updating the "Paw Planet" Coupon Campaign
-------------
+## Updating the "Paw Planet" Coupon Campaign
 
 Sometimes you might want to run a special campaign, and update all of your client's passes with the new conditions:
 
@@ -312,8 +307,7 @@ push_message | string | Optional. Text shown on the lock screen. | No message se
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
 
 
-Creating a "Paw Planet" Coupon Pass
-------------
+## Creating a "Paw Planet" Coupon Pass
 
 You can create a boilerplate pass simply by POSTing to the passes route:
 
@@ -386,8 +380,8 @@ Response:
 }
 ```
 
-Updating a "The Beat Goes On" Coupon Pass
-------------
+
+## Updating a "The Beat Goes On" Coupon Pass
 
 Imagine that you want to offer a special campaign to your top customer, you can offer a promotion to a specific client, by updating his pass.
 
@@ -469,8 +463,8 @@ Response:
 }
 ```
 
-Forcing a push update of a pass
-------------
+
+## Forcing a push update of a pass
 
 You can force the update of a pass via push notification by simply calling the following URL:
 
@@ -489,8 +483,7 @@ You can also send a custom message that will be displayed in the lock screen via
 ```
 
 
-Redeeming a pass
-------------
+## Redeeming a pass
 
 There are two ways you can redeem a pass:
 
@@ -530,31 +523,30 @@ There are two ways you can redeem a pass:
 	}
 	```
 
-Aditional routes available
-------------
+## Aditional routes available
 
-#####Get all the Coupon campaigns:
+### Get all the Coupon campaigns:
 ```shell
 GET /v2/coupons/
 ```
 
-#####Get all the passes for a specific Coupon campaign:
+### Get all the passes for a specific Coupon campaign:
 ```shell
 GET /v2/coupons/{campaign_id}/passes
 ```
 
-#####Get a pass's id from its redeem code
+### Get a pass's id from its redeem code
 ```shell
 GET /v2/coupons/{campaign_id}/redeem/{redeem_code}
 ```
 
-#####Get campaigns statistics
+### Reports
 ```shell
-GET /v2/coupons/{campaign_id}/statistics
+GET /v2/coupons/{campaign_id}/reports
 ```
 
 ```shell
-GET /v2/coupons/{campaign_id}/statistics/totals
+GET /v2/coupons/{campaign_id}/reports/totals
 ```
 
-For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
+For more information about the campaign reports, please check our [Reports Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md).

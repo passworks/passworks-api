@@ -1,12 +1,9 @@
-Store Card
-================
-
+# Store Card
 
 The Passworks API can be used to create loyalty or event tier programs to reward your customers for using your services.
 
 
-Example of a Store Card
-------------
+## Example of a Store Card
 
 > Attention: please check our
 > [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
@@ -18,9 +15,7 @@ Example of a Store Card
 
 
 
-Creating a Store Card "campaign" for the "Bayroast Coffee"
-------------
-
+## Creating a Store Card "campaign" for the "Bayroast Coffee"
 
 ```shell
 POST /v2/store_cards/
@@ -111,7 +106,8 @@ In case of success HTTP 201 response code is returned with the following body co
 
 NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format (e.g:  `2014-09-22T20:51:53+00:00`).
 
-##### Presentation fields (when template_id is not supplied)
+
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -124,7 +120,8 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
-##### Available fields
+
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -140,7 +137,8 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | gwallet_usage | boolean | Optional. Activate *Android Pay* for the campaign. Check the [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)  for detailed information.
 
-##### Location hash object format
+
+### Location hash object format
 
 ```json
 {
@@ -158,7 +156,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -175,7 +173,8 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+
+### Barcode hash object format
 
 ```json
 {
@@ -192,9 +191,7 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Updating a Store Card "campaign" for the "Bayroast Coffee"
-------------
-
+## Updating a Store Card "campaign" for the "Bayroast Coffee"
 
 ```shell
 PATCH /v2/store_cards/{campaign_id}
@@ -271,7 +268,8 @@ In case of success HTTP 201 response code is returned with the following body co
 
 NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format (e.g:  `2014-09-22T20:51:53+00:00`).
 
-##### Presentation fields (when template_id is not supplied)
+
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -284,7 +282,8 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
-##### Available fields
+
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -300,7 +299,7 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
 
-##### Location hash object format
+### Location hash object format
 
 ```json
 {
@@ -318,7 +317,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -335,7 +334,8 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+
+### Barcode hash object format
 
 ```json
 {
@@ -384,9 +384,7 @@ push_message | string | Optional. Text shown on the lock screen. | No message se
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
 
 
-
-Creating a Store Card pass for a customer
-------------
+## Creating a Store Card pass for a customer
 
 You can create a boilerplate pass simply by POSTing to the passes route:
 
@@ -482,8 +480,7 @@ download\_page\_link | string | The HTML page with the download link
 direct_link | string | The direct download link for the pass
 
 
-Updating the customer pass
-------------
+## Updating the customer pass
 
 ```shell
 PATCH /v2/store_cards/{campaign_id}/passes/{pass_id}/
@@ -560,8 +557,8 @@ In case of success HTTP 201 response code is returned with the complete passe de
 }
 ```
 
-Sending a push notification (or forcing a pass update)
-------------
+
+## Sending a push notification (or forcing a pass update)
 
 You can force the retrieval of a pass via push notification by simply calling the following URL:
 
@@ -579,8 +576,8 @@ You can also send a custom message that will be displayed in the lock screen via
 }
 ```
 
-Redeeming a pass
-------------
+
+## Redeeming a pass
 
 There are two ways you can redeem a pass:
 
@@ -620,31 +617,31 @@ There are two ways you can redeem a pass:
 	}
 	```
 
-Aditional routes available
-------------
 
-#####Get all the Store Card campaigns:
+## Aditional routes available
+
+### Get all the Store Card campaigns:
 ```shell
 GET /v2/store_cards/
 ```
 
-#####Get all the passes for a specific Store Card campaign:
+### Get all the passes for a specific Store Card campaign:
 ```shell
 GET /v2/store_cards/{campaign_id}/passes
 ```
 
-#####Get a pass's id from its redeem code
+### Get a pass's id from its redeem code
 ```shell
 GET /v2/store_cards/{campaign_id}/redeem/{redeem_code}
 ```
 
-#####Get campaigns statistics
+### Reports
 ```shell
-GET /v2/store_cards/{campaign_id}/statistics
+GET /v2/store_cards/{campaign_id}/reports
 ```
 
 ```shell
-GET /v2/store_cards/{campaign_id}/statistics/totals
+GET /v2/store_cards/{campaign_id}/reports/totals
 ```
 
-For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
+For more information about the campaign reports, please check our [Reports Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md).

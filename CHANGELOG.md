@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.2.0 (2016-06-30) - Pedro Gimenes
+
+* Documentation
+  - Added some examples
+  - Added help for using reports
 
 ## v0.1.8 (2016-01-28) - Luís Mendes
 

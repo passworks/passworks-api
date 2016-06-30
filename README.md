@@ -1,13 +1,12 @@
-Passworks API
-====================
+# Passworks API
+
 
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `Jan 28th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
+Documentation last updated at `Jun 30th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
 
-SDKs
--------------
+## SDKs
 
 Get started quickly using Passworks with our SDK's. The SDK helps take the complexity out of coding by providing native classes for operating Passworks API.
 
@@ -17,8 +16,7 @@ Get started quickly using Passworks with our SDK's. The SDK helps take the compl
 	* [passworks-ruby](https://github.com/passworks/passworks-ruby) - The SDK is also available through Ruby Gems ([Ruby Gems](https://github.com/passworks/passworks-ruby)).
 
 
-Understanding the API workflow
---------------------
+## Understanding the API workflow
 
 Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
 
@@ -34,8 +32,7 @@ A campaign can be, in pratical terms, a collection of "[Membership or Loyalty](h
 It's easy peasy!
 
 
-Creating things using the API
------------------
+## Campaign and Passes endpoints
 
 
 * [Assets](https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md) (Upload images to use in your passes)
@@ -48,8 +45,7 @@ Creating things using the API
 * [Templates](https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md) (List templates for use in your campaigns)
 
 
-Webhooks
------------------
+## Webhooks
 
 Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook) (wikipedia link).
 
@@ -64,8 +60,8 @@ The following events are monitored and sent to the the endpoint via HTTP POST:
 
 Please read more about webhooks [here](https://github.com/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
 
-Making a request
-----------------
+
+## Making a request
 
 All URLs start with `https://api.passworks.io/v2/`. **SSL only**. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.
 
@@ -77,28 +73,25 @@ curl -u account_id:api_key \
   https://api.passworks.io/v2/ping
 ```
 
-Authentication
---------------
+
+## Authentication
 
 As stated previously, Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests made to `https://api.passworks.io` use SSL.
 
 
-Identify for your account id and api key
------------------
+## Identify for your account id and api key
 
 To use the API you must provide your `username` and `api_key` in each request via Basic Auth.
 
 Your `username` and `api_key` can be found here [http://www.passworks.io/api_index](http://www.passworks.io/api_index)
 
 
-No XML, just JSON
------------------
+## No XML, just JSON
 
 We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, or PATCHing data into Passworks.
 
 
-Pagination
-----------
+## Pagination
 
 Most collection call's on our API paginate their results. The first request returns up to
 25 records. Check the next page for more results by adding `&page=2`, then
@@ -119,14 +112,19 @@ If a given resource is paginated the API will emit the following headers:
 | X-Offset: 10      | The offset to start from |
 
 
-Handling errors
----------------
+### Example
+
+```
+GET https://api.passworks.io/v2/coupons?per_page=10&page2
+```
+
+
+## Handling errors
 
 If Passworks is having trouble, you might see a 5xx error. `500` means that the app is entirely down, but you might also see `502 Bad Gateway`, `503 Service Unavailable`, or `504 Gateway Timeout`. It's your responsibility in all of these cases to retry your request later.
 
 
-Rate limiting
--------------
+## Rate limiting
 
 ```
 The rate limit and api throttling are not yet implemented.
@@ -155,23 +153,22 @@ X-RateLimit-Reset | The time at which the current rate limit window resets in [U
 
 *Note: Unauthenticated requests are associated with your IP address, and not the user making requests. For unauthenticated you have 60 requests per hour.*
 
-Using your own Passbook certificates
--------------
+
+## Using your own Passbook certificates
+
 Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so at the moment you can't do it via an API call.
 
 You can add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
 
 
-Statistics
-----------------------
+## Reports
 
-In order to see the statistics for any kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint `/statistics` and `/statistics/totals`.
+In order to see the reports for each kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint `/reports` and `/reports/totals`.
 
-Please check the [Statistics](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md) pages in order to understand the outputs and parameters.
+Please check the [Reports](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md) pages for a better understanding on the numbers and calculations.
 
 
-Help us make it better
-----------------------
+## Help us make it better
 
 Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.
 

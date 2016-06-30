@@ -1,5 +1,4 @@
-Generic Pass
-================
+# Generic Pass
 
 > Attention: This pass is not yet supported by Android Pay, please check the
 > [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
@@ -8,8 +7,7 @@ Generic Pass
 Generic passes can be used for anything that doesn't fit in the other pass categories.
 
 
-Example of Generic passes
-------------
+## Example of Generic passes
 
 |![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/generic/generic_2x.png)|
 |:--------------:|
@@ -22,8 +20,7 @@ Example of Generic passes
 
 
 
-Creating a Generic "campaign" for the "Toy Town"
-------------
+## Creating a Generic "campaign" for the "Toy Town"
 
 For this generic campaign we will have a custom primary field called `member` that will be displaying the child name. A secondary field with the key `subtitle` displaying the signup date and two auxiliary fields displaying the membership level and the favorite toy (called `level `, `favorite `).
 
@@ -123,7 +120,8 @@ Response
 }
 ```
 
-##### Presentation fields (when template_id is not supplied)
+
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -136,7 +134,8 @@ Response
 | label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
-##### Available fields
+
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -152,7 +151,7 @@ Response
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
 
-##### Location hash object format
+### Location hash object format
 
 ```json
 {
@@ -170,7 +169,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -187,7 +186,8 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+
+### Barcode hash object format
 
 ```json
 {
@@ -205,8 +205,7 @@ message | string | Optional. Message encoded in the barcode. | Pass's redeem cod
 
 
 
-Updating a Generic "campaign" for the "Toy Town"
-------------
+## Updating a Generic "campaign" for the "Toy Town"
 
 ```shell
 PATCH /v2/generics/{campaign_id}
@@ -270,7 +269,7 @@ Response
 }
 ```
 
-##### Presentation fields (when template_id is not supplied)
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -283,7 +282,8 @@ Response
 | label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
-##### Available fields
+
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -299,7 +299,7 @@ Response
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 
 
-##### Location hash object format
+### Location hash object format
 
 ```json
 {
@@ -317,7 +317,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -334,7 +334,8 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+
+### Barcode hash object format
 
 ```json
 {
@@ -383,9 +384,8 @@ push_message | string | Optional. Text shown on the lock screen. | No message se
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
 
 
+## Creating a Generic Pass for "Johnny Appleseed"
 
-Creating a Generic Pass for "Johnny Appleseed"
-------------
 You can create a boilerplate pass simply by POSTing to the passes route:
 
 ```shell
@@ -485,8 +485,9 @@ Response:
 }
 ```
 
-Updating "Johnny Appleseed" Generic Pass
-------------
+
+## Updating "Johnny Appleseed" Generic Pass
+
 Let's imagine that Johnny's new favorite toys are now *airplanes* so let's update the `favorite` key inside the `auxiliary_fields ` fields with the new value (Airplanes).
 
 ```shell
@@ -562,8 +563,7 @@ Response:
 ```
 
 
-Sending a push notification (or forcing a pass update)
-------------
+## Sending a push notification (or forcing a pass update)
 
 You can force the retrieval of a pass via push notification by simply calling the following URL:
 
@@ -581,8 +581,8 @@ You can also send a custom message that will be displayed in the lock screen via
   }
 ```
 
-Redeeming a pass
-------------
+
+## Redeeming a pass
 
 There are two ways you can redeem a pass:
 
@@ -625,31 +625,30 @@ There are two ways you can redeem a pass:
 
 
 
-Aditional routes available
-------------
+## Aditional routes available
 
-#####Get all the Generic campaigns:
+### Get all the Generic campaigns:
 ```shell
 GET /v2/generics/
 ```
 
-#####Get all the passes for a specific Generic campaign:
+### Get all the passes for a specific Generic campaign:
 ```shell
 GET /v2/generics/{campaign_id}/passes
 ```
 
-#####Get a pass's id from its redeem code
+### Get a pass's id from its redeem code
 ```shell
 GET /v2/generics/{campaign_id}/redeem/{redeem_code}
 ```
 
-#####Get campaigns statistics
+### Reports
 ```shell
-GET /v2/generics/{campaign_id}/statistics
+GET /v2/generics/{campaign_id}/reports
 ```
 
 ```shell
-GET /v2/generics/{campaign_id}/statistics/totals
+GET /v2/generics/{campaign_id}/reports/totals
 ```
 
-For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
+For more information about the campaign reports, please check our [Reports Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md).

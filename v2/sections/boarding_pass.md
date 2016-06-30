@@ -1,5 +1,4 @@
-Boarding Passes
-================
+# Boarding Passes
 
 > Attention: This pass is not yet supported by Android Pay, please check the
 > [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
@@ -7,17 +6,15 @@ Boarding Passes
 
 Boarding passes can be **airplane**, **bus**, **train**, or **boat tickets**. You also can create generic boarding passes.
 
-Examples of Boarding Passes
-------------
 
+## Examples of Boarding Passes
 
 | ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/boarding_pass/boarding_pass_2x.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/boarding_pass/skyport_airways_boarding_pass_guidelines.png) |
 |---|---|
 | Generic Boarding Schematic | Skyport Airways (Flight 815) |
 
 
-Creating a Airplane Boarding Pass Campaign for "Skyport Airways" flight 815
-------------
+## Creating a Airplane Boarding Pass Campaign for "Skyport Airways" flight 815
 
 ```shell
 POST /v2/boarding_passes/
@@ -162,7 +159,7 @@ Response:
 ```
 
 
-##### Presentation fields (when template_id is not supplied)
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -178,7 +175,7 @@ Response:
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
 
-##### Available fields
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -196,7 +193,8 @@ Response:
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 
-##### Location hash object format
+
+### Location hash object format
 
 ```json
 {
@@ -214,7 +212,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -231,7 +229,7 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+### Barcode hash object format
 
 ```json
 {
@@ -248,8 +246,7 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Updating the "Skyport Airways" flight 815 Campaign
-------------
+## Updating the "Skyport Airways" flight 815 Campaign
 
 Let's imagine that the gate of the flight changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
@@ -387,8 +384,7 @@ push_message | string | Optional. Text shown on the lock screen. | No message se
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
 
 
-Creating a Boarding Pass for "John Appleseed"
-------------
+## Creating a Boarding Pass for "John Appleseed"
 
 You can create a boilerplate pass simply by POSTing to the passes route:
 
@@ -503,8 +499,7 @@ Response:
 }
 ```
 
-Updating the Boarding Pass of John Appleseed
-------------
+## Updating the Boarding Pass of John Appleseed
 
 As mentioned before, updating a specific pass ensures that the personalization you defined at pass creation, will be preserved, unless, of course, you specifically overwrite those fields.
 
@@ -604,8 +599,7 @@ Response:
 }
 ```
 
-Sending a push notification (or forcing a pass update)
-------------
+## Sending a push notification (or forcing a pass update)
 
 You can force the retrieval of a pass via push notification by simply calling the following URL:
 
@@ -634,8 +628,7 @@ You'll get a contextualized message, informing on the start of the pass update, 
 ```
 
 
-Redeeming a pass
-------------
+## Redeeming a pass
 
 There are two ways you can redeem a pass:
 
@@ -675,31 +668,32 @@ There are two ways you can redeem a pass:
 	}
 	```
 
-Aditional routes available
-------------
 
-#####Get all the Boarding Pass campaigns:
+## Aditional routes available
+
+### Get all the Boarding Pass campaigns:
 ```shell
 GET /v2/boarding_passes/
 ```
 
-#####Get all the passes for a specific Boarding Pass campaign:
+### Get all the passes for a specific Boarding Pass campaign:
 ```shell
 GET /v2/boarding_passes/{campaign_id}/passes
 ```
 
-#####Get a pass's id from its redeem code
+### Get a pass's id from its redeem code
 ```shell
 GET /v2/boarding_passes/{campaign_id}/redeem/{redeem_code}
 ```
 
-#####Get campaigns statistics
+### Reports
+
 ```shell
-GET /v2/boarding_passes/{campaign_id}/statistics
+GET /v2/boarding_passes/{campaign_id}/reports
 ```
 
 ```shell
-GET /v2/boarding_passes/{campaign_id}/statistics/totals
+GET /v2/boarding_passes/{campaign_id}/reports/totals
 ```
 
-For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
+For more information about the reports, please check our [Reports Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports).

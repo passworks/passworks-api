@@ -1,5 +1,4 @@
-Event Ticket
-================
+# Event Ticket
 
 > Attention: This pass is not yet supported by Android Pay, please check the
 > [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)
@@ -8,13 +7,11 @@ Event Ticket
 Event Tickets are passes used for events such as concerts, movie tickets, galas, meetings or other types of activity that happen in a specific time or day.
 
 
-Example of Event Tickets
-------------
+## Example of Event Tickets
 
 |![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/event_ticket/event_ticket_2x.png)|
 |:--------------:|
 |Event Ticket with `background image` and one with a `strip image` (schematic)|
-
 
 
 > Note: If you specify a strip image, do not specify a background image nor a thumbnail image.
@@ -25,8 +22,7 @@ Example of Event Tickets
 
 
 
-Creating a Event Ticket "Campaign" for "The Beat Goes On" Event
-------------
+## Creating a Event Ticket "Campaign" for "The Beat Goes On" Event
 
 The **Beat Goes On** pass is straightforward example, the pass is the same for all the persons with the minor diference that each issued pass has it's own redeem code (barcode redeem code).
 
@@ -116,7 +112,7 @@ In case of success HTTP 201 response code is returned with the following body co
 }
 ```
 
-##### Presentation fields (when template_id is not supplied)
+### Presentation fields (when template_id is not supplied)
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -132,7 +128,7 @@ In case of success HTTP 201 response code is returned with the following body co
 | barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
 
-##### Available fields
+### Available fields
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
@@ -150,7 +146,7 @@ In case of success HTTP 201 response code is returned with the following body co
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 
 
-##### Location hash object format
+### Location hash object format
 
 ```json
 {
@@ -168,7 +164,7 @@ longitude | double | Required. Longitude, in degrees, of the location.
 relevant_text | string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby location such as “Store nearby on 1st and Main.”
 
 
-##### Beacon hash object format
+### Beacon hash object format
 
 ```json
 {
@@ -185,7 +181,8 @@ minor| 16-bit unsigned integer | Optional. Minor identifier of a Bluetooth Low E
 proximity_uuid| string | Required. Unique identifier of a Bluetooth Low Energy location beacon
 relevant_text| string | Optional. Text displayed on the lock screen when the pass is currently relevant. For example, a description of the nearby
 
-##### Barcode hash object format
+
+### Barcode hash object format
 
 ```json
 {
@@ -202,8 +199,7 @@ format | string | Optional. Must be one of the following if supplied: **qrcode**
 message | string | Optional. Message encoded in the barcode. | Pass's redeem code.
 
 
-Updating the "The Beat Goes On" Event Ticket Campaign
-------------
+## Updating the "The Beat Goes On" Event Ticket Campaign
 
 Let's imagine that the location of your event changed, and you wish to update all of the campaign's passes. To do so, you will need to issue a PATCH to the following URL with this example payload:
 
@@ -305,8 +301,7 @@ push_message | string | Optional. Text shown on the lock screen. | No message se
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
 
 
-Creating a "The Beat Goes On" Event Ticket Pass
-------------
+## Creating a "The Beat Goes On" Event Ticket Pass
 
 You can create a boilerplate pass simply by POSTing to the passes route:
 
@@ -385,8 +380,7 @@ Response:
 }
 ```
 
-Updating a "The Beat Goes On" Event Ticket Pass
-------------
+## Updating a "The Beat Goes On" Event Ticket Pass
 
 Let's imagine that the location of your event changed, and you wish to update a pass with the new `location`.
 
@@ -468,8 +462,7 @@ Response:
 }
 ```
 
-Forcing a push update of a pass
-------------
+## Forcing a push update of a pass
 
 You can force the update of a pass via push notification by simply calling the following URL:
 
@@ -487,8 +480,7 @@ You can also send a custom message that will be displayed in the lock screen via
 }
 ```
 
-Redeeming a pass
-------------
+## Redeeming a pass
 
 There are two ways you can redeem a pass:
 
@@ -528,31 +520,30 @@ There are two ways you can redeem a pass:
 	}
 	```
 
-Aditional routes available
-------------
+## Aditional routes available
 
-#####Get all the Event Ticket campaigns:
+### Get all the Event Ticket campaigns:
 ```shell
 GET /v2/event_tickets/
 ```
 
-#####Get all the passes for a specific Event Ticket campaign:
+### Get all the passes for a specific Event Ticket campaign:
 ```shell
 GET /v2/event_tickets/{campaign_id}/passes
 ```
 
-#####Get a pass's id from its redeem code
+### Get a pass's id from its redeem code
 ```shell
 GET /v2/event_tickets/{campaign_id}/redeem/{redeem_code}
 ```
 
-#####Get campaigns statistics
+### Reports
 ```shell
-GET /v2/event_tickets/{campaign_id}/statistics
+GET /v2/event_tickets/{campaign_id}/reports
 ```
 
 ```shell
-GET /v2/event_tickets/{campaign_id}/statistics/totals
+GET /v2/event_tickets/{campaign_id}/reports/totals
 ```
 
-For more information about the campaign statistcs, please check our [Statistics Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
+For more information about the campaign reports, please check our [Reports Documentation](https://github.com/passworks/passworks-api/blob/master/v2/sections/statistics.md).
