@@ -24,7 +24,7 @@ Response:
     "id": "9f568e52-4916-4105-8222-1834b5399e65",
     "name": "Template for valid campaign-3",
     "description": "Valid Campaign Description",
-    "pass_type": "Coupon",
+    "pass_type": "coupon",
     "logo_text": "",
     "background_color": "#098765",
     "text_color": "#123456",
@@ -39,7 +39,7 @@ Response:
     "id": "affa9de3-02e1-4b6f-8811-4c4199c7d332",
     "name": "Template for valid campaign",
     "description": "Valid Campaign Description",
-    "pass_type": "Coupon",
+    "pass_type": "coupon",
     "logo_text": "Valid Campaign",
     "background_color": "#098765",
     "text_color": "#123456",
@@ -54,7 +54,7 @@ Response:
     "id": "d406d43e-59c8-485b-84b3-52ea37373ca7",
     "name": "Template for valid campaign-1",
     "description": "Valid Campaign Description",
-    "pass_type": "Coupon",
+    "pass_type": "coupon",
     "logo_text": "Valid Campaign",
     "background_color": "#098765",
     "text_color": "#123456",
@@ -69,7 +69,7 @@ Response:
     "id": "e7785224-1953-49f0-84bb-5372cd2f674c",
     "name": "Template for valid campaign-3-1-1",
     "description": "Valid Campaign Description",
-    "pass_type": "Coupon",
+    "pass_type": "coupon",
     "logo_text": "",
     "background_color": "#098765",
     "text_color": "#123456",
@@ -97,7 +97,7 @@ Response:
   "id": "e7785224-1953-49f0-84bb-5372cd2f674c",
   "name": "Template for valid campaign-3-1-1",
   "description": "Valid Campaign Description",
-  "pass_type": "Coupon",
+  "pass_type": "coupon",
   "logo_text": "",
   "background_color": "#098765",
   "text_color": "#123456",
@@ -164,7 +164,7 @@ Payload:
   "template": {
     "name": "Template for valid campaign-3-1-1",
     "description": "My lovely template!",
-    "pass_type": "Coupon",
+    "pass_type": "coupon",
     "icon_id": "e7785224-1953-49f0-84bb-5372cd2f674d"
   }
 }
