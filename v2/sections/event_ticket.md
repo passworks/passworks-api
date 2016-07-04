@@ -146,6 +146,40 @@ In case of success HTTP 201 response code is returned with the following body co
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 
 
+### Field hash object format
+
+```json
+{
+  "key": "name",
+  "value": "2 weeks",
+  "label": "EXPIRES",
+  "behaviour": "fixed"
+}
+```
+
+|  Field name  | Type |  Description  |
+|--------------|------|----------------|
+key  | string | Required. A reference key, it must be unique for a campaign.
+value  | string | Required. The field's value
+label | string | Required. The field's label
+behaviour | string | Optional, Options: __fixed__ or __dynamic__. When not set, use __fixed__ as default
+
+
+#### Understanding behaviour fields (fixed vs dynamic content)
+
+The presentation fields (`primary_fields`, `secondary_fields`, `auxiliary_fields` and `back_fields`) have a `behaviour` attribute. This attribute can have one of two values: `fixed` or `dynamic` _(by default the `behaviour` is set to `fixed`)_.
+
+- fixed
+
+  `fixed` means that the value is `static`: every pass will have the same `label` and `value` for this field.
+  So when you call the  `merge` method in the Ruby client this field will be added or overriden (if the field with the same `key` exists) in every pass even if you had previously customized the value per pass. Don't use the type of field for custom fields in your passes eg: __name__, __client id__, __ticket number__ ,etc. This type of _behaviour_ is a good fit for fields that are the same across all passes eg: `event date`, `event location`, `flight number`, etc.
+
+- dynamic
+
+  The `dynamic` _behaviour_ defines the field as a custom updated field that shouldn't be updated on a bulk update when the `merge` method is called.
+  This field will only be updated when the user updates that field specifically for that pass. This type of _behaviour_ is a good fit for custom fields like `ticket number`, `user name`, `boarding number`, `seat number`, etc..
+
+
 ### Location hash object format
 
 ```json
@@ -156,6 +190,7 @@ In case of success HTTP 201 response code is returned with the following body co
 	"relevant_text": "notification to display"
 }
 ```
+
 |  Field name  | Type |  Description  |
 |--------------|------|----------------|
 altitude  | double | Optional. Altitude, in meters, of the location.
@@ -174,6 +209,7 @@ relevant_text | string | Optional. Text displayed on the lock screen when the pa
 	"relevant_text": "notification to display"
 }
 ```
+
 |  Field name  | Type |  Description  |
 |--------------|------|----------------|
 major| 16-bit unsigned integer | Optional. Major identifier of a Bluetooth Low Energy location beacon
