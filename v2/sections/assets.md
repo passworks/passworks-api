@@ -39,16 +39,19 @@ Response:
   {
     "id": "aab705bb-5bf0-4c14-93e0-f5fe01a4d3f5",
     "asset_type": "strip",
+    "asset_url": "https://api.passworks.io/path/to/image.png",
     "created_at": "2014-08-25T14:52:49Z"
   },
   {
     "id": "cecd7470-2ba8-4737-afe0-30d0cd4fd00c",
     "asset_type": "icon",
+    "asset_url": "https://api.passworks.io/path/to/image.png",
     "created_at": "2014-09-24T09:38:48Z"
   },
   {
     "id": "eb66127b-cbb7-41f4-b7ea-a6b8c106fead",
     "asset_type": "logo",
+    "asset_url": "https://api.passworks.io/path/to/image.png",
     "created_at": "2014-09-24T09:39:40Z"
   }
 ]
@@ -86,6 +89,7 @@ Response:
 {
   "id": "32f85671-2e12-4a46-9fe2-05435cd5fc14",
   "asset_type": "background",
+  "asset_url": "https://api.passworks.io/path/to/image.png",
   "created_at": "2014-09-24T17:41:27Z"
 }
 ```
