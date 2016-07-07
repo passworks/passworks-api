@@ -85,13 +85,15 @@ The output will return as follows:
 {
   "campaign_id": "86d1772e-ac76-4be0-8844-0f54353307ba",
   "report": {
-    "installs_count": 0,
+  	 "apple"=>{"installs_count"=>0, "uninstalls_count"=>0},
+  	 "android"=>{"installs_count"=>2, "uninstalls_count"=>0},
+    "installs_count": 2,
     "uninstalls_count": 0,
     "redeems_count": 0,
     "fetches_count": 0,
     "downloads_count": 0,
     "views_count": 0,
-    "creates_count": 0,
+    "creates_count": 2,
     "expires_count": 0,
     "pushes_count": 1,
     "updates_count": 1,
