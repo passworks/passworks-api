@@ -16,7 +16,7 @@ Coupons can be used to offer customers a discount or promotion, or as a general 
 
 ## Creating a Coupon Campaign for "Paw Planet" Store
 
-We are going to assume that Paw Planet is going to use sequencial barcodes, in this case each barcode numbering will be unique and is going to start from 1 to "unlimited".
+We are going to assume that Paw Planet is going to use sequencial barcodes, in this case each barcode numbering will be unique and is going to start from 1.
 
 ```shell
 POST /v2/coupons/
