@@ -16,6 +16,8 @@ Coupons can be used to offer customers a discount or promotion, or as a general 
 
 ## Creating a Coupon Campaign for "Paw Planet" Store
 
+We are going to assume that Paw Planet is going to use sequencial barcodes, in this case each barcode numbering will be unique and is going to start from 1 to "unlimited".
+
 ```shell
 POST /v2/coupons/
 ```
@@ -60,24 +62,34 @@ Payload
 
 Response:
 
+From the "create coupon" campaign request we get the following response.
+
+The `code_type` indicates the type of numbering that is going to be applied to the barcode, in this case we will be using "sequential"
+
 ```json
 {
-  "id": "5fd663d1-4ed4-4800-8d5a-caea4131358a",
+  "id": "a2d82801-e0f7-490e-b06d-548ec26e7c97",
   "name": "Paw Planet",
-  "template_id": "9bd46ecb-20c8-41cb-a8d8-f848a07c220c",
-  "organization_name": "your company",
+  "template_id": "24a97b3b-bd00-49c8-9663-e4c0504228fc",
+  "organization_name": "Paw Planet, Inc",
+  "gwallet_usage": null,
+  "gwallet_status": null,
+  "gwallet_message": null,
   "barcode": {
     "format": "pdf417",
     "message": "",
-    "alt_text": ""
+    "alt_text": "",
+    "alt_text_type": "mirror"
   },
+  "barcodes": [],
   "allow_multiple_redeems": false,
   "header_fields": [],
   "primary_fields": [
     {
       "key": "offer",
       "value": "20% off",
-      "label": "Any premium dog food"
+      "label": "Any premium dog food",
+      "behaviour": "fixed"
     }
   ],
   "secondary_fields": [],
@@ -85,7 +97,8 @@ Response:
     {
       "key": "expires",
       "value": "2 weeks",
-      "label": "EXPIRES"
+      "label": "EXPIRES",
+      "behaviour": "fixed"
     }
   ],
   "back_fields": [],
@@ -98,12 +111,24 @@ Response:
     }
   ],
   "beacons": [],
-  "page_url": "http://get.passworks.io/I5dPyf_j2Q",
-  "gwallet_usage": false,
-  "gwallet_status": nil,
-  "gwallet_message": nil,
-  "created_at": "2015-03-31T18:01:44Z",
-  "updated_at": "2015-03-31T18:01:45Z"
+  "expiration_date": null,
+  "code_type": "sequencial",
+  "code_fixed_value": null,
+  "created_at": "2016-07-15T09:49:12Z",
+  "updated_at": "2016-07-15T09:49:12Z",
+  "distributions": [
+    {
+      "id": "91d464ab-1eb2-475e-b70c-e45719b5de01",
+      "distribution_type": "downloadPage",
+      "state": "published",
+      "page_url": "https://passworks.io/p/5QodxK8VcA",
+      "pkpass_url": "https://passworks.io/p/5QodxK8VcA.pkpass",
+      "preview_url": "https://passworks.io/p/5QodxK8VcA.png",
+      "created_at": "2016-07-15T09:49:12.241Z",
+      "updated_at": "2016-07-15T09:49:12.365Z",
+      "published_at": "2016-07-15T09:49:12.374Z"
+    }
+  ]
 }
 ```
 
@@ -120,7 +145,6 @@ Response:
 | background_color| rgb string | Optional. Color defining the pass background color ranging from `#00000` to `#ffffff`
 | text_color | rgb string | Optional. The text color for all the `value` fields except primary_fields, ranging from `#00000` to `#ffffff`
 | label_color | rgb string | Optional. The text color for all `label` fields except primary_fields, ranging from `#00000` to `#ffffff`
-| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 
 
 ### Available fields
@@ -130,6 +154,7 @@ Response:
 | name | string | Required. Must be unique, it's used to identify the Event Ticket "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
 | template_id | uuid | Optional. If not supplied, you **must supply the presentation fields presented in the table above!**
+| barcode | hash | Optional. A single hash of [barcode hash object](#barcode-hash-object-format).
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
@@ -140,6 +165,19 @@ Response:
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | associated_store_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 | gwallet_usage | boolean | Optional. Activate *Android Pay* for the campaign. Check the [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)  for detailed information.
+| code_type | string | Optional. By default is sequential. Check the available code_types and their meaning.
+| code_fixed_value | string | Optional, default: null
+
+
+### Code Type (code_type)
+
+|  code_type  | Description  |
+|--------------|----------------|
+| sequencial | This means that each issued pass will be assign unique and sequencial number starting from 1 to unlimited. |
+| fixed | Use the same barcode in all issued passes |
+| list  | Not used in the API for now |
+| per_pass | This means that per pass creation request you need to supply the barcode message that will be used |
+
 
 ### Field hash object format
 
