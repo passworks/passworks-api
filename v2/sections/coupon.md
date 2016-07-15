@@ -173,9 +173,9 @@ The `code_type` indicates the type of numbering that is going to be applied to t
 
 |  code_type  | Description  |
 |--------------|----------------|
-| sequencial | This means that each issued pass will be assign unique and sequencial number starting from 1 to unlimited. |
-| fixed | Use the same barcode in all issued passes |
-| list  | Not used in the API for now |
+| sequencial | This means that each issued pass will be assign unique and sequencial (sequential) number starting from number 1. eg: 1, 2, 3 ... |
+| fixed | For all issued passes use the value inside the `code_fixed_value` attribute as the barcode message |
+| list  | Not used in the API for now. |
 | per_pass | This means that per pass creation request you need to supply the barcode message that will be used |
 
 
