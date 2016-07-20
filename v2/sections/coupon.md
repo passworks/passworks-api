@@ -613,7 +613,24 @@ DELETE /v2/coupons/{campaign_id}
 ```
 
 In case of success a HTTP 200 status code is returned with empty error list.
-In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors
+n
+
+```json
+{
+  "errors": []
+}
+```
+
+In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors.
+
+```json
+{
+  "errors": {
+    "campaign": "Campaign not found."
+  }
+}
+```
+
 
 
 ### Get a pass's id from its redeem code
