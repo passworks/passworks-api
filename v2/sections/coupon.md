@@ -606,6 +606,16 @@ GET /v2/coupons/
 GET /v2/coupons/{campaign_id}/passes
 ```
 
+### Delete a coupon campaign
+
+```shell
+DELETE /v2/coupons/{campaign_id}
+```
+
+In case of success a HTTP 200 status code is returned with empty error list.
+In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors
+
+
 ### Get a pass's id from its redeem code
 ```shell
 GET /v2/coupons/{campaign_id}/redeem/{redeem_code}

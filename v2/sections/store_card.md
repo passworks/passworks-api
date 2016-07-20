@@ -661,6 +661,30 @@ There are two ways you can redeem a pass:
 GET /v2/store_cards/
 ```
 
+### Delete a Store Card campaign
+
+```shell
+DELETE /v2/store_cards/{campaign_id}
+```
+
+In case of success a HTTP 200 status code is returned with empty error list.
+n
+```json
+{
+  "errors": []
+}
+```
+
+In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors.
+
+```json
+{
+  "errors": {
+    "campaign": "Campaign not found."
+  }
+}
+```
+
 ### Get all the passes for a specific Store Card campaign:
 ```shell
 GET /v2/store_cards/{campaign_id}/passes

@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.2.1 (2016-07-20) - Luís Mendes
+
+* Documentation
+  - Added missing documentation on how to DELETE campaign, eg: coupons, event_tickets, etc...
+
 ## v0.2.0 (2016-06-30) - Pedro Gimenes
 
 * Documentation

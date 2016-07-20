@@ -708,8 +708,33 @@ There are two ways you can redeem a pass:
 ## Aditional routes available
 
 ### Get all the Boarding Pass campaigns:
+
 ```shell
 GET /v2/boarding_passes/
+```
+
+### Delete a Boarding Pass campaign
+
+```shell
+DELETE /v2/boarding_passes/{campaign_id}
+```
+
+In case of success a HTTP 200 status code is returned with empty error list.
+n
+```json
+{
+  "errors": []
+}
+```
+
+In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors.
+
+```json
+{
+  "errors": {
+    "campaign": "Campaign not found."
+  }
+}
 ```
 
 ### Get all the passes for a specific Boarding Pass campaign:

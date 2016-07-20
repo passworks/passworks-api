@@ -429,7 +429,7 @@ POST /v2/generics/{campaign_id}/passes
 ```
 
 If you want to personalize the pass you can supply an hash with the parameters you want to override:
-Following our example, creating Johnny's pass is rather straightforward, we will pass the thumbnail asset (`thumbnail_id`) with his photo. And supply the remaining \*_fields with the information corresponding to each key.
+Following our example, creating Johnny's pass is rather straightforward, we will pass the thumbnail asset (`thumbnail_id`) with his photo. And supply the remaining _fields with the information corresponding to each key._
 
 ```shell
 POST /v2/generics/{campaign_id}/passes
@@ -664,8 +664,33 @@ There are two ways you can redeem a pass:
 ## Aditional routes available
 
 ### Get all the Generic campaigns:
+
 ```shell
 GET /v2/generics/
+```
+
+### Delete a Generic campaign
+
+```shell
+DELETE /v2/generics/{campaign_id}
+```
+
+In case of success a HTTP 200 status code is returned with empty error list.
+n
+```json
+{
+  "errors": []
+}
+```
+
+In case of a error a HTTP 412 (Precondition Failed) status code is returned with a array of errors.
+
+```json
+{
+  "errors": {
+    "campaign": "Campaign not found."
+  }
+}
 ```
 
 ### Get all the passes for a specific Generic campaign:
