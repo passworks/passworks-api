@@ -587,6 +587,40 @@ In case of a error a HTTP 412 (Precondition Failed) status code is returned with
 }
 ```
 
+### Changing campaign state via PAUSE, RESUME, ARCHIVE
+
+You can pause, resume and archive campaigns using the following endpoints:
+
+Pausing a campaign disables the ability to issue more passes and changes the campaign state to "paused".
+
+```shell
+POST /v2/event_tickets/{campaign_id}/pause
+```
+
+Resuming a campaign re-enables the issuing of new passes, changes the campaign state to "published" again.
+
+```shell
+POST /v2/event_tickets/{campaign_id}/resume
+```
+
+Archiving stops the issuing of new passes and and hides the campaign from the interface without deleting the campaign. It changes the campaign state to "archived".
+
+```shell
+POST /v2/event_tickets/{campaign_id}/archive
+```
+
+If the campaign state is changed successfully the endpoints return a 200 HTTP status code.
+
+In case of a error a HTTP 412 (Precondition Failed) is returned with a error message, eg:
+
+```
+{
+  "errors": [
+    "Can't resume from archived to publish"
+  ]
+}
+```
+
 ### Get all the passes for a specific Event Ticket campaign:
 ```shell
 GET /v2/event_tickets/{campaign_id}/passes
