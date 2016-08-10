@@ -76,7 +76,7 @@ Details of the webhook payload:
 
 | Attribute | Format | Example | Description |
 |-----------|--------|---------|-------------|
-| event| String | "`installed`" | The `event` that this webhook refers to. It can be "`installed`", "`created`", "`uninstalled`", "`fetched`.
+| event| String | "`installed`" | The `event` that this webhook refers to. It can be "`created`", "`downloaded`", "`installed`", "`fetched"`, "`redeemed`", "`uninstalled`",.
 | context| String | "pass" | The context for now is only "Pass", it's the events context       
 | campaign_id| UUIDv4 (String) | "b6179ee0-e753-403c-b0f7-5f4818e65b02" | This is the `campaign_id` there the passe belongs.
 | distribution_id| UUIDv4 (String) | "b792d7fa-193f-4ec7-8dc8-d3069a5b8e1c" | This is the `distribution_id`
