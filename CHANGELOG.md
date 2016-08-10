@@ -3,6 +3,13 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.2.2 (2016-08-10) - Pedro Somsen
+
+* Documentation
+  - Added Webhooks missing events.
+  - Updated Webhooks content example.
+  - Added attributes of the webhook payload.
+
 ## v0.2.1 (2016-07-20) - Luís Mendes
 
 * Documentation

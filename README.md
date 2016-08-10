@@ -4,7 +4,7 @@
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `July 20th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
+Documentation last updated at `August 10th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
 
 ## SDKs
 
@@ -54,9 +54,11 @@ The following events are monitored and sent to the the endpoint via HTTP POST:
 | Event name      | Description    |
 |-------------|----------------|
 | created     | Pass was created |
+| downloaded  | Pass was downloaded on the user's device |
 | installed   | Pass was installed on the user's device |
-| uninstalled | Pass was uninstalled from the user's device |
 | fetched     | User device fetched the pass from the server |
+| redeemed    | Pass was redeemed |
+| uninstalled | Pass was uninstalled from the user's device |
 
 Please read more about webhooks [here](https://github.com/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
 
