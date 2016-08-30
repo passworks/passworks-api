@@ -50,7 +50,7 @@ that may receive `true` for the supported pass types.
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
-| gwallet_usage | boolean | Optional. Activate *Android Pay* for the campaign.
+| gwallet_usage | boolean | Optional. Default `false`. Activate *Android Pay* for the campaign.
 
 #### Response
 
@@ -92,4 +92,3 @@ Android Lifecycle
 | ![img1](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/create_sequence.png) | ![img2](https://raw.githubusercontent.com/passworks/passworks-api/master/v2/assets/images/android_pay/update_sequence.png) |
 |---|---|
 | Creating Campaigns and Passes | Updating Campaigns and Passes |
-

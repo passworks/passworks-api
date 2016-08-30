@@ -3,6 +3,12 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.2.1 (2016-08-30) - Luís Mendes
+
+* Documentation
+  - Clear Android Pay usage in the API `gwallet_usage` is `false` by default.
+
+
 ## v0.2.2 (2016-08-10) - Pedro Somsen
 
 * Documentation
