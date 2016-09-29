@@ -2,9 +2,9 @@
 
 ## Context
 
-Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook) per organization.
+Passworks Platform has the ability to handle [webhooks](https://en.wikipedia.org/wiki/Webhook).
 
-This allows you to specify an endpoint URL to be called for Pass event inside a given organization (the webkhook URL supports SSL if the URL starts with `https`, it's recommended to **always** use HTTPS endpoints).
+This allows you to specify an endpoint URL to be called for Pass event (the webkhook URL supports SSL if the URL starts with `https`, it's recommended to **always** use HTTPS endpoints).
 
 Login in to the [Passworks Platform](http://passworks.io/api_index) and set the WebHooks endpoint / URL in the **API & WebHooks** menu.
 
