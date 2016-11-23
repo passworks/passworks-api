@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.3.0 (2016-11-34) - Luís Mendes
+
+* Documentation
+  - Added Open Graph attributes (`og` and `og_description`) to the campaign.
+
 ## v0.2.1 (2016-08-30) - Luís Mendes
 
 * Documentation

@@ -149,6 +149,8 @@ Response
 | beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
+| og | Boolean | Use Open Graph tags on the download page. Optional, default: true
+| og_description | String | Open Graph description. Optional, default: "" (empty string)
 
 
 ### Field hash object format
