@@ -4,7 +4,7 @@
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Documentation last updated at `November 23th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
+Last updated at `November 28th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
 
 ## SDKs
 
@@ -18,7 +18,7 @@ Get started quickly using Passworks with our SDK's. The SDK helps take the compl
 
 ## Understanding the API workflow
 
-Just before you start [creating things](#creating-things-using-the-api) using our API it's important that you understand the API flow.
+Just before you start [creating things](#api-endpoints) using our API it's important that you understand the API flow.
 
 There are 3 inherent concepts that are at work here:
 
@@ -32,17 +32,20 @@ A campaign can be, in pratical terms, a collection of "[Membership or Loyalty](h
 It's easy peasy!
 
 
-## Campaign and Passes endpoints
+## API Endpoints
 
 
-* [Assets](https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md) (Upload images to use in your passes)
-* [Store Cards](https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md) (Loyalty, Membership Card,Photo ID, Monthly Passes)
-* [Coupons](https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md) (Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits)
-* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/v2/sections/event_ticket.md) (Event admission, Season tickets, Movie Tickets)
-* [Boarding Passes](https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md) (Airplane, Bus, Train, Boat and Generic boarding passes)
-* [Generic](https://github.com/passworks/passworks-api/blob/master/v2/sections/generic.md) (Business cards and anything else)
-* [Certificates](https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md) (List certificates for use in your campaigns)
-* [Templates](https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md) (List templates for use in your campaigns)
+* [Assets](https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md) - Upload images to use in your templates
+* [Templates](https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md) - List templates for use in your campaigns
+* [Coupons](https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md) - Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits
+* [Store Cards](https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md) - Loyalty, Membership Card,Photo ID, Monthly Passes
+* [Event Tickets](https://github.com/passworks/passworks-api/blob/master/v2/sections/event_ticket.md) - Event admission, Season tickets, Movie Tickets
+* [Boarding Passes](https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md) - Airplane, Bus, Train, Boat and Generic boarding passes
+* [Generic](https://github.com/passworks/passworks-api/blob/master/v2/sections/generic.md) - Business cards and anything else
+* [Certificates](https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md) - List certificates for use in your campaigns
+* [Registrations](https://github.com/passworks/passworks-api/blob/master/v2/sections/registrations.md) - Pass registrations
+* [Reports](#reports) - Reporting and campaign metrics
+* [Webhooks](#webhooks) - Learn how use Passworks Webhooks
 
 
 ## Webhooks
@@ -62,6 +65,27 @@ The following events are monitored and sent to the the endpoint via HTTP POST:
 
 Please read more about webhooks [here](https://github.com/passworks/passworks-api/blob/master/v2/sections/webhooks.md)
 
+## Reports
+
+In order to see the reports for each kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint `/reports` and `/reports/totals`.
+
+Please check the [Reports](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md) pages for a better understanding on the numbers and calculations.
+
+## Identify for your account id and api key
+
+To use the API you must provide your `username` and `api_key` in each request via Basic Auth.
+
+Your `username` and `api_key` can be found here [http://www.passworks.io/api_index](http://www.passworks.io/api_index)
+
+
+## No XML, just JSON
+
+We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, or PATCHing data into Passworks.
+
+## Authentication
+
+As stated previously, Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests made to `https://api.passworks.io` use SSL.
+
 
 ## Making a request
 
@@ -74,23 +98,6 @@ curl -u account_id:api_key \
   -H 'Content-Type: application/json' \
   https://api.passworks.io/v2/ping
 ```
-
-
-## Authentication
-
-As stated previously, Passworks uses [Basic Auth](http://en.wikipedia.org/wiki/Basic_access_authentication) for authentication, this is secure since all requests made to `https://api.passworks.io` use SSL.
-
-
-## Identify for your account id and api key
-
-To use the API you must provide your `username` and `api_key` in each request via Basic Auth.
-
-Your `username` and `api_key` can be found here [http://www.passworks.io/api_index](http://www.passworks.io/api_index)
-
-
-## No XML, just JSON
-
-We only support [JSON](http://en.wikipedia.org/wiki/JSON) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing, or PATCHing data into Passworks.
 
 
 ## Pagination
@@ -161,13 +168,6 @@ X-RateLimit-Reset | The time at which the current rate limit window resets in [U
 Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so at the moment you can't do it via an API call.
 
 You can add your own certificates via our site [http://www.passworks.io/certificates](http://www.passworks.io/certificates)
-
-
-## Reports
-
-In order to see the reports for each kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint `/reports` and `/reports/totals`.
-
-Please check the [Reports](https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md) pages for a better understanding on the numbers and calculations.
 
 
 ## Help us make it better
