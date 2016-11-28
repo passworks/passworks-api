@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Passworks-api by passworks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Passworks-api</h1>
+        <p>Passworks API</p>
+        <p class="view"><a href="https://github.com/passworks/passworks-api">View the Project on GitHub <small>passworks/passworks-api</small></a></p>
+        <ul>
+          <li><a href="https://github.com/passworks/passworks-api/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/passworks/passworks-api/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/passworks/passworks-api">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="passworks-api" class="anchor" href="#passworks-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passworks API</h1>
+
+<p>The Passworks API is based on a <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.</p>
+
+<p>Last updated at <code>November 28th, 2016</code> see the <a href="https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md">CHANGELOG.md</a> for more details.</p>
+
+<h2>
+<a id="sdks" class="anchor" href="#sdks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SDKs</h2>
+
+<p>Get started quickly using Passworks with our SDK's. The SDK helps take the complexity out of coding by providing native classes for operating Passworks API.</p>
+
+<ul>
+<li>PHP
+
+<ul>
+<li>
+<a href="https://github.com/passworks/passworks-php">passworks-php</a> - The SDK is also available through Packagist (composer compatible) (<a href="https://packagist.org/packages/passworks/passworks-php">Packagist</a>)</li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li>
+<a href="https://github.com/passworks/passworks-ruby">passworks-ruby</a> - The SDK is also available through Ruby Gems (<a href="https://github.com/passworks/passworks-ruby">Ruby Gems</a>).</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="understanding-the-api-workflow" class="anchor" href="#understanding-the-api-workflow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Understanding the API workflow</h2>
+
+<p>Just before you start <a href="#api-endpoints">creating things</a> using our API it's important that you understand the API flow.</p>
+
+<p>There are 3 inherent concepts that are at work here:</p>
+
+<ul>
+<li><p>The first is the concept of a campaign. A campaign, as viewed in the API, is simply seen as the aggregator for all of the generated passes for a given context.
+A campaign can be, in pratical terms, a collection of "<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md">Membership or Loyalty</a>" passes, a "<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md">Bus Boarding</a>" pass, and several others. The type of campaign dictates what sort of data and purpose it can serve.</p></li>
+<li><p>Then there's the concept of a pass. A pass, by itself, is simply a representation of all the information that your target consumer will see when he installs it on his mobile device, it's the "boarding pass" the "event ticket" or simply a discount "<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md">coupon</a>".</p></li>
+<li><p>Finally, there's the concept of an asset. All of the passes support the insertion of at least 1 or more images, being one of them the 'icon', which is required on all passes, regardless of campaign type. Therefore, in order to start creating any type of campaign, you need to have uploaded at least one asset, which you supply to the campaign upon creation.</p></li>
+</ul>
+
+<p>It's easy peasy!</p>
+
+<h2>
+<a id="api-endpoints" class="anchor" href="#api-endpoints" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Endpoints</h2>
+
+<ul>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/assets.md">Assets</a> - Upload images to use in your templates</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/templates.md">Templates</a> - List templates for use in your campaigns</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/coupon.md">Coupons</a> - Discounts, Special Offers, Ongoing Engagement, Gift Card, Prepaid Cards, Return Credits</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/store_card.md">Store Cards</a> - Loyalty, Membership Card,Photo ID, Monthly Passes</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/event_ticket.md">Event Tickets</a> - Event admission, Season tickets, Movie Tickets</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/boarding_pass.md">Boarding Passes</a> - Airplane, Bus, Train, Boat and Generic boarding passes</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/generic.md">Generic</a> - Business cards and anything else</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md">Certificates</a> - List certificates for use in your campaigns</li>
+<li>
+<a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/registrations.md">Registrations</a> - Pass registrations</li>
+<li>
+<a href="#reports">Reports</a> - Reporting and campaign metrics</li>
+<li>
+<a href="#webhooks">Webhooks</a> - Learn how use Passworks Webhooks</li>
+</ul>
+
+<h2>
+<a id="webhooks" class="anchor" href="#webhooks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Webhooks</h2>
+
+<p>Passworks Platform has the ability to handle <a href="https://en.wikipedia.org/wiki/Webhook">webhooks</a> (wikipedia link).</p>
+
+<p>The following events are monitored and sent to the the endpoint via HTTP POST:</p>
+
+<table>
+<thead>
+<tr>
+<th>Event name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>created</td>
+<td>Pass was created</td>
+</tr>
+<tr>
+<td>downloaded</td>
+<td>Pass was downloaded on the user's device</td>
+</tr>
+<tr>
+<td>installed</td>
+<td>Pass was installed on the user's device</td>
+</tr>
+<tr>
+<td>fetched</td>
+<td>User device fetched the pass from the server</td>
+</tr>
+<tr>
+<td>redeemed</td>
+<td>Pass was redeemed</td>
+</tr>
+<tr>
+<td>uninstalled</td>
+<td>Pass was uninstalled from the user's device</td>
+</tr>
+</tbody>
+</table>
+
+<p>Please read more about webhooks <a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/webhooks.md">here</a></p>
+
+<h2>
+<a id="reports" class="anchor" href="#reports" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reports</h2>
+
+<p>In order to see the reports for each kind of campaign (boarding_pass, store_card, generic, event_ticket or coupon) we created a endpoint <code>/reports</code> and <code>/reports/totals</code>.</p>
+
+<p>Please check the <a href="https://github.com/passworks/passworks-api/blob/master/v2/sections/reports.md">Reports</a> pages for a better understanding on the numbers and calculations.</p>
+
+<h2>
+<a id="identify-for-your-account-id-and-api-key" class="anchor" href="#identify-for-your-account-id-and-api-key" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Identify for your account id and api key</h2>
+
+<p>To use the API you must provide your <code>username</code> and <code>api_key</code> in each request via Basic Auth.</p>
+
+<p>Your <code>username</code> and <code>api_key</code> can be found here <a href="http://www.passworks.io/api_index">http://www.passworks.io/api_index</a></p>
+
+<h2>
+<a id="no-xml-just-json" class="anchor" href="#no-xml-just-json" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>No XML, just JSON</h2>
+
+<p>We only support <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> for serialization of data. This means that you have to send <code>Content-Type: application/json; charset=utf-8</code> when you're POSTing, or PATCHing data into Passworks.</p>
+
+<h2>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication</h2>
+
+<p>As stated previously, Passworks uses <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Auth</a> for authentication, this is secure since all requests made to <code>https://api.passworks.io</code> use SSL.</p>
+
+<h2>
+<a id="making-a-request" class="anchor" href="#making-a-request" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a request</h2>
+
+<p>All URLs start with <code>https://api.passworks.io/v2/</code>. <strong>SSL only</strong>. The path is prefixed with the API version. If we change the API in backward-incompatible ways, we'll bump the version number and maintain stable support for the old URLs.</p>
+
+<p>To create objects using the API each request must include the <code>Content-Type</code> header with the value <code>application/json</code> and the body must contain data in the <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format.</p>
+
+<div class="highlight highlight-source-shell"><pre>curl -u account_id:api_key \
+  -H <span class="pl-s"><span class="pl-pds">'</span>Content-Type: application/json<span class="pl-pds">'</span></span> \
+  https://api.passworks.io/v2/ping</pre></div>
+
+<h2>
+<a id="pagination" class="anchor" href="#pagination" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pagination</h2>
+
+<p>Most collection call's on our API paginate their results. The first request returns up to
+25 records. Check the next page for more results by adding <code>&amp;page=2</code>, then
+<code>&amp;page=3</code>, and so on until you get an empty response.</p>
+
+<p>Each page returns a maximum of 25 objects you can increase (up to 50 items per page) or decrease (to 1 per item page) this value adding the <code>&amp;per_page=50</code> .</p>
+
+<p>If a given resource is paginated the API will emit the following headers:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Total: 42</td>
+<td>Total number of items found</td>
+</tr>
+<tr>
+<td>X-Total-Pages: 5</td>
+<td>Total number of pages</td>
+</tr>
+<tr>
+<td>X-Page: 3</td>
+<td>The current page</td>
+</tr>
+<tr>
+<td>X-Per-Page: 10</td>
+<td>Amount of items displayed per page</td>
+</tr>
+<tr>
+<td>X-Next-Page: 4</td>
+<td>The number of the next page</td>
+</tr>
+<tr>
+<td>X-Prev-Page: 2</td>
+<td>The number of the previews page</td>
+</tr>
+<tr>
+<td>X-Offset: 10</td>
+<td>The offset to start from</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+
+<pre><code>GET https://api.passworks.io/v2/coupons?per_page=10&amp;page2
+</code></pre>
+
+<h2>
+<a id="handling-errors" class="anchor" href="#handling-errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Handling errors</h2>
+
+<p>If Passworks is having trouble, you might see a 5xx error. <code>500</code> means that the app is entirely down, but you might also see <code>502 Bad Gateway</code>, <code>503 Service Unavailable</code>, or <code>504 Gateway Timeout</code>. It's your responsibility in all of these cases to retry your request later.</p>
+
+<h2>
+<a id="rate-limiting" class="anchor" href="#rate-limiting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rate limiting</h2>
+
+<pre><code>The rate limit and api throttling are not yet implemented.
+</code></pre>
+
+<p>Authenticated users can make up to <strong>5000</strong> requests per hour, each request is associated with the <code>username</code>.</p>
+
+<p>You can check the returned HTTP headers of any API request to see your current rate limit status:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ curl -i https://api.passworks.io/v2/ping
+
+HTTP/1.1 200 OK
+Date: Tue, 23 Sep 2014 09:09:54 GMT
+Status: 200 OK
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1411459677</pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-RateLimit-Limit</td>
+<td>The maximum number of requests that the consumer is permitted to make per hour.</td>
+</tr>
+<tr>
+<td>X-RateLimit-Remaining</td>
+<td>The number of requests remaining in the current rate limit window.</td>
+</tr>
+<tr>
+<td>X-RateLimit-Reset</td>
+<td>The time at which the current rate limit window resets in <a href="http://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>Note: Unauthenticated requests are associated with your IP address, and not the user making requests. For unauthenticated you have 60 requests per hour.</em></p>
+
+<h2>
+<a id="using-your-own-passbook-certificates" class="anchor" href="#using-your-own-passbook-certificates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using your own Passbook certificates</h2>
+
+<p>Adding a Passbook certificate (iOS Pass Type ID) is a rather cumbersome task so at the moment you can't do it via an API call.</p>
+
+<p>You can add your own certificates via our site <a href="http://www.passworks.io/certificates">http://www.passworks.io/certificates</a></p>
+
+<h2>
+<a id="help-us-make-it-better" class="anchor" href="#help-us-make-it-better" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Help us make it better</h2>
+
+<p>Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.</p>
+
+<p>To talk with us and other developers about the API <a href="https://github.com/passworks/passworks-api/issues">open a support ticket</a> or mail us at <code>api at passworks.io</code> if you need to talk to us.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/passworks">passworks</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
