@@ -44,7 +44,7 @@ It's easy peasy!
 * [Generic](https://github.com/passworks/passworks-api/blob/master/v2/sections/generic.md) - Business cards and anything else
 * [Certificates](https://github.com/passworks/passworks-api/blob/master/v2/sections/certificates.md) - List certificates for use in your campaigns
 * [Registrations](https://github.com/passworks/passworks-api/blob/master/v2/sections/registrations.md) - Pass registrations
-* [Organization](https://github.com/passworks/passworks-api/blob/master/v2/sections/organization.md) - Create and manage organizations under your main account (special permissions required)
+* [Organizations](https://github.com/passworks/passworks-api/blob/master/v2/sections/organizations.md) - Create and manage organizations under your main account (special permissions required)
 * [Reports](#reports) - Reporting and campaign metrics
 * [Webhooks](#webhooks) - Learn how use Passworks Webhooks
 
