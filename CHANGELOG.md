@@ -8,6 +8,7 @@ changes here when sending pull requests. Also send corrections if you spot any m
 * Documentation
   - Added new "Registrations" endpoint documentation. (lmmendes)
   - Improved Readme.md content. (lmmendes)
+  - Added "Organizations" endpoint documentation. (lmmendes)
 
 ## v0.3.0 (2016-11-23)
 
