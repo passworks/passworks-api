@@ -194,7 +194,8 @@ Response:
 | associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
 | og | Boolean | Use Open Graph tags on the download page. Optional, default: true
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
-
+| javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
+| stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 
 ### Field hash object format
 

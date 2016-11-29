@@ -151,7 +151,8 @@ Response
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | og | Boolean | Use Open Graph tags on the download page. Optional, default: true
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
-
+| javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
+| stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 
 ### Field hash object format
 

@@ -136,7 +136,8 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
 | gwallet_usage | boolean | Optional. Default: `false`. Activate *Android Pay* for the campaign. Check the [Android Pay](https://github.com/passworks/passworks-api/blob/master/v2/sections/android_pay.md)  for detailed information.
-
+| javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
+| stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 
 ### Field hash object format
 

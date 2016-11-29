@@ -3,6 +3,12 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.5.0 (2016-11-28)
+
+* Documentation
+  - Added new attributes "javascript" and "stylesheet" to the campaign model,
+  this allows users to render javascript elements and override css in the download page and form page (lmmendes)
+
 ## v0.4.0 (2016-11-28)
 
 * Documentation

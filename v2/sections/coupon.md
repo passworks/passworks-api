@@ -169,6 +169,8 @@ The `code_type` indicates the type of numbering that is going to be applied to t
 | code\_fixed_value | string | Optional, default: null
 | og | Boolean | Use Open Graph tags on the download page. Optional, default: true
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
+| javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
+| stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 
 
 ### Code Type (code_type)
