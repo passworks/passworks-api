@@ -24,7 +24,7 @@ The following predicates are also available:
 So if you wish to search for the attribute "name" containing the word "House" you will have
 
 ```
-GET https://api.passworks.io/v2/coupons/?q[name_cont]=Una Salus Victus
+GET https://api.passworks.io/v2/coupons/?q[name_cont]=House
 ```
 
 ### Best pratices: Escaping query parameters
@@ -32,7 +32,7 @@ GET https://api.passworks.io/v2/coupons/?q[name_cont]=Una Salus Victus
 Don't forget to escape the URL query parameters before submiting them to the API endpoint.
 
 ```
-GET  https://api.passworks.io/v2/coupons/q%5Bname_cont%5D%3DUna+Salus+Victus
+GET  https://api.passworks.io/v2/coupons/q%5Bname_cont%5D%3DHouse
 ```
 
 ### Ordering
