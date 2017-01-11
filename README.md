@@ -4,7 +4,7 @@
 The Passworks API is based on a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) architecture which makes Passworks API predictable and resource oriented. It uses HTTP built-in features, like HTTP authentication, HTTP verbs (GET, POST, PUT, PATCH, DELETE) and HTTP response codes to allow easy access from any programming language via off-the-shelf libraries and tools.
 
 
-Last updated at `November 29th, 2016` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
+Last updated at `January 11th, 2017` see the [CHANGELOG.md](https://github.com/passworks/passworks-api/blob/master/CHANGELOG.md) for more details.
 
 ## SDKs
 
@@ -128,6 +128,17 @@ If a given resource is paginated the API will emit the following headers:
 GET https://api.passworks.io/v2/coupons?per_page=10&page2
 ```
 
+## Sorting
+
+Passworks API supports sorting for the most common attributes via query string.
+
+### Example
+
+```
+GET https://api.passworks.io/v2/coupons/?q[name_eq]=Una Salus Victus
+```
+
+Read more about it here [sorting](https://github.com/passworks/passworks-api/blob/master/v2/sections/sorting.md) campaigns and passes.
 
 ## Handling errors
 
