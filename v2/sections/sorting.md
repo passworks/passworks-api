@@ -65,4 +65,4 @@ You can sort and order the attributes inside the following endpoints
 - https://api.passworks.io/v2/event_tickets/*campaign id*/passes
 - https://api.passworks.io/v2/generics/*campaign id*/passes
 - https://api.passworks.io/v2/store_cards/*campaign id*/passes
-- https://api.passworks.io/v2/boarding_passes/*campaign id*/passes
+- https://api.passworks.io/v2/boarding_passes/**campaign id**/passes
