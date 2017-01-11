@@ -54,7 +54,7 @@ So sorting the for the attribute name in descending order would be doing the fol
 https://api.passworks.io/v2/coupons/?q[s]=name+desc
 ```
 
-### Sorting multiple with parameters ordering and using pagination at the same time
+### Sorting multiple parameters, ordering and using pagination at the same time
 
 You can append one or more filters to the query string then event apply the desired sort and finally specify a given page to be retrieved.
 
