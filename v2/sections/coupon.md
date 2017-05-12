@@ -617,7 +617,6 @@ DELETE /v2/coupons/{campaign_id}
 ```
 
 In case of success a HTTP 200 status code is returned with empty error list.
-n
 
 ```json
 {
@@ -633,6 +632,14 @@ In case of a error a HTTP 412 (Precondition Failed) status code is returned with
     "campaign": "Campaign not found."
   }
 }
+```
+
+### Delete a pass from coupon campaign
+
+Deleting a coupon from a given campagin is strait forward:
+
+```shell
+DELETE /v2/coupons/{campaign_id}/passes/{pass_id}
 ```
 
 
