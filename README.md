@@ -125,7 +125,7 @@ If a given resource is paginated the API will emit the following headers:
 ### Example
 
 ```
-GET https://api.passworks.io/v2/coupons?per_page=10&page2
+GET https://api.passworks.io/v2/coupons?per_page=10&page=2
 ```
 
 ## Sorting
