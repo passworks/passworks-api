@@ -173,6 +173,8 @@ The `code_type` indicates the type of numbering that is going to be applied to t
 | javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
 | stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 | user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
+| remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
+
 
 ### Code Type (code_type)
 
