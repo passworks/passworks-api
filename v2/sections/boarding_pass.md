@@ -149,6 +149,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/G1mbmsPWkw",
   "gwallet_usage": false,
   "gwallet_status": nil,
@@ -196,6 +197,8 @@ Response:
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
 | javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
 | stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
+| user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
+| remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
 
 ### Field hash object format
 
@@ -373,6 +376,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/G1mbmsPWkw",
   "created_at": "2015-04-01T10:06:33Z",
   "updated_at": "2015-04-01T10:18:15Z"
@@ -531,6 +535,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q",
   "pkpass_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q.pkpass",
   "created_at": "2015-04-01T10:29:34Z",
@@ -631,6 +636,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q",
   "pkpass_url": "http://get.passworks.io/G1mbmsPWkw/ajcAj0bCaN4LxN3FjcHn2Q.pkpass",
   "created_at": "2015-04-01T10:29:34Z",

@@ -116,6 +116,7 @@ The `code_type` indicates the type of numbering that is going to be applied to t
   "code_fixed_value": null,
   "created_at": "2016-07-15T09:49:12Z",
   "updated_at": "2016-07-15T09:49:12Z",
+  "user_info": {},
   "distributions": [
     {
       "id": "91d464ab-1eb2-475e-b70c-e45719b5de01",
@@ -171,7 +172,7 @@ The `code_type` indicates the type of numbering that is going to be applied to t
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
 | javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
 | stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
-
+| user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
 
 ### Code Type (code_type)
 

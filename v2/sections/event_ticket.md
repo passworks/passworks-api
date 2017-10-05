@@ -102,6 +102,7 @@ In case of success HTTP 201 response code is returned with the following body co
       "relevant_text": "Welcome! Enjoy the show."
     }
   ],
+  "user_info": {},
   "beacons": [],
   "page_url": "http://get.passworks.io:3000/1VtFTG8YwQ",
   "gwallet_usage": false,
@@ -148,6 +149,8 @@ In case of success HTTP 201 response code is returned with the following body co
 | og_description | String | Open Graph description. Optional, default: "" (empty string)
 | javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
 | stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
+| user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
+| remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
 
 
 ### Field hash object format
@@ -302,6 +305,7 @@ Response:
       "relevant_text": "Welcome! Enjoy the show."
     }
   ],
+  "user_info": {},
   "beacons": [],
   "page_url": "http://get.passworks.io/1VtFTG8YwQ",
   "created_at": "2015-03-27T13:08:57Z",
@@ -410,6 +414,7 @@ Response:
       "relevant_text": "Welcome! Enjoy the show."
     }
   ],
+  "user_info": {},
   "redeemed_count": 0,
   "download_page_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g",
   "direct_link": "https://get.passworks.io/gOLp8MFxiA/nopCEC8kUP0kQ6TwC8IZ-g.pkpass",
@@ -495,6 +500,7 @@ Response:
     }
   ],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA",
   "pkpass_url": "http://get.passworks.io/1VtFTG8YwQ/FCgAWVECzDyuLS-kdvNrpA.pkpass",
   "created_at": "2015-03-27T18:11:49Z",

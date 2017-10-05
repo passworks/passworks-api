@@ -111,6 +111,7 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/ahStMTeuCw",
   "gwallet_usage": false,
   "gwallet_status": nil,
@@ -302,6 +303,7 @@ Response
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/IGYIYEydVw",
   "created_at": "2015-03-31T17:03:01Z",
   "updated_at": "2015-03-31T18:01:11Z"
@@ -326,16 +328,25 @@ Response
 
 |  Field name  | Type | Description  |
 |-------------|------|-----------------------------------
-| name | string | Required. Must be unique, it's used to identify the Store Card/Loyalty "Campaign"
+| name | string | Required. Must be unique, it's used to identify the Event Ticket "Campaign"
 | description | string | Optional. Brief description of the pass, used by the iOS accessibility technologies. If the description is not provided the *name* field value is used instead.
+| template_id | uuid | Optional. If not supplied, you **must supply the presentation fields presented in the table above!**
 | header_fields | array | Optional. Collection of *field hash objects*
 | secondary_fields | array | Optional. Collection of *field hash objects*
 | auxiliary_fields | array | Optional. Collection of *field hash objects*
 | back_fields | array | Optional. Collection of *field hash objects* used in the rear part of the pass
 | locations | array | Optional. Collection of up to 10 [location hash objects](#location-hash-object-format)
-| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#ibeacon-hash-object-format)
+| beacons | array | Optional. Collection of up to 10 [beacon hash objects](#beacon-hash-object-format)
 | certificate_id | uuid | Optional. **You should provide your own certificate** but in none is provided the passworks.io default certificate is used.
 | organization_name | string | Optional. Organization name showned in the unlock screen, if none is supplied the registration organization name is used
+| associated\_store\_identifiers | array | Optional. A list of iTunes Store item identifiers for the associated apps. Only one item in the list is used - the first item identifier for an app compatible with the current device. If the app is not installed, the link opens the App Store and shows the app. If the app is already installed, the link launches the app, [as specified in passbook's documentation](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html#//apple_ref/doc/uid/TP40012026-CH2-SW7)
+| og | Boolean | Use Open Graph tags on the download page. Optional, default: true
+| og_description | String | Open Graph description. Optional, default: "" (empty string)
+| javascript | String | Javascript that will be rendered inside the download page and form, Allows the user to run their own javascript code eg: Google Analytics or Facebook Pixel  |
+| stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
+| user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
+| remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
+
 
 
 ### Location hash object format
@@ -517,6 +528,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
   "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
@@ -594,6 +606,7 @@ Response:
   "back_fields": [],
   "locations": [],
   "beacons": [],
+  "user_info": {},
   "page_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA",
   "pkpass_url": "http://get.passworks.io/IGYIYEydVw/rzhfuD9mTdiAbGp14PGUoA.pkpass",
   "created_at": "2015-03-31T17:33:28Z",
