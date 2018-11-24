@@ -377,10 +377,9 @@ POST /v2/coupons/{campaign_id}/merge
 push_message | string | Optional. Text shown on the lock screen. | No message sent.
 
 
-The `push_message` sent in the body of the request is optional, if you lead the body empty the passes will be updated and pushed to the users device without displaying any "push message".
+Sending the `push_message` attribute in the body of the request is optional, if you leave the body request (POST) empty the passes will be updated and pushed to the users device without displaying any push message.
 
 This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
-
 
 NOTE:
 
