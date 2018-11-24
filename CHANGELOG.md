@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v0.7.0 (2018-11-24)
+
+* Documentation
+  - Added ability to merge campaign and send push message to the customer after each pass is updated. (lmmendes)
+
 ## v0.6.0 (2017-01-11)
 
 * Documentation

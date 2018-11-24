@@ -277,7 +277,11 @@ message | string | Optional. Message encoded in the barcode. | Pass's redeem cod
 
 ## Updating the "Paw Planet" Coupon Campaign
 
-Sometimes you might want to run a special campaign, and update all of your client's passes with the new conditions:
+Updating a campaign is a two phase operation, first you need to update the campaign with the desired changes, and then you need to push the changes to all passes.
+
+### Updating the campaign
+
+Here is an simple example on how to update the `offer` and `expire` fields of the previous campaign.
 
 ```shell
 PATCH /v2/coupons/{campaign_id}
@@ -352,18 +356,42 @@ Response:
 
 ```
 
+
+### Pushing the changes to the passes
+
+Now we need to push the changes to the existing passes of the campaign and if we wish we can also send a "push message" with the update at the same time.
+
+```shell
+POST /v2/coupons/{campaign_id}/merge
+```
+
+
+```json
+  {
+      "push_message": "30% off for the next 3 days!"
+  }
+```
+
+|  Field name  | Type |  Description   | Default |
+|--------------|------|----------------|---------|
+push_message | string | Optional. Text shown on the lock screen. | No message sent.
+
+
+The `push_message` sent in the body of the request is optional, if you lead the body empty the passes will be updated and pushed to the users device without displaying any "push message".
+
+This request will push all existing passes once again, guaranteeing that all that have been downloaded will contain the new changes. Otherwise, there's no guarantee that the users will receive the updated pass.
+
+
+NOTE:
+
+Special considerations, dynamic fields values of the passes will be left unchanged by the merge, this means that the merge will update the passes with the new layout, field labels, geo-location fields, etc but will let the custom fields values untouched.
+
 Now that you've updated your campaign, all the future passes generated from this updated campaign will contain the new changes.
 
-**NOTE:** The following instructions will reset all the issued passes to the base template, removing the personalization fields from all the issued passes.
 
-The correct way of updating the already issued passes while preserving the custom fields (like the name of the pass owner, for example) is to iterate trough the issued pass collection, by collecting the ids from
-`GET /v2/coupons/{campaign_id}/passes`
+### Forcing passes sync and sending push messages
 
-and then [updating each pass](#updating-each-pass) with the fields you wish to change.
-
-Please contact support@passworks.io for advisement on updating a coupon campaign.
-
-If, however any old passes that had already been generated and you wish to reset them to the new changes, you **must**, following a campaign update, issue a push POST request:
+You can send a "push message" to all customers calling the "push" endpoint, this will force the customers wallets to fetch the latest version of the pass and send send an attached push message if defined.
 
 ```shell
 POST /v2/coupons/{campaign_id}/push
@@ -602,7 +630,7 @@ There are two ways you can redeem a pass:
 	}
 	```
 
-## Aditional routes available
+## Additional routes available
 
 ### Get all the Coupon campaigns:
 ```shell
