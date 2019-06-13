@@ -143,6 +143,8 @@ NOTE: The API date fields (e.g `created_at`, `updated_at`) use the [ISO-8601](ht
 | stylesheet | String | CSS that will be rendered inside the download page and form, allows users to override the page css |
 | user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
 | remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
+| sync_locations_on_merge | boolean | Optional. Default `true`. Allows you to choose if you with that campaign locations are synced or not with the passes when the campaign is updated.|
+| sync_beacons_on_merge | boolean | Optional. Default `true`. Allows you to choose if you with that campaign beacons are synced or not with the passes when the campaign is updated.|
 
 ### Field hash object format
 

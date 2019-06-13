@@ -3,6 +3,11 @@
 This file is a manually maintained list of changes for each release. Feel free to add your
 changes here when sending pull requests. Also send corrections if you spot any mistakes.
 
+## v2.9.1 (2019-06-08)
+
+* Feature
+  - Ability to opt-out syncing of geo-locations and beacons collections while updating the campaign by setting  sync_locations_on_merge and sync_beacons_on_merge flags to false. This allows that you to update a campaign and merge it with the passes without overriding the beacons and locations defined per pass. (lmmendes)
+
 ## v0.7.0 (2018-11-24)
 
 * Documentation

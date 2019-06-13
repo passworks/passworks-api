@@ -175,6 +175,8 @@ The `code_type` indicates the type of numbering that is going to be applied to t
 | user_info | hash | Optional. This field can be used to store user related data. On Apple Wallet this field will be available as a JSON encoded string. |
 | max_distance| Integer | Optional. Maximum distance in meters from a relevant latitude and longitude that the pass is relevant. This number is compared to the pass’s default distance and the smaller value is used. Maximum 1000 meters for Event Tickets and 100 for everthing else. |
 | remote_form_url | url | Optional. Please see [advanced features](https://github.com/passworks/passworks-api/blob/master/v2/sections/advanced-features.md).  |
+| sync_locations_on_merge | boolean | Optional. Default `true`. Allows you to choose if you with that campaign locations are synced or not with the passes when the campaign is updated.|
+| sync_beacons_on_merge | boolean | Optional. Default `true`. Allows you to choose if you with that campaign beacons are synced or not with the passes when the campaign is updated.|
 
 
 ### Code Type (code_type)
