@@ -124,6 +124,8 @@ The `code_type` indicates the type of numbering that is going to be applied to t
       "state": "published",
       "page_url": "https://passworks.io/p/5QodxK8VcA",
       "pkpass_url": "https://passworks.io/p/5QodxK8VcA.pkpass",
+      "page_short_url": "http://pass.yt/d/7L",
+      "pkpass_short_url": "http://pass.yt/d/7L.pkpass",      
       "preview_url": "https://passworks.io/p/5QodxK8VcA.png",
       "created_at": "2016-07-15T09:49:12.241Z",
       "updated_at": "2016-07-15T09:49:12.365Z",
@@ -352,6 +354,9 @@ Response:
   ],
   "beacons": [],
   "page_url": "http://get.passworks.io/I5dPyf_j2Q",
+  "pkpass_url": "http://get.passworks.io/I5dPyf_j2Q.pkpass",
+  "page_short_url": "https://pass.yt/p/z62",
+  "pkpass_short_url": "https://pass.yt/p/z62.pkpass",  
   "created_at": "2015-03-31T18:01:44Z",
   "updated_at": "2015-03-31T18:22:50Z"
 }
@@ -483,6 +488,8 @@ Response:
   "beacons": [],
   "page_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ",
   "pkpass_url": "http://get.passworks.io/I5dPyf_j2Q/-zGkMq8orhAE1x9l08yLCQ.pkpass",
+  "page_short_url": "https://pass.yt/p/z62",
+  "pkpass_short_url": "https://pass.yt/p/z62.pkpass",    
   "created_at": "2015-03-31T18:25:20Z",
   "updated_at": "2015-03-31T18:25:20Z"
 }
