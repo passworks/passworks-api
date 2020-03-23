@@ -643,7 +643,7 @@ There are two ways you can redeem a pass:
 If your pass was flagged as "void" you can reset the flag calling the "reset_redeem" endpoint
 
 ```shell
-	POST /v2/coupons/{campaign_id}/passes/{pass_id}/reset_redeem
+POST /v2/coupons/{campaign_id}/passes/{pass_id}/reset_redeem
 ```
 
 ## Additional routes available
