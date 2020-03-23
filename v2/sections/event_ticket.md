@@ -568,6 +568,14 @@ There are two ways you can redeem a pass:
 	}
 	```
 
+## Reseting a redeem
+
+If your pass was flagged as "void" you can reset the flag calling the "reset_redeem" endpoint
+
+```shell
+POST /v2/coupons/{campaign_id}/passes/{pass_id}/reset_redeem
+```
+
 ## Aditional routes available
 
 ### Get all the Event Ticket campaigns:
